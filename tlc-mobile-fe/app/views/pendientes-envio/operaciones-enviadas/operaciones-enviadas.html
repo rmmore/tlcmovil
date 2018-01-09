@@ -1,0 +1,55 @@
+<main>	
+    <h1 data-page-title class="hideAccessible">Operaciones enviadas</h1>
+	
+	<div class="mod_infoAccount no_padding_top">
+		<div class="gridContainer mod_titles_border">			
+			<div class="wrapper">
+				<div class="row">
+					<div class="col-xs-12">
+						<steps data-steps-options="::{count: 3, current: 3}"></steps>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+    <div class="gridContainer">
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-xs-12">
+					<ul class="mod_sendConfirm">
+						<li class="sdc-item">
+							<p class="sdc-text">
+								<span class="ico-confirm-dos" data-ng-class="::{'error': operationsSentVM.allHaveErrors, 'warning': operationsSentVM.someHaveErrors}">
+									<span data-ng-if="::operationsSentVM.operationsSent.length > 1">
+										<span data-ng-if="::!operationsSentVM.allHaveErrors && !operationsSentVM.someHaveErrors">El proceso de envío ha finalizado</span>
+										<span data-ng-if="::(operationsSentVM.someHaveErrors && operationsSentVM.nroSuccess > 1)">S&oacute;lo {{::operationsSentVM.nroSuccess}} operaciones se pudieron enviar</span>
+										<span data-ng-if="::(operationsSentVM.someHaveErrors && operationsSentVM.nroSuccess === 1)">S&oacute;lo 1 operaci&oacute;n se pudo enviar</span>
+										<span data-ng-if="::operationsSentVM.allHaveErrors">Las operaciones no se pudieron enviar</span>
+									</span>
+									<span data-ng-if="::operationsSentVM.operationsSent.length === 1">
+										<span data-ng-if="::!operationsSentVM.allHaveErrors">La operaci&oacute;n se envi&oacute; con &eacute;xito</span>
+										<span data-ng-if="::operationsSentVM.allHaveErrors">No se pudo enviar la operación al Banco.</span>
+									</span>									
+								</span>
+							</p>
+						</li>
+					</ul>
+					
+					<operation-list class="mts"
+						data-options="{
+							list: operationsSentVM.operationsSent
+						}"
+					></operation-list>
+
+					<div class="mod_form">
+						<div class="mfm-boxBTN">
+							<input id="btn03" data-ng-click="operationsSentVM.back();" type="button" value="Regresar" class="mfm-button mfm-dbl cancel">
+							<label for="btn03" class="hideAccessible">Regresar</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</main>

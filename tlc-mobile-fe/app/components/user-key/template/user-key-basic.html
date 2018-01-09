@@ -1,0 +1,29 @@
+<form class="mod_form mod_auth_sign">
+	<div class="mod_details">
+		
+		<fieldset class="auth-keys" 
+			data-keypad-mobile-input 
+			data-ng-model="userKeyVM.key"
+			data-keypad-options="::userKeyVM.optionsValue">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="row">
+						<div class="col-xs-12 mbs">
+							<h3 class="auth-title-confirm">Confirma que los datos son correctos antes de ingresar tu Clave de Usuario.</h3>
+						</div>
+						<div class="col-xs-6">
+							<h3 class="auth-title">Clave de usuario:</h3>
+						</div>
+						<div class="col-xs-6 no_padding_left">
+							<label class="ico-key">
+								<input type="password" class="input-key w100" 
+									data-keypad-mobile-partial="6"
+									data-ng-model="userKeyVM.key" autocorrect="off" autocomplete="off" spellcheck="false">
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</div>
+</form>

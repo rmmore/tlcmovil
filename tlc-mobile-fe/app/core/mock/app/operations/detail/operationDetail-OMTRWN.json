@@ -1,0 +1,37 @@
+{
+  "response": {
+	"id": 1,
+	
+  	"dsOperation": "A bancos locales con tipo de cambio negociado",
+  	"cdStatus": "11",
+  	"dsFullName": "Jhon Alvarez",
+  	"dtPrepared": "1467049380000",
+	
+  	"originName": "BANCO DE COMERCIO S.A",
+	"originDocumentType": "5",
+	"originDocumentNumber": "20100047307",
+  	"originAccountAlias": "BANCO DE COMERCIO",
+	"originAccountType": "Corriente",
+  	"originAccountNumber": "1931341240188",
+	"originCurrencyType": "1001",
+	
+	"dsBank": "INTERBANK",
+	"dsInterbank": "00329700300052398136",
+	"dsBeneficiary": "BANCO DE COMERCIO",
+	"itfNumber": "Inafecta",
+	"destinationDocumentType": "5",
+	"destinationNumber": "20100047307",
+	"destinationNumberCorrelative": "1",
+	"destinationReference": "1221",
+	
+	"vlOperation": 2111,
+	"destinationTicket": "SP-5454",
+	"exchangeRateNegotiated": 3.36,
+	"againstValue": 7092.96,
+	
+	"chargeAmount": 2111,
+	"paymentAmount": 7092.96,
+	
+  	"observations": "Observaciones"
+  }
+}

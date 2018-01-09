@@ -1,0 +1,52 @@
+{
+  "response": {
+	"id": 1,
+	
+  	"dsOperation": "Remesas de efectivo",
+  	"cdStatus": "11",
+  	"dsFullName": "Jhon Alvarez",
+  	"dtPrepared": "1467049380000",
+	
+  	"dsAccountName": "CORPORACION DE LOS FIELES DEL GRUPO S.A.",
+	"originAccountType": "Corriente",
+  	"originAccount": "19187654321073",
+  	"originAccountAlias": "CORPORACION DE LOS FIELES DEL GRUPO S.A.",
+	"currency": "1001",
+	"dsBeneficiaryIdc": "20100473707",
+	
+	"listCurrency": [
+		{
+			"cdType": "B",
+			"listCurrencyDetail": [
+				{"dsDenomination": "100",	"vlDenomination": 3}
+			]
+		},
+		{	
+			"cdType": "M",
+			"listCurrencyDetail": [
+				{"dsDenomination": "1", 	"vlDenomination": 4}
+			]
+		}
+	],
+	
+	"vlOperation": 304,
+	
+	"dsTransport": "HERMES",
+	"dtDelivery": "1467954000000",
+	"hrDelivery": "12:00 AM",
+	"dsReference": "la referencia",
+	
+	"dsRegion": "AMAZONAS",
+	"dsProvince": "BONGARA",
+	"dsDistrict": "VALERA",
+	"dsAddress": "la dirección",
+	
+	"listContacts": [
+		{"dsContact": "Jorge Perez Guadalupe", "cdContactIdcType": "1", "dsContactIdc": "21212121"},
+		{"dsContact": "Carmen Lopez Suarez", "cdContactIdcType": "6", "dsContactIdc": "32323232"},
+		{"dsContact": "Juanito Rodriguez Gamboa", "cdContactIdcType": "C", "dsContactIdc": "85858585"}
+	],
+	
+  	"dsReject": "Observaciones"
+  }
+}

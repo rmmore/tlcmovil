@@ -1,0 +1,24 @@
+<ul class="mod_tableList2 mod_tableList_columns">
+	<li data-ng-repeat="item in ::operationDetailVM.operation.serviceDetail track by $index" class="tl2-item">
+		<div class="mod_form tl2-date d-block">
+			<div class="mfm-checkG d-table">
+				<div class="d-cell" ng-if="item.dtExpiredDetail">
+					<p>{{::item.dtExpiredDetail | dateMask:'day'}}</p>
+					<p>{{::item.dtExpiredDetail | dateMask:'month'}}</p>
+					<p>{{::item.dtExpiredDetail | dateMask:'year'}}</p>
+				</div>
+			</div>
+		</div><a title="Detalle del pago" class="tl2-link ico-arrowR-ora no_background_image tl2-oneItem">
+			<ul>
+				<li class="tl2-item">
+					<h4 class="tl2-title" data-ng-if="::item.dsPago">{{::item.dsPago}}</h4>
+					<p class="tl2-info"> <span class="tl2-sub d-inline-block mod_tableList_label">N° Doc Pago: </span><span class="tl2-name">{{item.nuInvoice}}</span></p>
+					<p class="tl2-info"> <span class="tl2-sub d-inline-block mod_tableList_label">Cargo fijo: </span><span class="tl2-name" data-currency="::{type:operationDetailVM.operation.currencyVlOperation, value:item.amountFixedCharge}"></span></p>
+					<p class="tl2-info"> <span class="tl2-sub d-inline-block mod_tableList_label">Mora: </span><span class="tl2-name" data-currency="::{type:operationDetailVM.operation.currencyVlOperation, value:item.vlTaxes}"></span></p>
+					<p class="tl2-info"> <span class="tl2-sub d-inline-block mod_tableList_label">Comisi&oacute;n: </span><span class="tl2-name" data-currency="::{type:operationDetailVM.operation.currencyVlOperation, value:item.vlCommission}"></span></p>
+					<p class="tl2-number" data-currency="::{type:operationDetailVM.operation.currencyVlOperation, value:item.vlDebit}"></p>
+				</li>
+			</ul>
+		</a>
+	 </li>
+</ul>	

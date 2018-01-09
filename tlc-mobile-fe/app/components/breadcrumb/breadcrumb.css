@@ -1,0 +1,104 @@
+/*
+
+ESTILOS NUEVOS DEL EQUIPO DFRONT
+
+ */
+
+/*ESTILOS PARA HBK*/
+
+.mod_steps.HBK { position: realitive;/*text-align: center; background-color: #ffffff; padding: 0.4375em 0; box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75); */}
+.mod_steps.HBK .mstp-group { display: inline-block; }
+.mod_steps.HBK .mstp-group:after { content: ""; display: block; clear: both; }
+.mod_steps.HBK .mstp-item { position: relative; float: left; margin-right: 30px; padding: 0.1875em; border: 1px solid #99989D; border-radius: 50%; background-color: #ECEBEC; }
+.mod_steps.HBK .mstp-item:after { position: absolute; content: ""; background: url("../../img/ico-sprite.png") repeat-y 0px -570px transparent; top: 14px; left: 35px; width: 32px; height: 10px; z-index: 1; }
+.mod_steps.HBK .mstp-item:last-child { margin-right: 0; }
+.mod_steps.HBK .mstp-item:last-child:after { content: none; }
+.mod_steps.HBK .mstp-item .mstp-number { float: left; width: 1.83333em; height: 1.83333em; padding-top: 6px; text-align: center; display: block; font-family: "flexo-bold"; font-size: 1.125em; color: #ffffff; background-color: #ADAAB1; border-radius: 50%; border: 1px solid #99989D; }
+.mod_steps.HBK .mstp-item.mstp-active .mstp-number { background-color: #FF4F00; }
+.mod_steps.HBK .mstp-text { position: absolute; bottom: -20px; left: -6px; color: black; width: 120%; font-size: 12px; display: block; text-align: center;}
+
+/*ESTILOS PARA TLC-MOBILE*/
+
+.mod_steps.TLC { /*text-align: center; background-color: #ffffff; padding: 0.4375em 0; box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75); */}
+.mod_steps.TLC .mstp-group { display: inline-block; }
+.mod_steps.TLC .mstp-group:after { content: ""; display: block; clear: both; }
+.mod_steps.TLC .mstp-item { position: relative; float: left; margin-right: 30px; padding: 0.1875em; border: 1px solid #99989D; border-radius: 50%; background-color: #ECEBEC; }
+.mod_steps.TLC .mstp-item:after { position: absolute; content: ""; background: url("../../img/ico-sprite.png") repeat-y 0px -570px transparent; top: 14px; left: 35px;  width: 32px; height: 10px; z-index: 1; }
+.mod_steps.TLC .mstp-item:last-child { margin-right: 0; }
+.mod_steps.TLC .mstp-item:last-child:after { content: none; }
+.mod_steps.TLC .mstp-item .mstp-number { float: left; width: 1.83333em; height: 1.83333em; padding-top: 6px; text-align: center; display: block; font-family: "flexo-bold"; font-size: 1.125em; color: #ffffff; background-color: #ADAAB1; border-radius: 50%; border: 1px solid #99989D; }
+.mod_steps.TLC .mstp-item.mstp-active .mstp-number { background-color: #94c765; }
+
+/*
+
+ESTILOS VIEJOS DE BCP
+
+ */
+.bdmH2{
+  color: grey;
+}
+.bcp-step-progress {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 0px;
+  float: right;
+  white-space: nowrap;
+}
+.bcp-step-progress li {
+  float: left;
+  margin-right: 5px;
+  text-align: center;
+  position: relative;
+  width: 100px;
+}
+.bcp-step-progress .bcp-step-name {
+  display: table-cell;
+  height: 32px;
+  text-align: center;
+  width: 100px;
+  font-family: 'Flexo-Medium';
+  font-size: 11px;
+  color: #4e4f55;
+}
+.bcp-step-progress .bcp-step-num {
+  font-size: 14px;
+  font-weight: bold;
+  border: solid 2px #FF8935;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin-top: 10px;
+  background: #635F5F;
+}
+.bcp-step-progress .bcp-step-num:after {
+  content: "";
+  display: block;
+  background: #FF8935;
+  height: 2px;
+  width: 78px;
+  position: absolute;
+  bottom: 51px;
+  left: 64px;
+  z-index: 1;
+}
+.bcp-step-progress li:last-of-type .bcp-step-num:after {
+  display: none;
+}
+.bcp-step-progress .bcp-step-progress-active .bcp-step-num {
+  background-color: #006aa6;
+}
+.bcp-step-progress .bcp-step-progress-completed .bcp-step-num {
+  background: url('/img/BCP_sprite_sheet.png') -253px -754px;
+  border-color: #006aa6;
+}
+.bcp-step-progress .bcp-step-progress-completed .bcp-step-name {
+  font-weight: bold;
+  font-size: 11px;
+  color: #4e4f55;
+}
+.bcp-step-progress .bcp-step-progress-completed .bcp-step-num:after {
+  background: #006aa6;
+}

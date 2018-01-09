@@ -1,0 +1,9 @@
+<div id="ingreso" ng-controller="AccessController">
+	<span>Tus Plataformas</span>
+	<h3>Accesos directos a tus plataformas</h3>
+	<ul id="aplicaciones">
+		<li ng-repeat="app in aplicaciones">
+			<a ng-href="{{app.url}}" target="_blank">{{app.nombre}}</a>
+		</li>
+	</ul>
+</div>

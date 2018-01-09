@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+
+<!--[if IE 7 ]> <html lang="es" dir="ltr" class="ie7" data-ng-app="app.tlc"> <![endif]-->
+<!--[if IE 8 ]> <html lang="es" dir="ltr" class="ie8" data-ng-app="app.tlc"> <![endif]-->
+<!--[if IE 9 ]> <html lang="es" dir="ltr" class="ie9" data-ng-app="app.tlc"> <![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!--> 
+<html lang="es" dir="ltr" data-ng-app="app.tlc"> 
+<!--<![endif]-->
+
+	<head>
+		<title>Telecr&eacute;dito BCP</title>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="Telecrédito BCP">
+      
+		<base href="/movil/"/>
+		
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="yes">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+		
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+
+		<!-- Angular material -->
+		<link rel="stylesheet" type="text/css" href="bower_components/angular-material/modules/js/core/core.min.css"/>
+		<link rel="stylesheet" type="text/css" href="bower_components/angular-material/modules/js/backdrop/backdrop.min.css"/>
+		<link rel="stylesheet" type="text/css" href="bower_components/angular-material/modules/js/sidenav/sidenav.min.css"/>
+		
+		<!-- General -->
+		<link rel="stylesheet" type="text/css" href="css/general.css"/>
+		<link rel="stylesheet" type="text/css" href="css/modules.css"/>			
+		
+		<link rel="stylesheet" type="text/css" href="css/app.css"/>	
+		<link rel="stylesheet" type="text/css" href="css/pue.css" />
+		<link rel="stylesheet" type="text/css" href="components/loader/loader.css" />
+		<link rel="stylesheet" type="text/css" href="components/keypad/keypad-mobile/keypad-mobile.css" />
+		<link rel="stylesheet" type="text/css" href="components/keypad/keypad-desktop/keypad.css">
+		<link rel="stylesheet" href="css/msgBoxLight.css">
+	
+		<link rel="shortcut icon" type="image/x-icon" href="img/modules/icons/favicon.ico">
+				
+		<!-- Modernizr -->		
+		<script src="bower_components/codrops/BookBlock/js/modernizr.custom.js"></script>
+		
+	</head>
+	<body class="mod_body mobile" 
+		  data-ng-controller="MainController as mainVM"
+		  data-md-swipe-right="mainVM.closeMenuMobile()" >	
+
+		<document-events></document-events>
+			
+		<div id="mybody" data-ng-show="::!mainVM.loading" unselectable="on" style="-webkit-user-select: none;">
+			
+			<!-- Cabecera de la pagina -->
+			<ui-header></ui-header>
+			
+			<!-- Menu de la pagina -->
+			<ui-menu></ui-menu>	
+			
+			<!-- Vista principal.--> 
+			<div class="content-view" autoscroll="">
+			
+				<!-- Corrige el error visual al cerrar sesion en la app de ipad --> 
+				<div style="
+					position: fixed;
+					z-index: 999;
+					width: 1px;
+					height: 1px;
+					background-color: rgba(255, 0, 0, 0);
+				">&nbsp;</div>
+				
+				<div data-ui-view autoscroll=""></div>
+			</div>
+			
+			<!-- Footer de la pagina -->
+			<ui-footer></ui-footer>		
+			
+			<!-- Teclado numerico mobile -->
+			<keypad-mobile></keypad-mobile>
+
+			<!-- Cargador principal -->
+			<loader></loader>
+
+		</div>
+		
+		<div class="msg_load" data-ng-show="::mainVM.loading">
+			<div class="messagebody">
+				<p><strong>La p&aacute;gina est&aacute; cargando.</strong></p>
+				<p>Por favor, espere un momento.</p>
+				<p>Gracias.</p>
+			</div>
+		</div>
+		
+		<noscript class="no-script">			
+			<div class="messagebody">
+				<p>BCP te informa que debes activar javascript</p>
+				<p>en tu navegador para poder usar nuestra p&aacute;gina.</p>
+				<p>Gracias.</p>
+			</div>
+		</noscript>
+		
+		<div class="msg_version hide">
+			<div class="messagebody">
+				<p><strong>Est&aacute; con una versi&oacute;n desactualizada del navegador.</strong></p>
+				<p>Por favor, actualice su navegador.</p>
+				<p>Gracias.</p>
+			</div>
+		</div>
+		
+		<!-- Librerias JS y Angular -->
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/jquery.browser/dist/jquery.browser.min.js"></script>		
+		<script src="bower_components/angular/angular.min.js"></script>	
+		<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<!-- <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>	 -->
+		<script src="bower_components/angular-ui-indeterminate/dist/indeterminate.min.js"></script>	
+		<!-- <script src="bower_components/bootstrap/js/tooltip.js"></script> -->
+		
+		<!-- <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script> -->
+		<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+		<!-- <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls-1.3.2.min.js"></script> -->
+		<!-- <script src="bower_components/angular-route/angular-route.min.js"></script> -->
+		<script src="bower_components/angular-touch/angular-touch.min.js"></script>
+		
+		<!-- Angular material -->
+		<script src="bower_components/angular-material/modules/js/core/core.min.js"></script>
+		<script src="bower_components/angular-material/modules/js/backdrop/backdrop.min.js"></script>
+		<script src="bower_components/angular-material/modules/js/sidenav/sidenav.min.js"></script>
+		<script src="bower_components/angular-material/modules/js/swipe/swipe.min.js"></script>
+		
+		<script src="bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+		
+		<!-- <script src="bower_components/angular-aria/angular-aria.min.js"></script>		 -->
+		<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+		<!-- <script src="bower_components/angular-messages/angular-messages.min.js"></script> -->
+		<!-- <script src="libs/angularMaterials/svg-assets-cache.js"></script>		 -->
+		
+		<script src="bower_components/angular-i18n/angular-locale_es-pe.js"></script>
+		<script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+		<script src="bower_components/ngstorage/ngStorage.min.js"></script>
+		<!-- <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js"></script> -->
+		
+				<!-- Fastclick -->
+		<script src="bower_components/fastclick/lib/fastclick.js"></script>
+		
+		<!-- CORE/Utils -->
+		<script src="core/util/error-messages.js"></script>	
+		<script src="core/util/util-pojo.js"></script>
+		<script src="core/util/util-msgbox.js"></script>
+		<script src="core/util/wrapper-pojo.js"></script>
+		
+		<!-- LIBS -->
+		<script src="libs/jquery.msgBox.js"></script>
+		<script src="libs/browser.validate.js"></script>
+	
+		<!-- CORE/Constants -->
+		<script src="core/constants/core.constants.js"></script>
+
+		<!-- CORE/Services -->
+		<script src="core/services/login.services.js"></script>
+		<script src="core/services/authentication.services.js"></script>
+		<script src="core/services/promise.services.js"></script>
+		<script src="core/services/storage.services.js"></script>
+		<script src="core/services/user.services.js"></script>
+		<script src="core/services/navigator.services.js"></script>
+		<script src="core/services/cas.services.js"></script>
+		<script src="core/services/unload.services.js"></script>
+		<script src="core/services/download.services.js"></script>
+		<script src="core/services/device.services.js"></script>
+		<script src="core/services/util.services.js"></script>
+		<script src="core/filters/filters.js"></script>
+		
+		<!-- CORE/Utils -->
+		<!-- <script src="core/util/error-messages.js"></script>	
+		<script src="core/util/util-msgbox.js"></script>
+		<script src="core/util/wrapper-pojo.js"></script> -->
+		<script src="core/util/util-pojo.js"></script>
+
+		<!-- CORE/Interceptors -->
+	 	<script src="core/interceptors/response.interceptor.js"></script> 
+		<script src="core/interceptors/request.interceptor.js"></script>
+		<script src="core/interceptors/error.interceptor.js"></script>
+		<script src="core/interceptors/route.interceptor.js"></script>
+
+		<!-- COMPONENTS/Currency -->
+		<script src="components/currency/currency.constants.js"></script>
+		<script src="components/currency/currency.directive.js"></script>
+		<script src="components/currency/currency.factory.js"></script>
+		<script src="components/currency/currency.service.js"></script>
+		<script src="components/currency/currency.filters.js"></script>
+		<script src="components/currency/currency.module.js"></script>
+
+		<!-- COMPONENTS/Loader -->
+		<script src="components/loader/loader.directives.js"></script>
+		<script src="components/loader/loader.factory.js"></script>
+		<script src="components/loader/loader.module.js"></script>
+		
+		<!-- components/Header -->
+		<script src="components/header/header.controller.js"></script>
+		<script src="components/header/header.directives.js"></script>
+		<script src="components/header/header.module.js"></script>
+		
+			<!-- SUB-COMPONENTS/ Header => Header Mobile -->
+			<script src="components/header/header-mobile/header-mobile.controller.js"></script>
+			<script src="components/header/header-mobile/header-mobile.directives.js"></script>
+			<script src="components/header/header-mobile/header-mobile.factory.js"></script>
+			<script src="components/header/header-mobile/header-mobile.module.js"></script>
+			
+			<!-- SUB-COMPONENTS/ Header => Header PUE -->
+			<script src="components/header/header-basic/header-basic.controller.js"></script>
+			<script src="components/header/header-basic/header-basic.directives.js"></script>
+			<script src="components/header/header-basic/header-basic.module.js"></script>
+		
+		
+		<!-- components/Menu -->
+		<script src="components/menu/menu.controller.js"></script>
+		<script src="components/menu/menu.services.js"></script>
+		<script src="components/menu/menu.factory.js"></script>
+		<script src="components/menu/menu.directives.js"></script>
+		<script src="components/menu/menu.module.js"></script>		
+		
+			<!-- SUB-COMPONENTS/ Menu => Menu Mobile -->
+			<script src="components/menu/menu-mobile/menu-mobile.controller.js"></script>
+			<script src="components/menu/menu-mobile/menu-toggle.controller.js"></script>
+			<script src="components/menu/menu-mobile/menu-mobile.directives.js"></script>
+			<script src="components/menu/menu-mobile/menu-mobile.services.js"></script>
+			<script src="components/menu/menu-mobile/menu-mobile.module.js"></script>
+			
+				<!-- SUB-COMPONENTS/ Menu Mobile => Menu Mobile Items -->
+				<script src="components/menu/menu-mobile/menu-mobile-items/menu-mobile-items.controller.js"></script>
+				<script src="components/menu/menu-mobile/menu-mobile-items/menu-mobile-items.directive.js"></script>
+				<script src="components/menu/menu-mobile/menu-mobile-items/menu-mobile-items.module.js"></script>
+			
+			<!-- SUB-COMPONENTS/ Menu => Menu PUE  -->
+			<script src="components/menu/menu-basic/menu-basic.directives.js"></script>
+			<script src="components/menu/menu-basic/menu-basic.services.js"></script>
+			<script src="components/menu/menu-basic/menu-basic.controller.js"></script>
+			<script src="components/menu/menu-basic/menu-basic.module.js"></script>
+
+			<!-- SUB-COMPONENTS/Menu Perfil -->
+			<script src="components/menu/menu-profile/menu-profile.controller.js"></script>
+			<script src="components/menu/menu-profile/menu-profile.directives.js"></script>
+			<script src="components/menu/menu-profile/menu-profile.module.js"></script>	
+
+		
+		<!-- components/Footer -->
+		<script src="components/footer/footer.directives.js"></script>
+		<script src="components/footer/footer.module.js"></script>	
+		
+			<!-- SUB-COMPONENTS/ Footer => Footer PUE  -->
+			<script src="components/footer/footer-basic/footer-basic.controller.js"></script>
+			<script src="components/footer/footer-basic/footer-basic.directives.js"></script>
+			<script src="components/footer/footer-basic/footer-basic.module.js"></script>		
+		
+		<!-- COMPONENTS/Keypad -->		
+		<script src="components/keypad/keypad.module.js"></script>
+		
+			<!-- SUB COMPONENTS/Keypad mobile -->			
+			<script src="components/keypad/keypad-mobile/keypad-mobile.controller.js"></script>
+			<script src="components/keypad/keypad-mobile/keypad-mobile.directive.js"></script>
+			<script src="components/keypad/keypad-mobile/keypad-mobile-input/keypad-mobile-input.directive.js"></script>
+			<script src="components/keypad/keypad-mobile/keypad-mobile-input/keypad-mobile-input.controller.js"></script>
+			<script src="components/keypad/keypad-mobile/keypad-mobile-partial/keypad-mobile-partial.directive.js"></script>
+			<script src="components/keypad/keypad-mobile/keypad-mobile-key.directive.js"></script>
+			<script src="components/keypad/keypad-mobile/keypad-mobile.factory.js"></script>
+			<script src="components/keypad/keypad-mobile/keypad-mobile.services.js"></script>
+			<script src="components/keypad/keypad-mobile/keypad-mobile.module.js"></script>
+			
+			<!-- COMPONENTS/Keypad Desktop -->
+			<script src="components/keypad/keypad-desktop/keypad.controller.js"></script>
+			<script src="components/keypad/keypad-desktop/keypad.directives.js"></script>
+			<script src="components/keypad/keypad-desktop/keypad.services.js"></script>
+			<script src="components/keypad/keypad-desktop/keypad.module.js"></script>
+		
+		<!-- COMPONENTS/Modal -->			
+		<script src="components/modal/modal.module.js"></script>
+		<script src="components/modal/modal.controller.js"></script>
+		<script src="components/modal/modal.directive.js"></script>
+		<script src="components/modal/modal.factory.js"></script>	
+		
+		<!-- COMPONENTS/Document events -->			
+		<script src="components/document-events/document-events.directives.js"></script>
+		<script src="components/document-events/document-events.module.js"></script>
+			
+		<!-- COMPONENTS/Sticky -->	
+		<script src="components/sticky/sticky.module.js"></script>
+		<script src="components/sticky/sticky.directive.js"></script>
+		
+		<!-- COMPONENTS/Configuracion Principal-->
+		<script src="components/main/main.controller.js"></script>
+		<script src="components/main/main.services.js"></script>
+		<script src="components/main/main.module.js"></script>	
+
+	
+		<script src="views/contracts/contracts.controller.js"></script>
+		<script src="views/contracts/contracts.services.js"></script>
+		<script src="views/contracts/contracts.factory.js"></script>
+		<script src="views/contracts/contracts.module.js"></script>
+
+
+		<script src="views/afiliacion/afiliacion.services.js"></script>
+		<script src="views/afiliacion/afiliacion.controller.js"></script>
+		<script src="views/afiliacion/afiliacion.module.js"></script>
+		<script src="views/habilitacion/habilitacion.services.js"></script>
+		<script src="views/habilitacion/habilitacion.controller.js"></script>
+		<script src="views/habilitacion/habilitacion.module.js"></script>
+		<script src="components/token-card/token-card.directives.js"></script>
+		<script src="components/token-card/token-card.controller.js"></script>
+		<script src="components/token-card/token-card-modal.controller.js"></script>
+		<script src="components/token-card/token-card-modal.factory.js"></script>
+		<script src="components/token-card/token-card.module.js"></script>
+
+		<script src="components/page-title/page-title.directives.js"></script>
+		<script src="components/page-title/page-title.module.js"></script>
+
+		<script src="components/user-key/user-key.directives.js"></script>
+		<script src="components/user-key/user-key.module.js"></script>
+		<script src="components/user-key/user-key.controller.js"></script>
+		<script src="components/user-key/user-key-modal.controller.js"></script>
+		<script src="components/user-key/user-key-modal.factory.js"></script>
+
+		<!-- COMPONENTS and VIEWS / Lazy Load -->
+		<!--
+			<script src="components/access/access.controller.js"></script>
+			<script src="components/access/access.directives.js"></script>
+			<script src="components/access/access.module.js"></script>
+
+			<script src="components/banners/banners.controller.js"></script>
+			<script src="components/banners/banners.directives.js"></script>
+			<script src="components/banners/banners.module.js"></script>
+
+			<script src="components/contact/contact.controller.js"></script>
+			<script src="components/contact/contact.directives.js"></script>
+			<script src="components/contact/contact.module.js"></script>
+			
+			<script src="components/tab-panel/tab-panel.directives.js"></script>
+			<script src="components/tab-panel/tab-panel.controller.js"></script>
+			<script src="components/tab-panel/tab-panel.factory.js"></script>
+			<script src="components/tab-panel/tab-panel.module.js"></script>
+			
+			<script src="components/chips/chips.controller.js"></script>
+			<script src="components/chips/chips.directive.js"></script>
+			<script src="components/chips/chips.module.js"></script>
+			
+			<script src="components/currency/currency.directive.js"></script>
+			<script src="components/currency/currency.constants.js"></script>
+			<script src="components/currency/currency.filters.js"></script>
+			<script src="components/currency/currency.module.js"></script>
+
+			<script src="components/progressBar/progressBar.controller.js"></script>
+			<script src="components/progressBar/progressBar.module.js"></script>
+			
+			<script src="components/filters-alert/filters-alert.factory.js"></script>
+			<script src="components/filters-alert/filters-alert.controller.js"></script>
+			<script src="components/filters-alert/filters-alert.module.js"></script>
+			
+			<script src="components/input-mail/inputMail.controller.js"></script>
+			<script src="components/input-mail/inputMail.module.js"></script>
+			
+			<script src="components/input-number/input-number.directive.js"></script>
+			<script src="components/input-number/input-number.module.js"></script>
+			
+			<script src="components/input-text/input-text.directive.js"></script>
+			<script src="components/input-text/input-text.module.js"></script>
+			
+			<script src="components/dropdownlist/dropdownlist.directive.js"></script>
+			<script src="components/dropdownlist/dropdownlist.controller.js"></script>
+			<script src="components/dropdownlist/dropdownlist.services.js"></script>
+			<script src="components/dropdownlist/dropdownlist.factory.js"></script>
+			<script src="components/dropdownlist/dropdownlist.module.js"></script>
+			
+			<script src="components/datepicker/datepicker.factory.js"></script>
+			<script src="components/datepicker/datepicker.service.js"></script>
+			<script src="components/datepicker/datepicker.controller.js"></script>
+			<script src="components/datepicker/datepicker-from.controller.js"></script>
+			<script src="components/datepicker/datepicker-end.controller.js"></script>
+			<script src="components/datepicker/datepicker.directive.js"></script>
+			<script src="components/datepicker/datepicker-interceptor.directive.js"></script>
+			<script src="components/datepicker/datepicker.module.js"></script>
+			
+			<script src="components/operation-detail/operation-detail.directive.js"></script>
+			<script src="components/operation-detail/operation-detail.controller.js"></script>
+			<script src="components/operation-detail/operation-detail.services.js"></script>
+			<script src="components/operation-detail/operation-detail.module.js"></script>
+			
+			<script src="components/operation-status/operation-status.directive.js"></script>
+			<script src="components/operation-status/operation-status.controller.js"></script>
+			<script src="components/operation-status/operation-status.module.js"></script>
+			
+			<script src="components/page-title/page-title.directives.js"></script>
+			<script src="components/page-title/page-title.module.js"></script>
+			
+			<script src="components/alert/alert.directive.js"></script>
+			<script src="components/alert/alert.controller.js"></script>
+			<script src="components/alert/alert.module.js"></script>
+
+			<script src="components/focus/focus.directive.js"></script>
+			<script src="components/focus/focus.module.js"></script>
+			
+			<script src="components/steps/steps.controller.js"></script>
+			<script src="components/steps/steps.directives.js"></script>
+			<script src="components/steps/steps.module.js"></script>
+			
+			<script src="components/table-load/table-load.controller.js"></script>
+			<script src="components/table-load/table-load.module.js"></script>
+			
+				<script src="components/table-load/pagination/pagination.directive.js"></script>
+				<script src="components/table-load/pagination/pagination.controller.js"></script>
+				<script src="components/table-load/pagination/pagination.module.js"></script>
+
+
+				
+		
+			<script src="views/contracts/contracts.controller.js"></script>
+			<script src="views/contracts/contracts.services.js"></script>
+			<script src="views/contracts/contracts.factory.js"></script>
+			<script src="views/contracts/contracts.module.js"></script>
+
+			<script src="views/afiliacion/afiliacion.services.js"></script>
+			<script src="views/afiliacion/afiliacion.controller.js"></script>
+			<script src="views/afiliacion/afiliacion.module.js"></script>
+
+			<script src="views/habilitacion/habilitacion.services.js"></script>
+			<script src="views/habilitacion/habilitacion.controller.js"></script>
+			<script src="views/habilitacion/habilitacion.module.js"></script>
+			
+			<script src="views/home/home.services.js"></script>
+			<script src="views/home/home.controller.js"></script>
+			<script src="views/home/home.module.js"></script>
+			
+			<script src="views/saldo-movimientos/empresas/empresas.services.js"></script>
+			<script src="views/saldo-movimientos/empresas/empresas.controller.js"></script>
+			<script src="views/saldo-movimientos/empresas/empresas.module.js"></script>
+			
+			<script src="views/saldo-movimientos/cuentas/cuentas.services.js"></script>
+			<script src="views/saldo-movimientos/cuentas/cuentas.controller.js"></script>
+			<script src="views/saldo-movimientos/cuentas/cuentas.module.js"></script>
+			
+			<script src="views/saldo-movimientos/movimientos/movimientos.services.js"></script>
+			<script src="views/saldo-movimientos/movimientos/movimientos.controller.js"></script>
+			<script src="views/saldo-movimientos/movimientos/movimientos.module.js"></script>
+			
+			<script src="views/saldo-movimientos/enviado-resumen/enviado-resumen.controller.js"></script>
+			<script src="views/saldo-movimientos/enviado-resumen/enviado-resumen.module.js"></script>
+			
+			<script src="views/saldo-movimientos/detalle-movimiento/detalle-movimiento.controller.js"></script>
+			<script src="views/saldo-movimientos/detalle-movimiento/detalle-movimiento.module.js"></script>
+
+			<script src="views/pendientes-envio/lista/pendientes-envio.controller.js"></script>
+			<script src="views/pendientes-envio/lista/pendientes-envio.services.js"></script>
+			<script src="views/pendientes-envio/lista/pendientes-envio.module.js"></script>
+				
+			<script src="views/pendientes-envio/detalle-envio/detalle-envio.controller.js"></script>
+			<script src="views/pendientes-envio/detalle-envio/detalle-envio.module.js"></script>
+				
+			<script src="views/pendientes-envio/autorizar-envios/autorizar-envios.controller.js"></script>
+			<script src="views/pendientes-envio/autorizar-envios/autorizar-envios.factory.js"></script>
+			<script src="views/pendientes-envio/autorizar-envios/autorizar-envios.services.js"></script>
+			<script src="views/pendientes-envio/autorizar-envios/autorizar-envios.module.js"></script>
+			
+			<script src="views/pendientes-envio/operaciones-enviadas/operaciones-enviadas.controller.js"></script>
+			<script src="views/pendientes-envio/operaciones-enviadas/operaciones-enviadas.module.js"></script>
+			
+			<script src="views/pendientes-envio/operacion-enviada/operacion-enviada.controller.js"></script>
+			<script src="views/pendientes-envio/operacion-enviada/operacion-enviada.module.js"></script>	
+			
+			<script src="views/pendientes-firma/lista/pendientes-firma.controller.js"></script>
+			<script src="views/pendientes-firma/lista/pendientes-firma.services.js"></script>
+			<script src="views/pendientes-firma/lista/pendientes-firma.module.js"></script>
+			
+			<script src="views/pendientes-firma/autorizar-firmas/autorizar-firmas.factory.js"></script>
+			<script src="views/pendientes-firma/autorizar-firmas/autorizar-firmas.controller.js"></script>
+			<script src="views/pendientes-firma/autorizar-firmas/autorizar-firmas.module.js"></script>
+			
+			<script src="views/pendientes-firma/operaciones-firmadas/operaciones-firmadas.controller.js"></script>
+			<script src="views/pendientes-firma/operaciones-firmadas/operaciones-firmadas.module.js"></script>
+			
+			<script src="views/pendientes-firma/detalle-firma/detalle-firma.controller.js"></script>
+			<script src="views/pendientes-firma/detalle-firma/detalle-firma.module.js"></script>
+			
+			<script src="views/pendientes-firma/operacion-firmada/operacion-firmada.controller.js"></script>
+			<script src="views/pendientes-firma/operacion-firmada/operacion-firmada.module.js"></script>		
+			
+			<script src="views/beneficiarios/beneficiarios/beneficiarios.controller.js"></script>
+			<script src="views/beneficiarios/beneficiarios/beneficiarios.services.js"></script>
+			<script src="views/beneficiarios/beneficiarios/beneficiarios.module.js"></script>
+			
+			<script src="views/beneficiarios/detalle-beneficiario/detalle-beneficiario.controller.js"></script>
+			<script src="views/beneficiarios/detalle-beneficiario/detalle-beneficiario.module.js"></script>		
+			
+			<script src="views/proveedores/proveedores.controller.js"></script>
+			<script src="views/proveedores/proveedores.services.js"></script>
+			<script src="views/proveedores/proveedores.module.js"></script>
+
+			<script src="views/perfil/perfil.controller.js"></script>
+			<script src="views/perfil/perfil.module.js"></script>
+
+			<script src="views/cambiar-clave/cambiar-clave.controller.js"></script>
+			<script src="views/cambiar-clave/cambiar-clave.services.js"></script>
+			<script src="views/cambiar-clave/cambiar-clave.module.js"></script> 
+                   -->
+		
+		<!-- END COMPONENTS and VIEWS/ Lazy Load -->
+		
+		<!-- Modules -->
+		<script src="module/module.external.js"></script>
+		<script src="module/module.core.js"></script>
+		<script src="module/module.component.js"></script>
+		<script src="module/oclazyload.component.js"></script>
+		<script src="module/module.view.js"></script>
+		<script src="module/oclazyload.view.js"></script>
+		
+		<!-- APP -->
+		<script src="routes.js"></script>
+		<script src="app.js"></script>
+  
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<div class="modal-header">
+	<span class="modal-header-left">
+		<a title="Cancel" class="hdr-link-left" data-ng-click="editCardVM.cancel();">
+			<img src="img/bancaMobil/lgn_ico_close.png" alt="Cancelar"/>
+		</a>
+	</span>
+	<h3 class="modal-title">Editar tarjeta</h3>
+	<span class="modal-header-right">
+		<a title="Aceptar" class="hdr-link-right" data-ng-click="editCardVM.updateCard(editCardVM.cancel)">
+			<img src="img/bancaMobil/lgn_ico_validate.png" alt="Aceptar"/>
+		</a>
+	</span>
+</div>
+<div class="modal-body text-center edit_card">
+	<book-block>
+		<bb-slide data-ng-init="editCardVM.checkCardName = true;">
+			<div class="card {{editCardVM.card.cssClass}} remember-card mod_form">
+				<span class="card-number">{{editCardVM.card.cardNumber | cardnumberMask}}</span>
+				<input placeholder="Alias para recordar la tarjeta" maxlength="20" type="text" class="lgn-input-item card-name-edit" 
+					value="{{editCardVM.card.cardName}}"
+					data-ng-model="editCardVM.card.cardName"
+					data-input-text="{{editCardVM.regexFrequentCard}}" 
+					autocorrect="off"
+					autocomplete="off"
+					spellcheck="false">
+					
+				<div class="mfm-checkG mtp-link" data-ng-click="bookBlockVM.next();">
+					<input id="bb-nav-next-edit" type="checkbox" data-ng-model="editCardVM.checkCardName" class="mfm-inCheck">
+					<label for="bb-nav-next-edit" class="mfm-labCheck labCheck-nav">
+						<span>Recordar</span>
+					</label>
+				</div>
+				<span class="ico-change-card"><span class="hideAccessible">Cambiar</span></span>
+			</div>
+		</bb-slide>
+		<bb-slide>
+			<div class="card card-white">
+				<h3 class="cfm-delete-card">¿Está seguro de no querer recordar esta tarjeta?</h3>
+				<div class="mod_form">
+					<div class="mfm-boxBTN mtl">
+						<button type="button" data-ng-click="editCardVM.checkCardName = true; bookBlockVM.prev()" class="mfm-button mfm-dbl cancel mrxs">Cancelar</button>
+						<button type="button" data-ng-click="editCardVM.cancel(); editCardVM.deleteCard(editCardVM.card);" class="mfm-button mfm-dbl mlxs">Aceptar</button>
+					</div>
+				</div>
+			</div>
+		</bb-slide>
+	</book-block>
+</div>

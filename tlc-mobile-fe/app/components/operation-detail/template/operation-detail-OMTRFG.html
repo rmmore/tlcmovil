@@ -1,0 +1,152 @@
+<div>
+	<div data-ng-include="'components/operation-detail/template/transacciones/datos-generales.html'"></div>
+	
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Datos del Cliente Ordenante</h2>
+		</div>
+	</div>	
+	<ul class="mod_details mod_details_operation">	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originAccountNumber">
+			<p class="md-info">Cuenta</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originAccountNumber | accountNumberMask}}</p>
+			<p class="md-smallInfo">{{::operationDetailVM.operation.originAccountAlias}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originAccountType">
+			<p class="md-info">Tipo</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originAccountType}}</p>
+		</li>	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originCurrencyType">
+			<p class="md-info">Moneda</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originCurrencyType | currencyDesc}}</p>
+		</li>	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originName">
+			<p class="md-info">Nombre</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originName}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originPhone">
+			<p class="md-info">Tel&eacute;fono</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originPhone}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originMail">
+			<p class="md-info">Correo electr&oacute;nico</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originMail}}</p>
+		</li>
+	</ul>
+	
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Datos de la Transferencia</h2>
+		</div>
+	</div>	
+	<ul class="mod_details mod_details_operation">	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.vlOperation">
+			<p class="md-info">Importe</p>
+			<p class="md-monto" data-currency="::{type:operationDetailVM.operation.originCurrencyType, value:operationDetailVM.operation.vlOperation}"></p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.fgExpenseOur">
+			<p class="md-info">Gastos OUR</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.fgExpenseOur | yesNoMask}}</p>
+		</li>
+	</ul>
+	
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Datos del Banco Intermediario</h2>
+		</div>
+	</div>	
+	<ul class="mod_details mod_details_operation">	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.cdTypeCodeFtBroker">
+			<p class="md-info">Tipo de C&oacute;digo</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.cdTypeCodeFtBroker}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsCodeFtBroker">
+			<p class="md-info">C&oacute;digo</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsCodeFtBroker}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsBroker">
+			<p class="md-info">Nombre</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsBroker}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsBrokerPlace">
+			<p class="md-info">Pa&iacute;s/Estado/Ciudad</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsBrokerPlace}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsAccountFtBroker">
+			<p class="md-info">Cuenta en el Banco Pagador en Banco Intermediario</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsAccountFtBroker | accountNumberMask}}</p>
+		</li>
+	</ul>	
+	
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Datos del Banco Pagador</h2>
+		</div>
+	</div>	
+	<ul class="mod_details mod_details_operation">	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.cdTypeCodeFtPayingBank">
+			<p class="md-info">Tipo de C&oacute;digo</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.cdTypeCodeFtPayingBank}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsCodeFtPayingBank">
+			<p class="md-info">C&oacute;digo</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsCodeFtPayingBank}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsBank">
+			<p class="md-info">Nombre</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsBank}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsLocationPayingBank">
+			<p class="md-info">Pa&iacute;s/Estado/Ciudad</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsLocationPayingBank}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsAddressBank">
+			<p class="md-info">Direcci&oacute;n</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsAddressBank}}</p>
+		</li>
+	</ul>	
+	
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Datos del Beneficiario</h2>
+		</div>
+	</div>	
+	<ul class="mod_details mod_details_operation">	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsTypeAccount">
+			<p class="md-info">Tipo de Cuenta</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsTypeAccount}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsCreditAccount">
+			<p class="md-info">Cuenta</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsCreditAccount | accountNumberMask}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsCreditAccountName">
+			<p class="md-info">Nombre</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsCreditAccountName}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.referenceBeneficiary">
+			<p class="md-info">Referencia</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.referenceBeneficiary}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsAddressBeneficiary">
+			<p class="md-info">Direcci&oacute;n</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsAddressBeneficiary}}</p>
+		</li>
+	</ul>
+		
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Observaciones</h2>
+		</div>
+	</div>				
+	<ul class="mod_details mod_details_operation">
+	  <li class="md-item"> 
+		<p class="md-info">
+			<p class="md-numOper-cncl pre">
+				{{operationDetailVM.operation.dsReject | defaultObservationMask}}
+			</p>
+		</p>
+	  </li>
+	</ul>	
+	
+</div>

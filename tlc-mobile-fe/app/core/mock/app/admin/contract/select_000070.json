@@ -1,0 +1,10 @@
+{
+  "response":
+    {
+		"hasBalancesPermission": true,
+		"hasMovementsPermission": true,
+		"enable": true,
+		"security": true,
+		"affiliate": true
+    }
+}

@@ -1,0 +1,26 @@
+{
+  "response": {
+	"listaContratos":[
+		{
+			"cdContract": "000067",
+			"dsCompany": "ALMACENES DE SAN BORJA",
+			"mobileAffiliated": true
+		},
+		{
+			"cdContract": "000068",
+			"dsCompany": "SERVICIOS OPTICOS S.A.",
+			"mobileAffiliated": true
+		},
+		{
+			"cdContract": "000069",
+			"dsCompany": "IND. PERUANA DE ALIMENTOS",
+			"mobileAffiliated": true
+		},
+		{
+			"cdContract": "000070",
+			"dsCompany": "MINERA SAN LUIS",
+			"mobileAffiliated": true
+		}
+	] 
+  }
+}

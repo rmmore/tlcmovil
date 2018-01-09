@@ -1,0 +1,2333 @@
+﻿@charset "UTF-8";
+
+/**===================================================
+- Estilo para el mensaje de carga de la pagina
+===================================================**/
+.msg_load, .no-script, .msg_version  {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1000;
+    background-color: #F2EFEE;
+    top: 0;
+    left: 0;
+	display: table;
+}
+.messagebody {
+	color: #13508b;
+	/*font-family: "Flexo-Medium";*/
+	font-size: 0.875em;
+	min-width: 320px;
+	display: table-cell;
+	text-align:center;
+	vertical-align:middle;
+}
+
+/**===================================================
+COMPONENT DROPDOWNLIST
+- Oculta EL dropdown-backdrop que sale en smartphone 
+  dado que ocupa toda la pantalla cuando se abre el combo.
+===================================================**/
+.dropdown-backdrop {
+	display: none;
+}
+
+/**===================================================
+COMPONENT MENU MOBILE
+- Elimina el scroll del body cuando el menu se abre
+- Corrige el efecto en la transicion mientras se abre el menu,
+  este necesita que su position sea fixed !important.
+- Corrige el backdrop del menu para que ocupe toda la pantalla
+===================================================**/
+.overflow-hidden { 
+	overflow: hidden;
+} 
+.position-fixed {
+	position: fixed !important;
+}
+.md-sidenav-backdrop{
+	position: fixed;
+}
+.ie7 .md-sidenav-right,
+.ie8 .md-sidenav-right,
+.ie9 .md-sidenav-right {
+	right: 0;
+	left: auto;
+}
+.ie9 ._md-sidenav-backdrop.md-opaque{
+	opacity: 0.48;
+}
+.mod_navMob .mod_headerFixed {
+    /* position: fixed; */
+    background-color: #00498E;	
+    position: relative;	
+}
+
+/**===================================================
+VIEW LOGIN
+- Oculta los botones del input number que salen en chrome
+===================================================**/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+    margin: 0;
+}
+
+/**===================================================
+COMPONENT DATEPICKER
+VIEW MOVIMIENTOS
+- Estilos para la fecha de hoy y fecha selecionada
+===================================================**/
+/* .btn-today  button:not(.today-muted) {
+	background-color: #FF4E00 !important;
+	border-color: #FF4E00 !important
+}
+.btn-info  button:not(.selected-muted){
+	background-color: #00498E !important;
+	border-color: #00498E !important
+}
+.btn-today  :not(.today-muted) span, 
+.btn-info  :not(.selected-muted)  span {
+	color: white !important;
+}
+.mod_datepicker tbody td .active {
+	border: inherit !important;
+	-webkit-box-shadow:  inherit !important;
+	box-shadow:   inherit !important;
+}
+*/
+.mod_datepicker .btn-today .btn-sm:not(.today-muted):not(.btn-info) {
+	background-color: #FF4E00;
+	border-color: #FF4E00
+}
+.mod_datepicker tbody td .btn-info:not(.selected-muted) {
+	background-color: #00498E;
+	border-color: #00498E;
+}
+.mod_datepicker .btn-today .btn-sm:not(.today-muted) span,
+.mod_datepicker .btn-info:not(.selected-muted) span{
+	color: #FFF !important;
+}
+.mod_datepicker tbody td .btn-info:not(.selected-muted) {
+	border: inherit !important;
+	-webkit-box-shadow:  inherit !important;
+	box-shadow:   inherit !important;
+}
+.mod_datepicker tbody td .btn-sm.active:not(.btn-info),
+.mod_datepicker tbody td .btn-sm.active:not(.btn-info):hover,
+.mod_datepicker tbody td .btn-sm.active:not(.btn-info):focus { 
+	border: 1px solid #D7D8DC;
+	background-color: #FFF;
+	box-shadow: none;
+}
+.mod_datepicker tbody td .btn-sm .text-muted {
+    height: 40px;
+    display: block;
+}
+.mod_datepicker tbody td .btn-sm .text-muted {
+	padding-top: 0.788em;
+}
+
+/******************* Estilos del datepicker ********************/
+/***** Corrige los estilos al cambiar a la version 0.14.3 ******/
+.mod_datepicker { border: none; display: inline-block; }
+.mod_datepicker .well { border: none; box-shadow: none; -webkit-box-shadow: none;  padding: 0; }
+.mod_datepicker thead tr { font-size: 16px; }
+.mod_datepicker thead tr:first-child th { padding: 0; }
+.mod_datepicker thead tr:first-child th:first-child .pull-left { padding: 0; float: none !important; margin-left: 5px; }
+.mod_datepicker thead tr:first-child th:last-child { text-align: right; }
+.mod_datepicker thead tr:first-child th:last-child .pull-right { padding: 0; float: none !important; margin-left: 5px; }
+.mod_datepicker thead tr:last-child { border: 1px solid #D7D8DC; font-size: 16px; font-family: "flexo-regular"; color: #666666; background: #FFFFFF; }
+.mod_datepicker thead tr:last-child th { vertical-align: middle; font-size: 0.75em; width: 40px; height: 40px; }
+.mod_datepicker thead tr:last-child th small { font-size: 0.83333em; }
+.mod_datepicker thead tr:last-child th:first-child { border-top-left-radius: 10px; border-left: 1px solid #D7D8DC; }
+.mod_datepicker thead tr:last-child th:last-child { border-top-right-radius: 10px; border-right: 1px solid #D7D8DC; }
+.mod_datepicker thead tr:first-child th:nth-child(2) button { padding: 0; color: #666666; background: transparent; font-family: "flexo-bold"; font-size: 12px; border: none; text-transform: uppercase; }
+.mod_datepicker tbody td .btn-sm { height: 40px; border-radius: 0; padding: 0; background-color: #FFF; color: #666666; border: 1px solid #D7D8DC; }
+.mod_datepicker tbody td .btn-sm.active { border: 1px solid #686868; }
+.mod_datepicker tbody td .btn-sm .ng-binding { font-size: 10px; padding: 1.4em; }
+.mod_datepicker tbody td .btn-sm .text-muted { color: #AAAAAA; background-color: #DDDDDD; }
+.mod_datepicker thead tr:first-child th:last-child .pull-right { background: transparent; border: none; }
+.mod_datepicker thead tr:first-child th:first-child .pull-left { background: transparent; border: none; }
+.mod_datepicker .well-sm { background: transparent; }
+.mod_datepicker .glyphicon-chevron-right:before { display: block; content: ''; background: url("../img/modules/icons/ico-arrow-orange-right.png") no-repeat transparent; width: 22px; height: 22px; }
+.mod_datepicker .glyphicon-chevron-left:before { display: block; content: ''; background: url("../img/modules/icons/ico-arrow-orange-left.png") no-repeat transparent; width: 22px; height: 22px; }
+.mod_datepicker thead tr:first-child th:last-child .pull-right {width: 100%}
+.mod_datepicker thead tr:first-child th:first-child .pull-left {width: 100%}
+
+/**===================================================
+VIEW MOVIMIENTOS
+- Corrige el margen entre el panel y la lista
+===================================================**/
+.mod_infoAccount {
+	margin-bottom: 0 !important;
+} 
+
+/**===================================================
+- Corrige el margen entre el numero de cuenta y empresa
+===================================================**/
+.mod-fixed.fixed {
+	position: fixed;
+    z-index: 1000;
+    width: 100%;
+}
+
+/**===================================================
+VIEW DETALLE DEL MOVIMIENTO
+- Corrige el margen entre el numero de cuenta y empresa
+===================================================**/
+@media screen and (max-width: 767px) {	
+	.mod_details .md-subInfo {
+		margin-top: 0;
+	}
+}
+.mod_details .text-input {
+	height: 9.0625em;
+}
+
+/**===================================================
+COMPONENT MODAL
+VIEW PENDIENTES DE FIRMAR
+- Estilos para que un modal se vea como vista
+===================================================**/
+.modal-page .modal-header {
+	padding: 0px;
+	border-bottom: 0px;
+	background-color: #00498E;
+    text-align: center;
+	height: 50px;
+}
+.modal-page .modal-header .modal-header-left{
+    display: block;
+    float: left;
+    width: 3.125em;
+    border-right: 1px solid #004385;
+    min-height: 3.125em;
+}
+.modal-page .modal-header .modal-header-left .hdr-link-left{
+    padding-top: 0.7em;
+    display: block;
+    width: 100%;
+}
+.modal-page .modal-header .modal-header-left .hdr-link-left img,
+.modal-page .modal-header .modal-header-right .hdr-link-right img {
+    width: 26px;
+}
+.modal-page .modal-header .modal-header-right{
+    display: block;
+    float: right;
+    width: 3.125em;
+    border-left: 1px solid #004385;
+    min-height: 3.125em;
+}
+.modal-page .modal-header .modal-header-right .hdr-link-right{
+    display: block;
+    width: 100%;
+    padding-top: 0.7em;
+}
+.modal-page .modal-header .modal-title{
+	text-align: center;
+    background-color: #00498E;
+	color: #ffffff;
+    font-size: 1em;
+    padding-top: 0.9375em;
+    padding-bottom: 0.625em;
+	display: inline-block;
+}
+.modal-page .modal-body {
+	overflow: auto;
+}
+.modal-page .mod_steps {
+	box-shadow: none;
+}
+.modal-page .modal-dialog {
+	margin-top: 0.625em;
+}
+
+/**===================================================
+COMPONENT HEADER MOBILE
+- Estilos para la opcion cerrar sesion
+===================================================**/
+#header .session-close {
+	color: #ffffff;
+	outline: none;
+}
+
+/**===================================================
+COMPONENT TAB PANEL
+VIEW OPERACIONES POR FIRMAR
+- Estilos para los tab panel con scroll
+===================================================**/
+.tab-content {
+	overflow: auto;
+}
+
+/**===================================================
+VIEW OPERACIONES POR FIRMAR
+- Estilos para el select con diseño de dropdownlist
+===================================================**/
+.select-sample {
+    display: block;
+    border: 1px solid #F2EFEE;
+    border-left: 3px solid #FF4F00;
+    border-radius: 0.3125em;
+    box-shadow: 1px 2px 5px 0px rgba(123, 114, 118, 0.8);
+    width: 100%;
+    color: #595960;
+    font-size: 0.875em;
+    padding: 1.07143em 1.07143em 1.07143em 1.07143em;
+    background: url("../img/modules/icons/ico-arrow-orange-bottom.png")  no-repeat 97%  13px #fff !important;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+	outline: none;
+}
+.select-sample:visited	 {
+	background: url("../img/modules/icons/ico-arrow-orange-top.png")  no-repeat 97%  13px #fff !important;
+}
+.lbl-select {
+    font-family: "flexo-bold";
+    color: #595960;
+    font-size: 0.875em;
+}
+.dwl-item.parent .dwl-item-link {
+	font-size: 0.939em;
+    padding: 0.8em 0.9375em 0.6375em 2em;
+}
+.dwl-item.child .dwl-item-link {
+    padding-left: 3.64em;
+}
+
+/**===================================================
+VIEW OPERACIONES POR FIRMAR
+- Estilos del boton y del enlace "Cargar mas"
+===================================================**/
+.btn-load-more {
+	width: 100%;
+    margin-top: 10px;
+    display: block;
+    font-size: 0.8125em;
+    font-family: &quot;flexo-regular&quot;;
+    padding: 0.84615em 0.76923em 0.84615em 0.76923em;
+    color: #6C6D70;
+    background-color: #FAF8F8;
+    margin-right: 0px;
+    border-radius: 0;
+    border-color: #eee #eee #ddd;
+    background-color: #FAF8F8;
+    border-radius: 0.3125em;
+    font-family: "flexo-bold";
+	border: 1px solid #C5C5C6;
+}
+.btn-load-more:hover, .btn-load-more:active {
+       background-color: #eee;
+}
+.link-load-more {	
+    margin-top: 20px;
+    margin-bottom: 20px;
+	text-align: center;
+}
+.link-load-more a{	
+    font-family: "flexo-bold";
+    text-decoration: underline;
+    color: #FF4E00;
+	font-size: 0.875em;
+}
+
+/**===================================================
+COMPONENT ALERT
+- Estilos para alertas
+===================================================**/
+.alert {
+	font-size: 0.75em;
+    padding: 0.66667em 1em;
+    text-align: left;
+    border-radius: 0;
+    font-family: "flexo-regular";    
+	padding-right: 4em;
+    position: relative;
+}
+.alert-info {
+    border: 1px solid #8AB3DA;
+    background-color: #BFD5FF;
+    color: #00498E;
+}
+.alert-filter {
+    border: 1px solid #FFB973;
+    background-color: #FFDFBF;
+    color: #AA3400;
+}
+.alert-error {
+    border: 1px solid #FFB973;
+    background-color: #FFDFBF;
+    color: #AA3400;
+}
+.alert .close {
+	opacity: 1;
+	outline: none;    
+	width: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    max-height: 50px;
+}
+.ico-closed-filter {
+    height: 20px;
+    display: block;
+}
+.ico-closed-filter:after {
+	content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("../img/modules/icons/ico-sprite.png") no-repeat -308px -319px transparent;
+}
+.ico-closed-info {	
+	font-family: 'Glyphicons Halflings';
+	color: #7190ae;
+	position: relative;
+    top: 2px;
+}
+.ico-closed-info:after {	
+	content: "\e088";
+}
+
+/**===================================================
+COMPONENT MENU MOBILE
+- Efecto de transicion para el menu
+===================================================**/
+@media screen and (max-width: 1023px) {	
+	md-sidenav.md-closed-add.md-closed-add-active, md-sidenav.md-closed-remove.md-closed-remove-active,
+	.mod_navMob.md-closed-add + .mod_headerFixed, .mod_navMob.md-closed-remove.md-closed-remove-active {
+		position: static;
+		margin-top: 0px !important;
+		transition: all .4s cubic-bezier(.25,.8,.25,1) !important;
+	}
+} 
+
+/**===================================================
+VIEW EMPRESAS
+- Color gris para el RUC
+===================================================**/
+.text-light-grey {
+	font-family: "flexo-medium" !important;
+    color: #B8BABF !important;
+    font-size: 1em !important;
+}
+
+/**===================================================
+VIEW EMPRESAS
+- Corrige los margenes muy separados
+===================================================**/
+.mod_tableList .tl-link {
+	padding-top: 0.8em !important;
+	padding-bottom: 0.8em !important;
+}
+
+/**===================================================
+VIEW MOVIMIENTOS
+- Corrige el monto que se pega a la flecha en tablet
+===================================================**/
+@media (min-width: 480px) and (max-width: 767px) {
+	.mod_tableList .tl-link.ico-arrowR-ora {
+		padding-right: 3em !important;
+	}
+}
+
+/**===================================================
+VIEW LOGIN
+- Corrige el tipo de letra para la alerta en el login
+===================================================**/
+.mod_error .mer-textA {
+	font-family: 'flexo-regular';
+}
+
+/**===================================================
+Estilos por efecto
+===================================================**/
+.mtxxs { margin-top:		.25em !important; }
+.mrxxs { margin-right: 	.25em !important; }
+.mbxxs { margin-bottom:	.25em !important; }
+.mlxxs { margin-left:  	.25em !important; }
+.ptxxs { padding-top:   	.25em !important; }
+.prxxs { padding-right: 	.25em !important; }
+.pbxxs { padding-bottom:	.25em !important; }
+.plxxs { padding-left:  	.25em !important; }
+
+.mtxs { margin-top:		.5em !important; }
+.mrxs { margin-right: 	.5em !important; }
+.mbxs { margin-bottom:	.5em !important; }
+.mlxs { margin-left:  	.5em !important; }
+.ptxs { padding-top:   	.5em !important; }
+.prxs { padding-right: 	.5em !important; }
+.pbxs { padding-bottom:	.5em !important; }
+.plxs { padding-left:  	.5em !important; }
+
+.mts { margin-top:		1em !important; }
+.mrs { margin-right: 	1em !important; }
+.mbs { margin-bottom: 	1em !important; }
+.mls { margin-left: 		1em !important; }
+.pts { padding-top: 		1em !important; }
+.prs { padding-right: 	1em !important; }
+.pbs { padding-bottom: 	1em !important; }
+.pls { padding-left: 	1em !important; }
+
+.mtm { margin-top: 		2em !important; }
+.mrm { margin-right: 	2em !important; }
+.mbm { margin-bottom: 	2em !important; }
+.mlm { margin-left: 		2em !important; }
+.ptm { padding-top: 		2em !important; }
+.prm { padding-right: 	2em !important; }
+.pbm { padding-bottom: 	2em !important; }
+.plm { padding-left: 	2em !important; }
+
+.mtl { margin-top: 		3em !important; }
+.mrl { margin-right: 	3em !important; }
+.mbl { margin-bottom: 	3em !important; }
+.mll { margin-left: 		3em !important; }
+.ptl { padding-top: 		3em !important; }
+.prl { padding-right: 	3em !important; }
+.pbl { padding-bottom: 	3em !important; }
+.pll { padding-left: 	3em !important; }
+.pll { padding-left: 	3em !important; }
+
+.text-init { text-align: initial !important; }
+
+.text-bold {font-family: "flexo-bold" !important; }
+
+.d-block {display: block !important;}
+.d-inline-block {display: inline-block !important;}
+.d-table {display: table !important; width: 100%; height: 100%;}
+.d-cell {display: table-cell !important; vertical-align: middle;}
+
+.line-normal {line-height: normal !important;}
+.overflow-auto {overflow: auto; !important;}
+
+b, strong {font-weight: bold;}
+
+@media (max-width: 479px) {
+	.xs-hide {display: none !important}
+	.xs-inline-visible { display: inline-block !important }
+}
+
+/**===================================================
+COMPONENT DROPDOWNLIST
+- Corrige la superposicion del elemento seleccionado 
+  cuando su descripcion es muy grandre
+===================================================**/
+.mod_dropDownList .dropdown-toggle {
+	background-color: #ffffff;
+	display: inline-block;    
+	padding: 1.07143em 1.07143em 1.07143em 1.07143em;   
+	width: 100%;
+}
+.mod_dropDownList .dropdown-toggle .dwl-item {
+	float: left;   
+	padding: 0;    
+	width: auto; 
+}
+.mod_dropDownList .dropdown-toggle .dwl-selected {
+	float: right;   
+	width: auto;    
+	white-space: initial;    
+	position: static;   
+	text-align: right;    
+	margin-right: 35px;
+}
+
+/**===================================================
+COMPONENT CARDS
+- Carrousel de tarjetas
+===================================================**/
+.card {
+    text-align: center;
+    padding-top: 4.5em;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 272px;
+    border-radius: 7px;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+}
+.card.card-acceso-empresarial {
+	background-image: url("../img/content/2-ae-min.png");
+}
+.card.card-credimas-negocios {
+	background-image: url("../img/content/1-cn-min.png");
+}
+.card.card-white {
+	/* background-image: url("../img/content/card_white.png"); */
+	padding-top: 2em;
+	background-color: #FFF;
+    border: 1px solid #ddd9d8;
+}
+.carousel_cards {
+	width: 310px; 	
+	margin: auto;
+}
+.carousel_cards .carousel-control {
+	background-image: none;
+	filter: none !important;
+	width: 15px;
+}
+.carousel_cards  .carousel-control span {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#40000000', GradientType=1);
+}
+.carousel_cards .carousel-indicators {
+	bottom: -22px;
+	
+}
+.carousel_cards .carousel-indicators li {
+	border: 1px solid #666666;		
+	margin: 1px;
+	margin-right: 9px;
+}
+.carousel_cards .carousel-indicators .active {
+	width: 10px;
+    height: 10px;
+	background-color: #666666;
+}
+.carousel_cards .cfm-delete-card,
+.edit_card .cfm-delete-card {
+    font-size: 0.875em;
+    font-family: "flexo-bold";
+    color: #595960;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+.carousel_cards .mod_form  .mfm-boxBTN .mfm-button,
+.edit_card .mod_form  .mfm-boxBTN .mfm-button {
+    width: 100px;
+}
+.carousel_cards .carousel-control .glyphicon-chevron-left, 
+.carousel_cards .carousel-control .glyphicon-chevron-right, 
+.carousel_cards .carousel-control .icon-next, 
+.carousel_cards .carousel-control .icon-prev {
+	width: 20px !important;
+    font-size: 20px !important;
+}
+
+
+@media not all, (-webkit-transform-3d) {
+	.carousel-inner>.item {
+		-webkit-transition: -webkit-transform .3s ease-in-out;
+         -o-transition:      -o-transform .3s ease-in-out;
+            transition:         transform .3s ease-in-out;		
+		-webkit-perspective: none !important;
+		perspective:  none !important;
+	}
+}
+
+/** Estilos para tarjeta frecuente **/
+.carousel_cards .lgn-input-item.card-name,
+.edit_card .remember-card .card-name-edit  {
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    text-align: left;
+    font-size: 0.85em;
+    color: #000;
+    padding: 5px;
+    width: 244px;
+	margin-top: 10px;
+}
+.edit_card .remember-card .card-name-edit {
+	width: 235px;	
+    display: block;
+}
+.carousel_cards .mfm-checkG .mfm-labCheck:before,
+.edit_card .mfm-checkG .mfm-labCheck:before {
+	margin: 0;
+}
+.carousel_cards .mfm-checkG .mfm-labCheck.labCheck-nav,
+.edit_card .mfm-checkG .mfm-labCheck.labCheck-nav {
+	padding: 0;
+	color: #FFF;
+	font-size: 0.9em;
+}
+.carousel_cards .mfm-checkG .mfm-labCheck.labCheck-nav span,
+.edit_card .mfm-checkG .mfm-labCheck.labCheck-nav span{
+    margin-left: 5px;
+}
+/*.carousel_cards .card-credimas-negocios .mfm-checkG .mfm-labCheck.labCheck-nav,
+.carousel_cards .card-credimas-negocios.remember-card .card-name, 
+.edit_card .card-credimas-negocios .mfm-checkG .mfm-labCheck.labCheck-nav {
+	color: #FFF;
+}*/
+.carousel_cards .remember-card .card-number,
+.edit_card .remember-card .card-number{
+	display: block;
+    text-align: left;
+    color: #FFF;
+	font-family: "flexo-regular";
+}
+.carousel_cards .remember-card .card-name {
+	display: block;
+    text-align: left;
+    color: #FFF;
+    font-family: "flexo-bold";
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.carousel_cards .mfm-checkG,
+.edit_card .remember-card .mfm-checkG {    
+	text-align: left;
+    margin-top: 5px;
+}
+.carousel_cards .bb-content,
+.edit_card .bb-content {
+	background: rgba(0, 0, 0, 0);
+}
+.carousel_cards .card-group,
+.carousel_cards .bb-bookblock,
+.edit_card .bb-bookblock {
+	width: 272px;
+    height: 171px;
+	margin: 0 auto;
+}
+.carousel_cards .bb-item,
+.edit_card .bb-item {
+	background: rgba(0, 0, 0, 0);
+}
+.carousel_cards .item,
+.edit_card .bb-custom-wrapper {
+	background-image: url("../img/content/card-shadow-min.png");
+    background-size: 307px;
+    background-position: 5px 171px;
+    background-repeat: no-repeat;
+	width: 310px;
+    margin: 0 auto;
+}
+.carousel_cards .bb-overlay, 
+.carousel_cards .bb-flipoverlay,
+.edit_card .bb-overlay,
+.edit_card .bb-flipoverlay {
+	background: rgba(0, 0, 0, 0);
+}
+.carousel_cards .ico-edit-card:before {
+	position: absolute;
+    top: 10px;
+    right: 10px;
+    content: "";
+    width: 25px;
+    height: 25px;
+    background: url("../img/lgn_ico_edit.png") no-repeat transparent;
+    background-size: 25px;
+}
+.mod_login .lgn-input-item {
+	width: 3.444em;
+    margin-left: 0.5em;
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 0;
+}
+.mod_login .text-captcha {
+	font-family: "flexo-bold";
+    padding: 0.40625em 0.125em;
+    color: #595960;
+	text-transform: lowercase;
+}
+.mod_login .lgn-input-item:first-child {
+	margin-left: 0em;
+}
+.carousel_cards .swiper-container {
+	height: 220px;
+}
+.carousel_cards .swiper-pagination {
+	bottom: 0px !important;
+}
+.carousel_cards .swiper-slide {
+	background-image: url("../img/content/card-shadow-min.png");
+	background-size: 307px;
+	background-position: 5px 171px;
+	background-repeat: no-repeat;
+    padding: 15px 20px 34px 21px;
+	background-color: #F2EFEE;
+}
+.carousel_cards .swiper-pagination-bullet {
+	border: 1px solid #666;
+	background-color: rgba(0,0,0,0);
+	width: 10px;
+	height: 10px;
+	opacity: 1;
+}
+.carousel_cards .swiper-pagination-bullet-active {
+	background-color: #666;
+}
+.carousel_cards .swiper-button-next {
+	background-image: url("../img/modules/icons/ico-arrow-orange-right.png");
+	background-size: 17px;
+	right: -5px;
+}
+.carousel_cards .swiper-button-prev {
+	background-image: url("../img/modules/icons/ico-arrow-orange-left.png");
+	background-size: 17px;
+	left: -5px;
+}
+
+@media (max-width: 340px) {
+	
+	.carousel_cards {
+		max-width: 290px; 	
+	}
+	.carousel_cards .card-group,
+	.carousel_cards .bb-bookblock,
+	.edit_card .bb-bookblock {
+		max-width: 248px;
+	}
+	.carousel_cards .swiper-slide {
+		background-size: 285px;
+		background-position: 6px 172px;
+	}
+	.mod_login .lgn-input-item {
+		max-width: 3.1em;
+	}
+	.carousel_cards .lgn-input-item.card-name, 
+	.edit_card .remember-card .card-name-edit {
+		max-width: 222px;
+	}
+	.carousel_cards .item, .edit_card .bb-custom-wrapper {
+		max-width: 265px;
+	}
+}
+.mod_login .carousel_login .linkH3, 
+.mod_login .carousel_login .linkH3:hover{
+    display: inline-block;
+}
+.mod_login .carousel_login .linkH3 .icon-conditions{
+    height: 25px;
+    float: right;
+}
+.password-login {
+	width: 140px;
+}
+
+@media (min-width: 760px) {
+	/*centrado para tablets
+	.carousel-inner{
+      padding-top: 15%;
+    }*/
+	.carousel_cards {
+		width: 380px; 	
+	}
+	.carousel_cards .card-group,
+	.carousel_cards .bb-bookblock,
+	.edit_card .bb-bookblock {
+		width: 330px;
+		height: 208px;
+	}
+	.card {
+		background-size: 330px;
+		padding-top: 6em;
+		padding-left: 1.1em;
+		padding-right: 1.1em;
+	}
+	.carousel_cards .swiper-slide {		
+		background-size: 377px;
+		background-position: 5px 205px;
+	}
+	.carousel_login {
+		/* margin-top: 60px; */
+	}
+	.carousel_cards .swiper-container {
+		height: 260px;
+	}
+	.mod_login .lgn-input-item {
+		width: 4em;
+		margin-left: 0.8em;
+	}
+	.carousel_cards .mfm-checkG {
+		margin-top: 18px;
+	} 
+	.edit_card .remember-card .mfm-checkG {
+		margin-top: 12px;
+	}
+	.mod_login .lgn-input-item {
+		padding: 0.50625em 0.125em;
+	}
+	.carousel_cards .cfm-delete-card, 
+	.edit_card .cfm-delete-card {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.carousel_cards .lgn-input-item.card-name, 
+	.edit_card .remember-card .card-name-edit {
+		width: 296px;
+		margin-top: 15px;
+	}
+	.carousel_cards .remember-card .card-name {
+		position: relative;
+		top: 5px;
+	}
+	.card.card-white {
+		padding-top: 3em;
+	}
+}
+
+/**===================================================
+COMPONENT TAB PANEL
+- Corrige los margenes de inputs check en los tab panel
+===================================================**/
+.mod_tab_panel .mtp-item .mfm-checkG .mfm-labCheck:before {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/**===================================================
+COMPONENT MENU MOBILE
+- Menu mobile con opcion de cerra sesion al final del menu
+- Panel de confirmacion para cerrar sesion
+===================================================**/
+md-sidenav .mod_navMenu {
+    overflow-y: auto;
+    position: absolute;
+    bottom: 50px;
+    top: 109px;
+	right: 0px;
+	left: 0px;
+}
+.ico-logout {
+    position: relative;
+    display: inline-block;
+    padding: 0.23077em 0 0.23077em 2.1875em;
+}
+.ico-logout:before {
+	position: absolute;
+	top: -3px;
+	left: 0px;
+	content: "";
+	width: 25px;
+	height: 25px;
+	background: url("../img/modules/icons/ico-sprite.png") no-repeat top right transparent;
+}
+.mod_navMob .mod_tab_panel {	
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    margin-bottom: 0;
+}
+.mod_logout_confirm {
+	margin: 1em;
+	text-align: center;
+}
+.mod_logout_confirm p {
+	font-family: "flexo-regular";
+    font-size: 0.875em;
+    color: #717172;
+}
+
+/**===================================================
+VIEW LOGIN
+- Carousel para los pasos del login
+===================================================**/
+.carousel_login .mfm-boxBTN .mfm-button {
+	margin-top: 0;
+	margin-bottom: 1em;
+	width: 150px;
+}
+.carousel_login .item-login .lgn-inputs {
+	border-bottom: 0;
+}
+.carousel_login {	
+    height: 416px;
+}
+.linkH2 {    
+	background: url('../img/modules/icons/ico-arrow-orange-right.png') no-repeat;
+    background-position: right center;
+    padding-right: 20px;
+}
+
+/**===================================================
+COMPONENT MODAL
+- Centrar modales
+===================================================**/
+.modal {
+	display: table !important;
+    width: 100%;
+    height: 100%;
+}
+.modal .modal-dialog {
+	text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+.modal .modal-dialog>div{
+	text-align: left;
+}
+/** Para cuando sale el keypad sobre el modal **/
+.modal .modal-dialog.vertical-top { 
+	vertical-align: top;
+}
+@media (min-width: 1025px), (min-height: 600px) {
+	.modal .modal-dialog.vertical-top {
+		vertical-align: middle;
+	}
+}
+
+/**===================================================
+COMPONENT MODAL
+- Dimensiones para tamaños de modal
+===================================================**/
+@media (max-width: 319px) {
+	.modal .modal-sm .modal-content {
+		width: auto;
+		margin: 0.625em;
+	}
+}
+@media (min-width: 320px) {
+	.modal .modal-sm .modal-content {
+		max-width: 300px;
+		margin: 0.625em auto;
+	}
+}
+@media (max-width: 479px) {
+	.modal .modal-md .modal-content {
+		width: auto;
+		margin: 0.625em;
+	}
+}
+@media (min-width: 480px) {
+	.modal .modal-md .modal-content {
+		max-width: 460px;
+		margin: 0.625em auto;
+	}
+}
+
+/**===================================================
+COMPONENT MODAL
+- Estilos para el modal basico
+===================================================**/
+.modal-basic .modal-dialog.modal-sm {
+}
+.modal-basic .modal-content {
+	border-radius: 0;
+}
+.modal-basic .modal-header {
+	color: #FF4F00;
+    font-family: "flexo-bold";
+	border-bottom: 3px solid #FF4F00;
+}
+.modal-basic .modal-body {
+	font-family: "flexo-regular";
+	overflow: auto;
+}
+.modal-basic .modal-footer {
+	text-align: center;
+	border-top: 1px solid #e5e5e5;
+}
+
+.text-size-justify{
+	font-size: 0.95em;
+	text-align: justify;
+}
+
+/**===================================================
+- Corrige el color del fondo para input deshabilitado en Zafari
+===================================================**/
+input:disabled, input[disabled],
+textarea:disabled, textarea[disabled] {
+    background-color: #FFF;
+	opacity: 1;
+}
+/* Hack para safari para que el color se vea correcto */
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) { 
+@media {
+    input:disabled, input[disabled],
+	textarea:disabled, textarea[disabled] {
+		color: #000 !important;
+	}
+}}
+
+/**===================================================
+VIEW PENDIENTES DE ENVIO
+- Corrige estilos para el token
+===================================================**/
+.mod_auth_token .mod_details {
+	box-shadow: none;
+	padding: .8em .8em .8em .7em;
+	margin-top: 0px;
+}
+.mod_auth_token .mod_details .auth-keys:last-child {
+	padding: 0em;
+}
+.mod_auth_token .mod_details .auth-title,
+.mod_auth_token .mod_details .auth-title-confirm {
+	margin-top: 11px;
+	padding-top: 0em;
+	padding-bottom: 0em;
+	text-align: left;
+	font-size: 0.75em;
+    color: #666666;
+}
+.mod_auth_token .mod_details .ico-key-token:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background: url("../img/modules/icons/token25x25.png") no-repeat;	
+    background-position: center; 
+    width: 35px;
+    height: 35px;
+    vertical-align: text-bottom;
+    display: block;
+    border-right: 1px solid #D7D8DC;
+	z-index: 2;
+}
+.ico-key:before {
+	z-index: 2;
+}
+
+/**===================================================
+VIEW OPERACIONES RECHAZADAS
+- Coloca el motivo debajo de su titulo
+===================================================**/
+.mod_details .md-numOper-cncl {
+	float: none;
+}
+
+/**===================================================
+VIEW BENEFICIARIOS
+- Input de busqueda de beneficiarios
+===================================================**/
+.input-group.search-beneficiaries {	
+    position: relative;
+    margin: 0.625em 0.3em;
+}
+.input-group.search-beneficiaries .form-control {	
+	box-sizing: border-box;
+	height: 41px;
+	padding: 4px 15px 3px 30px;
+	color: #999999;
+	border: 2px solid #D7D8DC;
+	border-radius: 5px 0 0 5px;
+	background: url("../img/modules/icons/ico-sprite.png") no-repeat -517px -139px #ffffff;
+	font-size: 0.875em;
+	font-family: "flexo-regular";
+}
+.input-group.search-beneficiaries button{	    
+    height: 41px;
+    border: 2px solid #D7D8DC;
+    border-left: 0;
+}
+.input-group.search-beneficiaries button:active,
+.input-group.search-beneficiaries button:focus,
+.input-group.search-beneficiaries button:visited {	 
+    border: 2px solid #D7D8DC;
+	outline:0px;
+}
+
+/**===================================================
+- Color cuando un item de una grilla es seleccionado
+===================================================**/
+.tl-item:not(.no_records):active, 
+.tl-item:not(.no_records):active *, 
+.tl2-item a:active, 
+.tl2-item a:active *{
+	/* background-color: #FF4F00; */
+	/* color: #FFF !important; */
+}
+
+/**===================================================
+COMPONENT MENU MOBILE
+- Agrega swipe para el menu mobile
+===================================================**/
+.menu-mobile .swipe-left {
+	width: 50px;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	z-index: 20;
+}
+.menu-mobile .swipe-right {
+	width: 50px;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	z-index: 2500;
+	display: none;
+}
+/* .md-sidenav-right:not(.md-closed) + .swipe-right {
+	display: block;
+} */
+.mod_navMob  .mod_headerFixed {
+	height: 51px;
+}
+.md-sidenav-right:not(._md-closed) + .swipe-right {
+	display: block;
+}
+.mod_body ._md-sidenav-backdrop.md-opaque {
+	z-index: 1020;
+}
+
+/**===================================================
+COMPONENT MODAL
+- Estilos para el modal dropdownlist
+===================================================**/
+.modal-dropdownlist .modal-header .closeable {
+	text-align: right;
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    padding-top: 15px;
+	cursor: pointer;
+}
+.modal-dropdownlist .modal-header .closeable img{
+	width: 20px;	
+}
+.modal-dropdownlist .modal-dialog {
+	border-radius: 0;
+}
+.modal-dropdownlist .modal-header {
+	color: #FF4F00;
+    font-family: "flexo-bold";
+	border-bottom: 3px solid #FF4F00;
+	position: relative;
+}
+.modal-dropdownlist .modal-content {
+	border-radius: 0;
+}
+.modal-dropdownlist .modal-body {
+	font-family: "flexo-regular";
+	padding: 0px;
+	overflow: auto;
+}
+.modal-dropdownlist .modal-footer {
+	display: none;
+}
+.modal-dropdownlist .mod_dropDownList {
+	margin: 0px;
+}
+.modal-dropdownlist .dropdown-menu {
+	padding: 0px;
+}
+.modal-dropdownlist .dwl-item .dwl-item-link{
+    color: #000;
+	white-space: initial;
+}
+.modal-dropdownlist .selectable .mod_dropDownList .dwl-group .dwl-item-link:active,
+.modal-dropdownlist .selectable .dwl-item.child .dwl-item-link:active {
+	background-color: #CCC !important;
+}
+.modal-dropdownlist .dwl-item.parent .dwl-item-link {
+	font-family: "Flexo-bold"
+}
+.modal-dropdownlist .dwl-item .dwl-item-link {
+	font-family: "Flexo-regular"
+}
+.modal-dropdownlist .mod_dropDownList .dwl-group .dwl-item-link,
+.modal-dropdownlist .mod_dropDownList .dwl-group .dwl-item-link:hover,
+.modal-dropdownlist .dwl-item.child .dwl-item-link,
+.modal-dropdownlist .dwl-item.child .dwl-item-link:hover {
+	background-color: #FFF;
+}
+
+/**===================================================
+- Quita el borde cuando los elemenos son seleccionados
+===================================================**/
+*{
+	outline: none !important
+}
+
+/**===================================================
+VIEW EMPRESAS
+- Corrige el ancho para tablet
+===================================================**/
+@media (min-width: 768px) {
+	.mod_tableList .tl-boxL {
+		width: 60%;
+	}
+}
+
+/**===================================================
+COMPONENT HEADER MOBILE
+- Estilos para mantener el version mobile del la cabecera cuando es desktop
+===================================================**/
+.mod_headerFixed .hdr-boxInfo .hdr-boxTitle,
+.mod_headerFixed .hdr-logo .hdr-logo-d,
+.mod_headerFixed .hdr-login-text,
+.mod_headerFixed .hdr-boxInfo {
+	display: none;
+}
+.mod_headerFixed {
+    position: fixed;
+    background-color: #004B8D;	
+	height: 50px;
+}
+.mod_navMob {
+	padding-top: 0em;
+	top: 0;
+    bottom: 0;
+	z-index: 1020;
+}
+.mod_headerFixed .hdr-title {
+    position: inherit;
+	left: 0;
+	font-size: 1em;
+}
+.gridContainer {
+    padding-left: 0.625em;
+    padding-right: 0.625em;
+}
+.mod_headerFixed .hdr-group {
+    padding: 0;
+}
+.mod_headerFixed .hdr-logo-container {
+	position: absolute;
+    display: block;
+    text-align: center;
+    width: 100%;
+	z-index: -1;
+}
+.mod_headerFixed .hdr-logo {
+    padding: 0;
+    display: inline-block;
+    float: none;
+}
+.mod_headerFixed .hdr-boxBack, 
+.mod_headerFixed .hdr-boxMenu {
+    display: block;
+}
+.mod_headerFixed .hdr-logo .hdr-logo-tm {
+	display: inline-block;
+    margin-top: 0.9375em;
+}
+.mobile.mod_body, 
+.tablet.mod_body {
+    padding-top: 3.125em;
+}
+
+/**===================================================
+VIEW HOME
+- Estilos para el nombre del titular
+===================================================**/
+.holder-name {
+	font-family: "flexo-regular";
+}
+
+/**===================================================
+- Quita el margen para que no haya una separacion 
+  entre el panel y la lista
+===================================================**/
+.mod_tab_panel {
+	margin-bottom: 0px !important;
+}
+.mod_infoAccount {
+	padding-bottom: 0px !important;
+}
+.gridContainer.gridList{   
+	padding-top: 0.625em;
+}
+.mod_tab_panel .mtp-box-filter {
+	border-bottom: 1px solid #C5C5C6;
+}
+
+/**===================================================
+COMPONENT TAB PANEL
+- Estilo para poner un nav-tabs fijo en el inferior
+  de la pantalla
+===================================================**/
+.nav-tab-bottom {	
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 50;
+    left: 0;
+    right: 0;	
+}
+.nav-tab-bottom  .mtp-link{	
+	background-color: #F2EFEE;			
+}
+.nav-tab-bottom  .mtp-link .mod_form .mfm-boxBTN{	
+	margin-top: 0em; 
+	margin-bottom: 0em;		
+}
+.mod_tab_panel .nav-tab-bottom .mtp-item{
+	height: auto;
+}
+
+/**===================================================
+- Corrige el espacio del margen inferior
+===================================================**/
+.mod_body main {	
+	padding-bottom: 1.25em;	
+	margin-bottom: 0px;
+}
+
+/**===================================================
+- Corrige el espacio del margen inferior
+===================================================**/
+.mod_infoAccount.fixed {
+    position: fixed;
+    top: 50px;
+    background-color: #FFF;
+    /* background-color: #F2F1F1; */
+    padding: 0.625em 0em 0.3125em;
+}
+
+/**===================================================
+- Corrige los margenes de los titulos en cada pagina
+===================================================**/
+.mod_titles {
+	padding-bottom: 0.8125em;
+	padding-top: 0.8125em;
+}
+.mod_titles_border {
+	border-bottom: 2px solid #D7D8DC;
+}
+.mod_titles .mt-titleH2 {
+    position: relative;
+    display: block;
+    left: 0;
+}
+
+/**===================================================
+BOTONES
+- Estilos para botones
+===================================================**/
+/** Corrige el margen derecho si hay dos botones juntos **/
+.mod_form .mfm-button.mfm-dbl:last-child {
+	/*margin-right: 0.625em;*/
+}
+/** Botones para mobile **/
+@media screen and (max-width: 479px) {
+	.mod_form .mfm-button.mfm-dbl {
+		width: 7.125em;
+		font-size: 0.875em;
+		margin-bottom: .5em;
+	}
+}
+/** Botones para tablet **/
+@media screen and (min-width: 480px) and (max-width: 767px) {
+	.mod_form .mfm-button.mfm-dbl {
+		width: 11.875em;
+	}
+}
+/** Botones para desktop **/
+@media screen and (min-width: 768px) {
+	.mod_form .mfm-button.mfm-dbl {
+		font-size: 1em;
+	}
+}
+/** Color para boton deshabilitado **/
+.mod_form .mfm-button.mfm-dbl:disabled,
+.mod_form .mfm-button.mfm-dbl[disabled] {
+	cursor: default;
+    background-color: #EE966E;
+}
+/** Estilo para boton cancelar **/
+.mod_form .mfm-button.cancel {	
+	background-color: #DDDDDD;
+    box-shadow: 1px 1px 1px 0px rgba(123, 114, 118, 0.8);
+    -webkit-box-shadow: 1px 1px 1px 0px rgba(123, 114, 118, 0.8);
+    -moz-box-shadow: 1px 1px 1px 0px rgba(123, 114, 118, 0.8);
+    -o-box-shadow: 1px 1px 1px 0px rgba(123, 114, 118, 0.8);
+    color: #595960;
+}
+/** Botones mas pequeños para modal sm **/
+.modal .modal-sm .mod_form .mfm-button.mfm-dbl,
+.mod_logout_confirm.mod_form .mfm-button.mfm-dbl{
+	width: 7.125em;
+	font-size: 0.875em;
+	margin-bottom: .5em;
+}
+
+/**===================================================
+VIEW MOVIMIENTOS
+- Estilo para la detalle del saldo contable
+===================================================**/
+.mod_infoAccount .mod_progressBar .pgb-montoTotal-info{
+	font-size: 0.75em;
+    font-family: "flexo-medium";
+    color: #A6A9AB;
+}
+
+.mod_infoAccount.fixed .mod_progressBar .pgb-montoTotal {
+    top: -2em;
+}
+
+.mod_infoAccount.fixed .mod_progressBar .pgb-montoTotal-info {
+	position: absolute;
+    top: -1.66667em;
+    right: 0;
+}
+
+/**===================================================
+VIEW PENDIENTE DE FIRMA
+- Corrige estilos para la firma
+===================================================**/
+.mod_auth_sign .mod_details {
+	box-shadow: none;
+	padding: .8em .8em .8em .7em;
+	margin-top: 0px;
+}
+.mod_auth_sign .mod_details .auth-keys:last-child {
+	padding: 0em;
+}
+.mod_auth_sign .mod_details .auth-title, 
+.mod_auth_sign .mod_details .auth-title-confirm {
+	margin-top: 11px;
+	padding-top: 0em;
+	padding-bottom: 0em;
+	text-align: left;
+	font-size: 0.75em;
+    color: #666666;
+}
+
+/**===================================================
+- Corrige estilos para los steps
+===================================================**/
+.mod_steps {
+	box-shadow: none;
+	background-color: rgba(255, 255, 255, 0);
+}
+.mod_steps .mstp-item:after {
+	height: 6px;
+}
+
+/**===================================================
+COMPONENT TAB PANEL
+- Corrige la altura de los tabs en tab panel 
+===================================================**/
+.mod_tab_panel .nav-tabs>li>a, .mod_tab_panel .mtp-link {
+	line-height: 1.5;
+}
+.mod_tab_panel .mtp-item {
+	/*height: 3.19em;*/
+}
+
+/**===================================================
+VIEW LOGIN
+- Estilos para la clave
+===================================================**/
+.mod_key {
+    width: 270px;
+    margin: 0px auto;
+}
+.mod_key input {
+	height: 2.1875em;
+    border: 1px solid #D7D8DC;
+    border-radius: 0.3125em;
+    font-family: "flexo-regular";
+    text-align: center;
+    padding-left: 2.3em;
+    padding-right: 2em;
+}
+.mod_login .linkH3 {
+	margin-left: 0;
+	text-decoration: none;
+}
+.linkH3, .linkH3:hover {
+    font-family: "flexo-regular";
+    font-size: 0.8em;
+    color: #B8BABF;
+	text-decoration: none;
+	display: block;
+	height: 25px;
+    line-height: 25px;
+}
+.linkH3 [class*="icon-"]{
+	background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-right: 25px;
+    position: relative;
+    top: -1px;
+}
+.icon-conditions {
+	background-image: url("../img/bancaMobil/rgs_btn_conditions_off.png");
+}
+.linkH3:hover .icon-conditions, .linkH3:active .icon-conditions{
+	background-image: url("../img/bancaMobil/rgs_btn_conditions_on.png");
+}
+.linkH3 .glyphicon-refresh{
+	padding-right: 0;
+}
+.linkH3 .glyphicon-refresh:before{
+    margin-left: 5px;
+    top: 2px;
+    position: relative;
+}
+.linkH3:hover .glyphicon-refresh, .linkH3:active .glyphicon-refresh {
+    color: #9c9c9c;
+}
+
+/**===================================================
+VIEW LOGIN
+- Estilos el captcha
+===================================================**/
+.mod_login .captcha {    
+	height: auto;
+    border-radius: 0px;
+}
+.mod_login .captcha img {
+	width: 100%;
+    vertical-align: bottom;
+}
+
+/**===================================================
+VIEW DETALLE DE OPERACION
+- Deja sin margen superior el detalle de operaciones
+===================================================**/
+.mod_details.mod_details_operation {
+	margin-top: 0em;
+}
+.mod_titles.mod_details_operation {
+	padding-top: 0em;
+}
+.icon-detail:before {
+    display: inline-block;
+    content: '';
+    background: url("../img/bancaMobil/gen_ico_services_off.png") no-repeat transparent;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 0px;
+    top: -6px;
+}
+.mod_titles .mt-titleH3 {
+    padding-top: 0;
+    padding-left: 1.8em;
+    margin-top: 1.2em;
+    position: relative;
+}
+
+/**===================================================
+VIEW MOVIMIENTOS
+COMPONENT MD-CHIPS
+- Corrige el ancho de los input email
+===================================================**/
+.md-chip-input-container {
+	width: 95%;
+}
+.md-chip-input-container  .md-input {
+	width: 100%;
+}
+.md-chips:not(.md-readonly) {
+    cursor: text;
+}
+.mod_inputChips .md-chips {
+    display: block;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-size: 16px;
+    vertical-align: middle;
+    background-color: #FFF;
+    background-image: none;
+}
+.md-chips .md-chip-input-container {
+    display: block;
+    line-height: 32px;
+    margin: 8px 8px 0 0;
+    padding: 0;
+    float: left;
+}
+.md-chips .md-chip-input-container input:not([type]), 
+.md-chips .md-chip-input-container input[type=url], 
+.md-chips .md-chip-input-container input[type=text], 
+.md-chips .md-chip-input-container input[type=email], 
+.md-chips .md-chip-input-container input[type=number], 
+.md-chips .md-chip-input-container input[type=tel] {
+    border: 0;
+    height: 32px;
+    line-height: 32px;
+    padding: 0;
+}
+.md-chips .md-chip-input-container input {
+    background: 0 0;
+    border-width: 0;
+}
+.md-chips:not(.md-readonly) .md-chip:not(.md-readonly) {
+    padding-right: 22px;
+}
+.md-chips .md-chip {
+    cursor: default;
+    border-radius: 16px;
+    display: block;
+    height: 32px;
+    line-height: 32px;
+    margin: 8px 8px 0 0;
+    padding: 0 12px;
+    float: left;
+    box-sizing: border-box;
+    max-width: 92%;
+    position: relative;
+}
+.md-chips:not(.md-readonly) .md-chip:not(.md-readonly) .md-chip-content {
+    padding-right: 4px;
+}
+.md-chips .md-chip .md-chip-content {
+    display: block;
+    float: left;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.md-chips .md-chip .md-chip-remove-container {
+    position: absolute;
+    right: 0;
+    line-height: 0px;
+}
+.md-chips .md-chip .md-chip-remove {
+    text-align: center;
+    width: 32px;
+    height: 32px;
+    min-width: 0;
+    padding: 0;
+    background: 0 0;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    position: relative;
+}
+.md-chips .md-chip .md-chip-remove md-icon {
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    top: 20%\9\0;
+    left: 20%\9\0;
+    -webkit-transform: translate3d(-50%,-50%,0);
+    transform: translate3d(-50%,-50%,0);
+}
+md-icon {
+    margin: auto;
+    background-repeat: no-repeat no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    fill: currentColor;
+    height: 24px;
+    width: 24px;
+}
+md-icon svg {
+    pointer-events: none;
+    display: block;
+}
+.md-chips.md-default-theme .md-chip, .md-chips .md-chip {
+	background: rgb(224,224,224);
+    color: rgb(66,66,66);
+}
+.md-chip-button-more-container {	
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.md-chip-button-more-container {	
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.md-chip-button-more-parent{	
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.md-chip-button-more-child{	
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+.md-chip-button-more-child button{	
+    width: 50px;
+    height: 50px;
+    opacity: 1 !important;
+}
+.md-chip-button-more-child button .ico-more-chip:after{	
+	content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+	background: url("../img/modules/icons/ico-plus.png")
+}
+.ie7 md-backdrop.ng-enter.md-opaque,
+.ie8 md-backdrop.ng-enter.md-opaque,
+.ie9 md-backdrop.ng-enter.md-opaque {
+	opacity: 0.48;
+}
+
+/**===================================================
+VIEW PENDIENTES DE FIRMA
+- Input checkbox con propiedad indeterminate
+===================================================**/
+.mod_form .mfm-checkG .mfm-inCheck:indeterminate + .mfm-labCheck:before {
+    background-position: -141px -154px;
+}
+
+/**===================================================
+VIEW PENDIENTES DE FIRMA
+- Color rojo para numeros negativos
+===================================================**/
+.negative-currency {
+    color: #C1121E;
+}
+
+/**===================================================
+VIEW OPERACIONES FIRMADAS
+- Icono de confirmación de envio
+- Estilo para el estado de la operación
+===================================================**/
+.ico-confirm-dos {
+	position: relative;
+	background: none;
+}
+.ico-confirm-dos:before {
+	position: absolute;
+    top: 0px;
+    left: 0px;
+    content: "";
+    width: 40px;
+    height: 40px;
+	background: url("../img/modules/icons/ico-sprite.png") no-repeat -508px -87px;
+}
+.ico-confirm-dos.warning:before {
+	background: url("../img/modules/icons/ico-sprite.png") no-repeat -506px -303px;
+}
+.ico-confirm-dos.error:before {
+	background: url("../img/modules/icons/ico-sprite.png") no-repeat -506px -257px;
+}
+.tl2-title .operation-status, .mos-title .operation-status {
+	font-family: "flexo-bold";
+	float: right;
+	color: #595960;
+}
+
+/**===================================================
+- Estilo para corregir visualización de texto extenso
+===================================================**/
+.pre {
+  -ms-word-break: break-all;
+  word-break: break-all;
+
+  /* Non standard for webkit */
+  word-break: break-word;
+
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+/**===================================================
+- Corrige la visualización de los listados que tienen 
+  2 columnas
+===================================================**/
+.mod_tableList_columns .tl-item,
+.mod_tableList_columns .tl2-item {
+	position: relative;
+}
+.mod_tableList_columns .tl-item .tl-date {
+	position: absolute;
+}
+.mod_tableList_columns .tl2-item .tl2-date{
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    border-right: 1px solid #F2EFEE;
+}
+.mod_tableList_columns .tl-link.tl-oneItem.ico-arrowR-ora {
+	padding-left: 60px;
+    position: relative;
+    display: block;
+    padding-top: 20px !important;
+    padding-bottom: 16px !important;
+	width: auto;
+    background-position-y: 50%;
+}
+.mod_tableList .tl-link .tl-concept {
+	font-family: "flexo-regular";
+}
+.mod_tableList_columns .tl2-link.tl2-oneItem.ico-arrowR-ora {
+	padding-left: 60px;
+    position: relative;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: auto;
+}
+.mod_tableList_columns .tl2-item .tl2-date .mfm-checkG {
+	top: 20px;
+}
+.no_background_image {
+	background-image: none !important;
+    cursor: initial !important;
+}
+.mod_tableList .tl-link.ico-arrowR-ora.no_background_image  {
+	padding-right: 1.07143em !important;
+}
+.mod_tableList_columns .tl2-item .tl2-date .mfm-checkG.d-table{
+	top: 0;	
+	display: table;
+    width: 100%;
+    height: 100%;
+}
+.d-cell{
+	display: table-cell;
+	vertical-align: middle;
+}
+.mod_tableList2 .tl2-number {
+	float: inherit;
+	text-align: right;
+}
+.mod_tableList2 .tl3-sub {
+	color: #717172;
+	font-size: 0.75em;
+    line-height: 100%;
+    font-family: "flexo-regular";
+}
+.mod_carousel {
+    padding-left: 1px;
+    padding-right: 3px;
+	margin-bottom: 5px;
+}
+.mod_tableList_label {
+	width: 80px;
+}
+.mod_tableList_label_lg {
+	width: 120px;
+}
+
+/**===================================================
+- Corrige la visualización del placeholder para 
+  explorador nativo samsumg
+===================================================**/
+::-webkit-input-placeholder {
+	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif !important;
+}
+
+/**===================================================
+- Fix delay in event click
+===================================================**/
+a[href], button, input { touch-action: manipulation; }
+
+/**===================================================
+- Paginación
+===================================================**/
+.pagination-container {
+	width: 175px;
+    margin: 0 auto;
+    position: relative;
+}
+.pagination-direction {
+    border: none;
+	width: 40px;
+    height: 40px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center center;
+	position: absolute;
+    top: -14px;
+	background-color: transparent;
+}
+.pagination-prev {
+	background-image: url("../img/modules/icons/ico-arrow-orange-left.png");
+    left: 0;
+}
+.pagination-next {
+	background-image: url("../img/modules/icons/ico-arrow-orange-right.png");
+    right: 0;
+}
+.pagination-page {
+	position: relative;
+	top: -4px;
+	font-size: 0.8125em;
+    font-family: "flexo-regular";
+    color: #6C6D70;
+}
+/**===================================================
+- VIEW: AFFILIATION
+Estilos para el panel de afiliación
+===================================================**/
+.mod_affiliation{
+	max-width: 300px;
+	margin: 0 auto;
+	font-family: "flexo-regular";
+	border: 1px solid #e8e2e0;
+    border-radius: 0.3125em;
+	background-color: #FFF;
+	border-left: 3px solid #FF4F00;
+    padding-top: .8em;
+    padding-bottom: .8em;
+}
+.mod_affiliation .mod_details{
+    padding: 0 .8em 0 .8em;
+    border: 0;
+	border-radius: 0;
+}
+.mod_affiliation .mod_details:first-child{
+    border-bottom: 1px solid #F2EFEE;
+	padding-bottom: .8em;
+}
+.mod_affiliation .mod_details:last-child{
+    margin-bottom: 0px;
+}
+.mod_affiliation.mod_form .mfm-checkG .mfm-labCheck:before {
+	margin-left: 0;
+}
+.mod_affiliation .auth-title{
+	color: #717172 !important;
+	font-family: "flexo-regular";
+}
+.mod_affiliation .auth-title-confirm,
+.mod_affiliation .auth-title,
+.mod_affiliation .mfm-labCheck{
+	color: #717172;
+}
+.mod_affiliation .link-conditions{
+	font-size: 0.9em;
+	text-decoration: none;    
+	height: 17px;
+    display: block;
+}
+.mod_affiliation.mod_auth_token .mod_details .auth-title, 
+.mod_affiliation.mod_auth_token .mod_details .auth-title-confirm{
+	font-size: 0.8em;
+}
+.mod_affiliation .mfm-labCheck{
+	font-size: 0.8em;
+	text-decoration: none;
+}
+
+/**===================================================
+- VIEW CUENTAS
+Corrige el estilo del monto
+===================================================**/
+.mod_tableList .tl-link .tl-num {
+    font-family: "flexo-bold";
+}
+
+/**===================================================
+Estilos para una tabla tipo panel
+===================================================**/
+.table-mod-panel {
+	border: 1px solid #F2EFEE;
+	border-radius: 0.4em;
+	border-left: 3px solid #FF4F00;
+	box-shadow: 1px 2px 5px 0px rgba(123, 114, 118, 0.8);
+	background-color: #FFF;
+	margin-bottom: 12px;
+	font-size: 0.8125em;
+	font-family: "flexo-regular";
+	color: #717172;
+}
+.table-mod-panel table {
+	width: 100%;
+}
+.table-mod-panel tr {
+	border-bottom: 1px solid #F2EFEE;
+}
+.table-mod-panel .table-level1 {			
+	vertical-align: middle;
+	text-align: center;
+	max-width: 75px;
+	font-family: "flexo-bold";
+	color: #717172;
+	border-right: 1px solid #F2EFEE;
+	padding: 8px;
+	border-top: none;
+}
+.table-mod-panel tr .table-level1:last-child {
+	border-right: 0
+}
+.table-mod-panel tr .table-level1:first-child {
+	border-right: 1px solid #F2EFEE;
+}
+.table-mod-panel .table-level2 {			
+	vertical-align: middle;
+	text-align: center;
+	font-family: "flexo-bold";
+	color: #717172;
+	text-align: center;
+	padding: 8px;
+	max-width: 100px;
+	border-right: 1px solid #F2EFEE;
+}
+.table-mod-panel .table-level3 {			
+	text-align: center;
+	padding: 8px;
+	padding-right: 18px;
+}
+
+/**===================================================
+Estilos para reemplazar el sticky
+===================================================**/
+.sticky-content-header {
+	position: fixed;
+	z-index:2;
+}
+[class*="sticky-content-body-"] {
+	position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+	z-index:1;
+	top:0;
+}
+.sticky-content-scroll {
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+}
+.sticky-content-body-accounts {
+    padding-top: 185px;
+}
+.sticky-content-body-operations {
+    padding-top: 162px;
+    bottom: 32px;
+}
+.sticky-content-body-movements {
+    padding-top: 165px;
+}
+.sticky-content-body-movements.hasBalancesPermission {
+    padding-top: 269px;
+}
+.sticky-content-body-beneficiaries {
+    padding-top: 176px;
+}
+.sticky-content-body-providers {
+    padding-top: 176px;
+}
+@media only screen and (orientation: landscape) and (max-width: 1023px) {
+	.sticky-content-body-movements,
+	.sticky-content-body-movements.hasBalancesPermission {
+		padding-top: 160px;
+	}
+	.sticky-content-header.mod_infoAccount {
+		background-color: #FFF;
+	}	
+	.sticky-content-header.mod_infoAccount .mia-titleH2 {
+		color: #717172;
+		font-family: "flexo-bold";
+		text-align: left;
+		font-size: 0.875em;
+		line-height: 150%;
+	}
+	.sticky-content-header.mod_infoAccount .mia-titleH2 .mia-accountNumber {
+		display: block;
+	}
+	.sticky-content-header.mod_infoAccount .mia-titleH3, 
+	.sticky-content-header.mod_infoAccount .progress,
+	.sticky-content-header.mod_infoAccount .pgb-montoLiquid, 
+	.sticky-content-header.mod_infoAccount .pgb-montoAvaible{
+		display: none;
+	}
+	.sticky-content-header.mod_infoAccount .mod_progressBar {
+		position: relative;
+	}
+	.sticky-content-header.mod_infoAccount .mod_progressBar .pgb-montoTotal {
+		top: -2em;
+		position: absolute;
+		right: 0;
+	}
+	.sticky-content-header.mod_infoAccount .mod_progressBar .pgb-montoTotal-info {
+		position: absolute;
+		top: -1.66667em;
+		right: 0;
+	}
+	.sticky-content-header.mod_infoAccount .mia-titleH3, 
+	.sticky-content-header.mod_infoAccount .progress, 
+	.sticky-content-header.mod_infoAccount .pgb-montoLiquid, 
+	.sticky-content-header.mod_infoAccount .pgb-montoAvaible {
+		display: none;
+	}
+	.sticky-content-header .header-toggle {
+		display: none;
+	}
+}
+.sticky-content-header .header-toggle {
+	width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.sticky-content-header .header-toggle span{
+	color: #9f9f9f;
+	width: 150px;
+	top: -6px;
+}
+.header-reduce.sticky-content-body-movements {
+	padding-top: 160px;
+}
+.header-reduce.sticky-content-header.mod_infoAccount {
+	background-color: #FFF;
+}	
+.mia-titleH2 {
+	position: relative;
+    top: -5px;
+}
+.header-reduce.sticky-content-header.mod_infoAccount .mia-titleH2 {
+	color: #717172;
+	font-family: "flexo-bold";
+	text-align: left;
+	font-size: 0.875em;
+	line-height: 150%;
+}
+.header-reduce.sticky-content-header.mod_infoAccount .mia-titleH2 .mia-accountNumber {
+	display: block;
+}
+.header-reduce.sticky-content-header.mod_infoAccount .mia-titleH3, 
+.header-reduce.sticky-content-header.mod_infoAccount .progress,
+.header-reduce.sticky-content-header.mod_infoAccount .pgb-montoLiquid, 
+.header-reduce.sticky-content-header.mod_infoAccount .pgb-montoAvaible{
+	display: none;
+}
+.header-reduce.sticky-content-header.mod_infoAccount .mod_progressBar {
+	position: relative;
+}
+.header-reduce.sticky-content-header.mod_infoAccount .mod_progressBar .pgb-montoTotal {
+	top: -2em;
+	position: absolute;
+	right: 0;
+}
+.header-reduce.sticky-content-header.mod_infoAccount .mod_progressBar .pgb-montoTotal-info {
+	position: absolute;
+	top: -1.66667em;
+	right: 0;
+}
+.header-reduce.sticky-content-header.mod_infoAccount .mia-titleH3, 
+.header-reduce.sticky-content-header.mod_infoAccount .progress, 
+.header-reduce.sticky-content-header.mod_infoAccount .pgb-montoLiquid, 
+.header-reduce.sticky-content-header.mod_infoAccount .pgb-montoAvaible {
+	display: none;
+}
+
+.sticky-fix-movements {
+	padding-bottom: 256px;
+}
+
+/**===================================================
+Estilos para corregir el actualizar el navegador
+al bajar en dispositivos android
+===================================================**/
+.mod_body, #mybody {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.content-view {
+	overflow: auto;
+    height: 100%;
+	-webkit-overflow-scrolling: touch;
+}
+
+/**===================================================
+Estilos para dispositivos pequeños
+===================================================**/
+@media (max-width: 320px) {
+	.mod_steps .mstp-item .mstp-number {	
+		width: 1.4em;
+		height: 1.4em;
+		font-size: 1em;
+		padding-top: 0.05em;
+	}
+	.mod_steps .mstp-item:after {
+		top: 10px;
+		left: 29px;
+	}
+	.mod_tab_panel .nav-tabs>li>a, .mod_tab_panel .mtp-link {
+		line-height: 1;
+	}
+	.ico-filters:before {
+		top: -6px;
+	}
+	.sticky-content-body-operations {
+		padding-top: 145px;
+	}
+	.mod_titles {
+		padding-bottom: 0.3125em;
+		padding-top: 0.3125em;
+	}
+	.mod_titles.mod_details_operation  {
+		padding-top: 0.3125em;
+	}
+	.sticky-content-body-accounts {
+		padding-top: 151px;
+	}
+	.nav-tab-bottom .mtp-link {		
+		padding: 0.4615em 0.46923em 0.44615em 0.46923em;
+	}
+	.nav-tab-bottom .mod_form .mfm-button.mfm-dbl {
+		font-size: 0.875em;
+	}
+	.mod_titles .mt-titleH3 {
+		margin-top: 0em;
+	}
+	.sticky-content-body-movements.hasBalancesPermission {
+		padding-top: 248px;
+	}
+	.mod_infoAccount .mia-titleH2 {
+		line-height: 50%;
+		top: -2px;
+	}
+	.sticky-content-body-beneficiaries {
+		padding-top: 169px;
+	}
+	.sticky-content-body-providers {
+		padding-top: 169px;
+	}
+	.header-reduce.sticky-content-body-movements {
+		padding-top: 152px;
+	}
+	.mod_tab_panel .mfm-checkG.mtp-link {
+		padding-top: 0.65em;
+		padding-bottom: 0.65em;
+	}
+}
+
+/* */
+.mod_details .auth-title {
+    padding-top: .6em;
+    text-align: left;
+}
+
+.mod_details .md-smallInfo {
+	font-size: 0.8125em;
+}
+/**===================================================
+Muestra el link a telecrédito cuando es desktop 
+===================================================**/
+@media screen and (min-width: 1025px) {
+                .mod_login .linkH2 {
+                               display: inline-block;
+                }
+}
+@media screen and (max-width: 1024px) {
+                .mod_login .linkH2 {
+                              /* display: none !important;*/
+                              display: inline-block !important;
+                }
+}
+
+
+
+/**===================================================
+Centrado vertical del login
+===================================================**/
+html, main , .gridContainer, .wrapper, .row, .col-xs-12{
+	width: 100%;
+	height: 100%;
+}
+body.mod_body main {
+    margin: 0;
+    padding: 0;
+}
+body.mod_body .gridContainer, body.mod_body .gridContainer .row, body.mod_body .gridContainer .col-xs-12{
+    margin: 0;
+    padding: 0;
+}
+.no_scroll {
+	overflow: hidden;
+}

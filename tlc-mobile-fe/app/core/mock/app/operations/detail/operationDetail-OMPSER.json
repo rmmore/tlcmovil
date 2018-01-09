@@ -1,0 +1,66 @@
+{
+  "response": {
+	"id": 1,
+	
+  	"dsOperation": "Pago de servicios",
+	"sqOperation": "579813456712",	
+  	"cdStatus": "11",
+  	"listSignatoryBy": ["Juan Gamboa Zuñiga", "Camilo Lazo Robles"],
+  	"dtExpiration": "1470155480998",
+	
+	"dsMode": "06-01",
+	
+  	"originCompany": "CORPORACION DE LOS FIELES DEL GRUPO S.A.",
+  	"originAccountAlias": "CORPORACION DE LOS FIELES DEL GRUPO",
+	"originAccountType": "Corriente",
+  	"originAccountNumber": "19187654321073",
+	"originCurrencyType": "0001",
+	
+	"dsPaymentServicesType": "AEROLINEAS",
+	"dsPaymentServicesCompany": "LAN",
+	"dsOwnerService": "GLADYS CONDORI",
+	"documentType": "5",
+	"documentNumber": "58745912547",
+	"bookingCode": "R45874",
+	"dsPaymentServices": "PAGO DE PASAJES LAN",
+	"numericalCode": "0000000080000700080",
+	"currencyVlOperation": "0001",
+	"vlOperation": 412.17,
+	"supplyNumber": "0000145742",
+	
+	"serviceDetail": [
+		{
+			"dtExpiredDetail": "1470155480998",
+			"nuInvoice": "CJA-LIM-AGP-LIM-CJA",
+			"documentType": "5",
+			"documentNumber": "79234556",
+			"vlTotalAmount": 132.17,
+			"amountFixedCharge": 0.00,
+			"vlTaxes": 0.00,
+			"vlCommission": 0.00,
+			"cdPayment": 230,
+			"cdUser": 54871485,
+			"paymentType": "Otro pago",
+			"surcharge": 0,
+			"dtCreacion": "1470155480998"
+		},
+		{
+			"dtExpiredDetail": "1470155480998",
+			"nuInvoice": "CJA-LIM-AGP-LIM-CJA",
+			"documentType": "4",
+			"documentNumber": "284458471",
+			"vlTotalAmount": 280.00,
+			"amountFixedCharge": 0.00,
+			"vlTaxes": 0.00,
+			"vlCommission": 0.00,
+			"cdPayment": 231,
+			"cdUser": 89489245,
+			"paymentType": "Otro pago",
+			"surcharge": 0,
+			"dtCreacion": "1470155480998"
+		}
+	],
+	
+  	"dsReject": "Observaciones"
+  }
+}

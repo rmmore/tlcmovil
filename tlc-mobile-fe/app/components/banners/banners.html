@@ -1,0 +1,7 @@
+<div id="carrousel" data-ng-controller="BannersController">
+	<uib-carousel active="active" interval="interval" no-wrap="noWrapSlides">
+		<uib-slide ng-repeat="slide in slides track by $index" index="$index" actual="slide">
+			<a ng-href="{{slide.url}}" target="_blank"><img ng-src="{{slide.imagen}}"/></a>
+		</uib-slide>
+	</uib-carousel>
+</div>

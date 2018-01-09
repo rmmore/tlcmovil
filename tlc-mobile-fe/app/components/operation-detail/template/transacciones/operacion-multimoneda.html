@@ -1,0 +1,27 @@
+<div class="row" data-ng-if="::operationDetailVM.operation.chargeAmount">
+	<div class="col-xs-12 mod_titles mod_details_operation">
+		<h2 class="mt-titleH3 icon-detail">Operaci&oacute;n multimoneda</h2>
+	</div>
+</div>
+<ul class="mod_details mod_details_operation" data-ng-if="::operationDetailVM.operation.chargeAmount">	
+	<li class="md-item">
+		<p class="md-info">Monto cargado</p>
+		<p class="md-infoB" data-currency="::{type:operationDetailVM.operation.originCurrencyType, value:operationDetailVM.operation.chargeAmount}"></p>
+	</li>
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.paymentAmount">
+		<p class="md-info">Monto total pagado</p>
+		<p class="md-infoB" data-currency="::{type:operationDetailVM.operation.destinationCurrencyType, value:operationDetailVM.operation.paymentAmount}"></p>
+	</li>
+	<li class="md-item">
+		<p class="md-info">Monto de cargo</p>
+		<p class="md-infoB" data-currency="::{type:operationDetailVM.operation.originCurrencyType, value:operationDetailVM.operation.chargeAmount}"></p>
+	</li>
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.paymentAmount">
+		<p class="md-info">Monto de abono</p>
+		<p class="md-infoB" data-currency="::{type:operationDetailVM.SOL_CODE, value:operationDetailVM.operation.paymentAmount}"></p>
+	</li>
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.exchangeType">
+		<p class="md-info">Tipo de cambio</p>
+		<p class="md-infoB" data-currency="::{type:operationDetailVM.SOL_CODE, value:operationDetailVM.operation.exchangeType}"></p>
+	</li>
+</ul>

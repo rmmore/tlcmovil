@@ -1,0 +1,62 @@
+<div class="carousel_cards">
+	<swiper data-swiper-options="cardsSwiperVM.swiper">
+		<swiper-slide data-ng-repeat="slide in cardsSwiperVM.slides" data-index="$index">
+			<div class="card-group" data-ng-if="!slide.isRemember">
+				<div class="card {{slide.cssClass}}">
+					<input maxlength="4" class="lgn-input-item"
+						data-ng-repeat="i in [0,1,2,3]"
+						data-ng-disabled="$first"
+						data-input-number
+						data-input-model="slide.cardNumber[i]"
+						data-input-keyup="cardsSwiperVM.keyupCardNumber($charCode, $oldValue, $value, i)" 
+						data-focus="slide.cardNumberFocus[i]"
+						autoCorrect="off"
+						autoComplete="off"
+						pattern="\d*"
+						type="{{cardsSwiperVM.isMozilla ? 'text' : 'number'}}">
+				
+					<div data-ng-hide="slide.showCardName" class="mfm-checkG mtp-link">
+						<!-- <input id="check-cardname-{{$index}}" type="checkbox" data-ng-model="slide.showCardName" class="mfm-inCheck" data-ng-disabled="slide.disabledCheck" data-ng-change="cardsSwiperVM.selectRemember();"> -->
+						<label for="check-cardname-{{$index}}" class="mfm-labCheck labCheck-nav" data-ng-click="slide.showCardName = !slide.disabledCheck && !slide.showCardName; cardsSwiperVM.selectRemember();">
+							<span>Recordar</span>
+						</label>
+					</div>
+					<input type="text" maxlength="20" class="lgn-input-item card-name" placeholder="Alias para recordar la tarjeta" 
+						oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"					 
+						data-ng-show="slide.showCardName" 
+						data-ng-model="cardsSwiperVM.card.cardName"
+						data-input-text="{{cardsSwiperVM.regex.frequentCard}}" 
+						autocorrect="off"
+						autocomplete="off"
+						spellcheck="false">
+				</div>
+			</div>
+			<book-block data-ng-if="slide.isRemember" data-ng-init="slide.check = true; cardsSwiperVM.initBookBlock(bookBlockVM, $index)">
+				<bb-slide>
+					<div class="card {{slide.cssClass}} remember-card">
+						<span class="card-number">{{slide.cardNumber | cardnumberMask}}</span>
+						<span class="card-name">{{slide.cardName}}</span>
+						<div class="mfm-checkG mtp-link" data-ng-click="bookBlockVM.next();">
+							<input id="bb-nav-next-{{$index}}" type="checkbox" data-ng-model="slide.check" class="mfm-inCheck">
+							<label for="bb-nav-next-{{$index}}" class="mfm-labCheck labCheck-nav">
+								<span>Recordar</span>
+							</label>
+						</div>
+						<span data-ng-click="cardsSwiperVM.editCard($index)" class="ico-edit-card"><span class="hideAccessible">Editar tarjeta</span></span>
+					</div>
+				</bb-slide>
+				<bb-slide>
+					<div class="card card-white">
+						<h3 class="cfm-delete-card">¿Está seguro de no querer recordar esta Tarjeta?</h3>
+						<div class="mod_form">
+							<div class="mfm-boxBTN mtl">
+								<button type="button" data-ng-click="slide.check = true; bookBlockVM.prev()" class="mfm-button mfm-dbl cancel mrxs">Cancelar</button>
+								<button type="button" data-ng-click="cardsSwiperVM.deleteCard(slide)" class="mfm-button mfm-dbl mlxs">Aceptar</button>
+							</div>
+						</div>
+					</div>
+				</bb-slide>
+			</book-block>
+		</swiper-slide>
+	</swiper>
+</div>

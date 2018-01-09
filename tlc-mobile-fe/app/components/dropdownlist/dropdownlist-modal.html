@@ -1,0 +1,9 @@
+<div class="dropdownlist-sample">
+	<div class="mod_dropDownList open">
+		<ul class="dropdown-menu dwl-group">
+			<li data-ng-repeat="item in ::modalVM.listData" class="dwl-item" data-ng-class="::{'parent': item.isParent, 'child': item.isChild}">
+				<a data-ng-click="modalVM.selectItem(item); modalVM.cancel()" data-ng-class="{'dwl-active': modalVM.selection.id === item.id}" class="dwl-item-link">{{::item.name}}</a>
+			</li>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,9 @@
+{
+	"resultCode":"1",
+	"errorCode":null,
+	"errorDesc":null,
+	"response": [
+		{ "id": 2, "cssClass": "card-acceso-empresarial", "cardNumber": "0006-00"},
+		{ "id": 1, "cssClass": "card-credimas-negocios", "cardNumber": "4912-56"}
+	]
+}

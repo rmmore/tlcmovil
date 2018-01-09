@@ -1,0 +1,5 @@
+"Cuenta - T"|"Cuenta - M"|"Cuenta - Número - Alias"|"Cuenta - Nombre"|"Estado"|"Saldo líquido (A)"|"Saldo no disponible (B)"|"Saldo contable (A+B)"|
+"C"|"S/."|"215-1301238-0-34 - CONTROL TOTAL SAC"|"CONTROL TOTAL SAC"|"Activa"|"49,989,705.85"|"0.00"|"49,989,705.85"|
+"C"|"US$"|"215-1333395-1-62 - CONTROL TOTAL SAC"|"CONTROL TOTAL SAC"|"Activa"|"-5,736.87"|"0.00"|"-5,736.87"|
+"C"|"S/."|"191-1321576-0-51 - MERCANTIL TAY LONG S A"|"MERCANTIL TAY LONG S A"|"Activa"|"3,104.01"|"0.00"|"3,104.01"|
+"C"|"US$"|"191-1358457-1-96 - MERCANTIL TAY LONG S A"|"MERCANTIL TAY LONG S A"|"Activa"|"-281.75"|"0.00"|"-281.75"|

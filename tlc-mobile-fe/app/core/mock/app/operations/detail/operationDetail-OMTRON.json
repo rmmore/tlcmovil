@@ -1,0 +1,28 @@
+{
+	"response":{
+	
+	"dsOperation":"Transferencias a cuentas propias con tipo de cambio negociado",
+	"cdStatus":"11",
+	"dsFullName":"Jhon Alvarez",
+	"dtPrepared":1469135345000,
+	
+	"originName":"BANCO DE COMERCIO S.A",
+	"originAccountNumber":"1931341240188",
+	"originAccountAlias":"BANCO DE COMERCIO",
+	"originAccountType":"Cuenta Corriente",
+	"originCurrencyType":"1001",
+	"destinationName":"",
+	"destinationName":"INGENIEROS CIVILES Y CONTRATISTAS GENERA",
+	"destinationAccountNumber":"19318109817043",
+	"destinationAccountType":"Cuenta Ahorros",
+	"destinationCurrencyType":"0001",
+	"destinationReference":"teste rob",
+	"vlOperation":1500.0,
+	"destinationTicket":"21212",
+	"exchangeRateNegotiated":3.1,
+	"againstValue":4650,
+	"chargeAmount":1500,
+	"paymentAmount":4650,
+	"observations":"observacion"
+	}
+}

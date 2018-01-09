@@ -1,0 +1,33 @@
+
+<h2 class="bdmH2"> Maquetacion  por defecto</h2>
+
+<ol class="bcp-step-progress clearfix">
+    <li 
+        ng-repeat="(i, breadcrumbStep) in breadcrumbSteps track by $index"
+        ng-class = "{ 'bcp-step-progress-active': i==0 }">
+        <span class="bcp-step-num">{{ breadcrumbStep.step }}</span>
+        <span class="bcp-step-name">{{ breadcrumbStep.stepname }}</span>
+    </li>
+</ol>
+
+<h2 class="bdmH2"> Maquetacion para HBK </h2>
+
+<div class="mod_steps HBK">
+	<ul class="mstp-group">
+	    <li ng-repeat="(i, breadcrumbStep) in breadcrumbSteps track by $index" ng-class = "{ 'mstp-item-active': i==0 }" class="mstp-item">
+	        <span class="mstp-number "><!-- {{ breadcrumbStep.step }} --></span>
+	        <span class="mstp-text">{{ breadcrumbStep.stepname }}</span>
+	    </li>
+	</ul>
+</div>
+
+<h2 class="bdmH2"> Maquetacion para TLC</h2>
+
+<div class="mod_steps TLC">
+	<ul class="mstp-group">
+	    <li ng-repeat="(i, breadcrumbStep) in breadcrumbSteps track by $index" ng-class = "{ 'mstp-item-active': i==0 }" class="mstp-item">
+	        <span class="mstp-number ">{{ breadcrumbStep.step }}</span>
+	        <!-- <span class="bcp-step-name">{{ breadcrumbStep.stepname }}</span> -->
+	    </li>
+	</ul>
+</div>

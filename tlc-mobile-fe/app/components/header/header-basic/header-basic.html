@@ -1,0 +1,17 @@
+<div id="cabecera">
+	<div class="wrapper">
+		<div id="logo">
+			<a data-ng-click="mainVM.goHome()"><h1>Portal de Empresas</h1></a>
+		</div>
+		<div id="welcome">
+			<span class="company">{{::mainVM.user.userContract}}</span> 
+			<a class="session-close" data-ng-click="mainVM.logoutConfirm()">
+				Cerrar Sesi&oacute;n
+			</a>
+		</div>
+		<div id="portal">
+			<h3>Portal de Empresas</h3>
+			<p>Accede a todos los servicios electr&oacute;nicos con un solo clic</p>
+		</div>
+	</div>
+</div>

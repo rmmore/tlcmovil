@@ -1,0 +1,21 @@
+{
+  "response": {
+	"id": 1,
+  	"cdStatus": "11",
+  	"nuSpreadSheet": "000119",
+  	"subtype": "P",
+  	"dsCompany": "CORPORACION DE LOS FIELES DEL GRUPO S.A.",
+  	"accountAlias": "CORPORACION DE LOS FIELES DEL GRUPO S.A.",
+  	"accountNumber": "19187654321073",
+  	"accountType": "C",
+	"cdCurrency": "0001",
+  	"dtProcess": "1470151143906",
+  	"dsReference": "Adelanto quincena",
+  	"vlOperation": 1525.50,
+  	"vlCreditAmount": 1525.50,
+  	"differenceAmount": 0,
+  	"nuRegistriesCount": 2,
+  	"dsReject": "Observaciones",
+	"hasBeneficiaries": true
+  }
+}

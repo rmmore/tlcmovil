@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<!--[if IE 7 ]> <html lang="es" dir="ltr" class="ie7"> <![endif]-->
+<!--[if IE 8 ]> <html lang="es" dir="ltr" class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="es" dir="ltr" class="ie9"> <![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!--> 
+<html lang="es" dir="ltr"> 
+<!--<![endif]-->
+
+	<head>
+		<title>Telecrédito BCP</title>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="Telecrédito BCP">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+      	
+		<link rel="shortcut icon" type="image/x-icon" href="img/modules/icons/favicon.ico">
+		
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="mobile-web-app-capable" content="yes">
+		
+		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/general.css"/>
+		<link rel="stylesheet" type="text/css" href="css/modules.css"/>			
+		<link rel="stylesheet" type="text/css" href="css/app.css"/>	
+		
+	</head>
+	<body class="mod_body">	
+			
+		<div id="mybody" data-ng-show="::!mainVM.loading">
+			
+			<div class="modal fade modal-basic in">
+				<div class="modal-dialog modal-sm">
+					<div class="modal-content" style="box-shadow: none;">
+						<div class="modal-header ">
+							<div class="row">
+								<div class="col-xs-12">
+									<h2 class="modal-title ng-binding">Alerta</h2>
+								</div>
+							</div>
+						</div>
+						<div class="modal-body" style="max-height: 397px;">
+							<p>Error de conexión.</p>
+						</div>	
+					</div>
+				</div>
+			</div>
+
+		</div>
+  
+	</body>
+</html>

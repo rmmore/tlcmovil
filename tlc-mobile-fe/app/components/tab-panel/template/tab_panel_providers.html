@@ -1,0 +1,27 @@
+<div class="col-xs-12 mtp-groupAll">
+	<ul class="nav nav-tabs mtp-group">
+		<li data-ng-class="{ active:tabs.tab === 1 }" class="mtp-item mtp-item-2"><a data-ng-click="tabs.selectTab(1)" title="Filtros" class="mtp-link"><span class="ico-arrowsud"><span class="txt-bold no_padding_top no_paddingBottom">Orden:</span> {{providersVM.typeOrder.name}}</span></a></li>
+		<li class="mtp-item mtp-item-2 mod_form">
+			<p class="mtp-link">Página <span class="txt-bold">{{providersVM.scroll.page}}</span> de <span class="txt-bold">{{providersVM.scroll.pages}}</span> </p>
+		</li>
+	</ul>
+	<div class="tab-content">
+		<div data-ng-show="tabs.tab === 1" class="col-xs-12 mtp-content">
+			<div class="wrapper">
+				<div class="mtp-header">
+					<h3 class="mtp-tit">Seleccione tipo de ordenaci&oacute;n</h3>
+					<!-- <a title="Cerrar tab" role="button" data-ng-click="tabs.closeTabs()" class="mtp-close"><span class="hideAccessible">Cerrar tab</span></a> -->
+				</div>
+				<div class="mtp-body">
+					<dropdownlist data-ctrl="TypeOrderProvidersController"></dropdownlist>
+				</div>
+				<div class="mtp-footer mod_form">
+					<div class="mfm-boxBTN">
+						<input id="btn01" type="button" data-ng-click="providersVM.filter(); tabs.closeTabs();" value="Filtrar" class="mfm-button mfm-dbl"/>
+						<label for="btn01" class="hideAccessible">Filtrar</label>
+					</div><a title="Cerrar tab" role="button" data-ng-click="tabs.closeTabs()" class="mtp-close"><span class="hideAccessible">Cerrar tab</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,70 @@
+<div class="menu-mobile">
+	<div data-ng-controller="MenuToggleController as menuToogleVM">
+		<md-sidenav md-component-id="right" class="md-sidenav-right mod_navMob position-fixed">
+			<div class="mod_headerFixed">
+				<div class="col-xs-12 hdr-group">
+					<span class="hdr-boxBack">
+						<a title="Cerrar Menu" data-ng-click="menuToogleVM.toggleMenu();" class="hdr-linkBack">
+							<img src="img/modules/icons/ico-closeMenu.png" alt="Volver atrás" class="hdr-mmenu"/>
+						</a>
+					</span>
+					<p class="hideAccessible">TLC Mobile - Home</p>
+					<img src="img/modules/icons/ico-logo-BCP.png" alt="BCP Telecredito Mobile" class="hdr-logo"/>
+				</div>
+			</div>
+			<div class="mod_userLogin" data-ng-show="!!mainVM.user.userContract">
+				<div class="col-xs-12">  
+					<div class="mul-group">
+						<p class="mul-tith2">
+							<span data-ng-hide="menuMobileVM.showLogout || menuMobileVM.showConfiguration">Titular: <span class="holder-name">{{::mainVM.user.userContract}}</span></span>
+							<span data-ng-show="menuMobileVM.showLogout">Cerrar sesión</span>
+							<span data-ng-show="menuMobileVM.showConfiguration" class="title-configuration">Configuración</span>
+							<span data-ng-hide="menuMobileVM.showConfiguration" class="mul-numAcc">{{::mainVM.user.cardNumber | cardnumberSeparator}}</span>
+							<span data-ng-show="menuMobileVM.showConfiguration" data-ng-click="menuMobileVM.showConfiguration = false" class="ico-close-configuration"></span>
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			<menu-mobile-items data-menu="menuMobileVM.menu" data-ng-hide="menuMobileVM.showLogout || menuMobileVM.showConfiguration"></menu-mobile-items>
+			
+			<div class="mod_tab_panel">
+				<div class="col-xs-12 mtp-groupAll" data-ng-hide="menuMobileVM.showLogout || menuMobileVM.showConfiguration">
+					<ul class="nav nav-tabs mtp-group">					
+						<li class="mtp-item" data-ng-class="{'w100': !mainVM.showSetting, 'w50': mainVM.showSetting}"><a data-ng-click="menuMobileVM.showLogout = true" title="Cerrar sesión" class="mtp-link"> <span class="ico-logout">Cerrar sesión</span></a></li>
+						<li class="mtp-item w50" data-ng-show="mainVM.showSetting"><a data-ng-click="menuMobileVM.showConfiguration = true" title="Cerrar sesión" class="mtp-link"> <span class="ico-configuration">Configuración</span></a></li>
+					</ul>	
+				</div>
+			</div>
+				
+			<div class="mod_logout_confirm mod_form" data-ng-show="menuMobileVM.showLogout">
+				<p>¿Está seguro que desea cerrar sesión?.</p>
+				<div class="mfm-boxBTN">
+					<button type="button" data-ng-click="menuMobileVM.showLogout = false" class="mfm-button mfm-dbl cancel">Cancelar</button>
+					<button type="button" data-ng-click="mainVM.logout();" class="mfm-button mfm-dbl">Aceptar</button>
+				</div>
+			</div>
+			
+			<nav class="mod_navMenu menu-configuration" data-ng-show="menuMobileVM.showConfiguration">
+				<ul class="nvm-list nvm-level-1">
+					<li class="nvm-items nvm-active" data-ng-if="mainVM.security"> 
+						<a class="nvm-link" data-ng-click="mainVM.goPath('/deshabilitacion')">Deshabilitar</a>
+					</li>
+					<li class="nvm-items nvm-active"> 
+						<a class="nvm-link" data-ng-click="mainVM.goPath('/desafiliacion')">Desafiliar</a>
+					</li>
+				</ul>
+			</nav>
+			
+		</md-sidenav>
+		
+		<!-- <div class="swipe-right"
+			 data-ng-click="mainVM.closeMenuMobile()" 
+			 data-md-swipe-right="mainVM.closeMenuMobile()" 
+		>&nbsp;</div> -->
+	
+		<!-- <div class="swipe-left"
+			 data-md-swipe-left="mainVM.openMenuMobile()"
+		>&nbsp;</div> -->
+	</div>
+</div>

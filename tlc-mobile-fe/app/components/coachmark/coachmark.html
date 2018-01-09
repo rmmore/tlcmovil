@@ -1,0 +1,9 @@
+<div class="slider"><img data-ng-repeat="item in slides" data-ng-src="{{item.image}}" data-ng-swipe-right="nextSlide()" data-ng-swipe-left="prevSlide()" data-ng-hide="!isCurrentSlideIndex($index)" class="slide slide-animation nonDraggableImage"/>
+  <nav class="nav">
+    <div class="wrapper">
+      <ul class="mcm-dots">
+        <li data-ng-repeat="item in slides" class="mcm-item-dot"><a href="#" data-ng-class="{'active':isCurrentSlideIndex($index)}" data-ng-click="setCurrentSlideIndex($index);">{{item.description}}</a></li>
+      </ul>
+    </div>
+  </nav><a href="#cerrar" title="Cerrar Guía" class="linkClose">Saltar gu&iacute;a ></a>
+</div>

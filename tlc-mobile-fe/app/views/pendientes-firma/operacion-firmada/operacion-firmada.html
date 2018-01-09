@@ -1,0 +1,57 @@
+<main data-ng-show="::signedOperationVM.showMain">
+	<h1 data-ng-if="::signedOperationVM.isSign" data-page-title class="hideAccessible">Operaci&oacute;n firmada</h1> 
+	<h1 data-ng-if="::signedOperationVM.isReject" data-page-title class="hideAccessible">Operaci&oacute;n rechazada</h1> 
+	
+	<div class="gridContainer">
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-xs-12 mod_details_send">
+					<ul class="mod_sendConfirm">
+						<li class="sdc-item">
+							<p class="sdc-text">
+								<span class="ico-confirm-dos" data-ng-class="::{'error': signedOperationVM.operation.errorDescription}">
+									<span data-ng-if="::signedOperationVM.isSign">
+										<span data-ng-if="::!signedOperationVM.operation.errorDescription">Operaci&oacute;n firmada</span>
+										<span data-ng-if="::signedOperationVM.operation.errorDescription">La operaci&oacute;n no pudo ser firmada</span>
+									</span>
+									<span data-ng-if="::signedOperationVM.isReject">
+										<span data-ng-if="::!signedOperationVM.operation.errorDescription">Operaci&oacute;n rechazada</span>
+										<span data-ng-if="::signedOperationVM.operation.errorDescription">La operaci&oacute;n no pudo ser rechazada</span>
+									</span>
+								</span>
+							</p>
+						</li>
+					</ul>
+												
+					<ul data-ng-if="::signedOperationVM.operation.statusCode" class="mod_details mod_details_operation mts">	
+						<li class="md-item">
+							<p class="md-info">Estado</p>
+							<p class="md-infoB"><operation-status data-status-code="signedOperationVM.operation.statusCode"></operation-status></p>
+						</li>
+					</ul>
+					
+					<p data-ng-if="::(signedOperationVM.isSign && !signedOperationVM.operation.errorDescription && signedOperationVM.hasPendingSent)" class="text-info">Su operaci&oacute;n se encuentra pendiente de env&iacute;o. Para enviarla ahora al banco seleccione “enviar ahora” o para hacerlo despu&eacute;s ingrese a la opci&oacute;n  Operaciones pendientes de env&iacute;o.</p>
+						
+					<uie-alert data-ng-if="::signedOperationVM.operation.errorDescription" data-options="::{type:'error', message: signedOperationVM.operation.errorDescription, closeable: false, show: true}" class="mbxs mts"></uie-alert>
+						
+					<operation-detail data-operation-detail-options="::signedOperationVM.options"></operation-detail>
+					
+					<ul class="mod_details" data-ng-if="::signedOperationVM.isReject">
+						<li class="md-item"> 
+							<p class="md-info">Motivo del rechazo</p>
+							<p class="md-numOper-cncl pre" >{{::signedOperationVM.reasonRejection}}</p>
+						</li>
+					</ul>
+					
+					<div class="mod_form">
+						<div class="mfm-boxBTN">
+							<input id="btn03" type="button" data-ng-click="signedOperationVM.back()" value="Regresar" class="mfm-button mfm-dbl cancel">
+							<input id="btn04" type="button" data-ng-if="::(signedOperationVM.isSign && !signedOperationVM.operation.errorDescription && signedOperationVM.hasPendingSent && signedOperationVM.flagSend)" data-ng-click="signedOperationVM.send()" value="Enviar ahora" class="mfm-button mfm-dbl">
+						</div>
+					</div>
+			
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

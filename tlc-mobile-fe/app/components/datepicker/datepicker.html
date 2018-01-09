@@ -1,0 +1,33 @@
+<ul class="mod_tab_fromEnd">
+	<li data-ng-click="datepickerVM.showDtFrom()" data-ng-class="{dtp_sel:datepickerVM.show.from === true}" class="mtb-item mtb-from dtp_dis">Desde </li>
+	<li data-ng-click="datepickerVM.showDtEnd()" data-ng-class="{dtp_sel:datepickerVM.show.end === true}" class="mtb-item mtb-end dtp_dis">Hasta</li>
+</ul>
+<div class="row">	
+	<div data-ng-class="{dtp_hide:datepickerVM.show.from === false}" class="col-xs-12 col-md-6">
+		<div data-ng-controller="DatepickerFromController as fromVM" class="mod_datepicker">
+			<!-- <uib-datepicker datepicker-interceptor data-ng-model="fromVM.dtFrom" data-ng-change="fromVM.onSelect();" data-datepicker-options="fromVM.options" class="well well-sm"></uib-datepicker> -->
+			<uib-datepicker data-ng-if="::fromVM.show" class="well well-sm"
+				data-ng-model="fromVM.dtFrom" 
+				data-ng-change="fromVM.onSelect();" 
+				data-min-date="::fromVM.options.minDate"
+				data-max-date="::fromVM.options.maxDate"
+				data-show-weeks="::fromVM.options.showWeeks"
+				data-custom-class="fromVM.options.customClass(date, mode)"
+				data-starting-day="::fromVM.options.startingDay"></uib-datepicker>
+		</div>
+	</div>
+	<div data-ng-class="{dtp_hide:datepickerVM.show.end === false}" class="col-xs-12 col-md-6">
+		<div data-ng-controller="DatepickerEndController as endVM" class="mod_datepicker">
+			<!-- <uib-datepicker data-ng-model="endVM.dtEnd" data-ng-change="endVM.onSelect()" data-datepicker-options="endVM.options" class="well well-sm"></uib-datepicker> -->
+			<uib-datepicker class="well well-sm"
+				data-ng-model="endVM.dtEnd" 
+				data-ng-change="endVM.onSelect()" 
+				data-min-date="endVM.options.minDate"
+				data-max-date="endVM.options.maxDate"
+				data-show-weeks="::endVM.options.showWeeks"
+				data-custom-class="endVM.options.customClass(date, mode)"
+				data-starting-day="endVM.options.startingDay"
+				data-init-date="endVM.options.initDate"></uib-datepicker>
+		</div>
+	</div>
+</div>

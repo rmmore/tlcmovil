@@ -1,0 +1,93 @@
+<div>
+	<div data-ng-include="'components/operation-detail/template/transacciones/datos-generales.html'"></div>
+	
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Datos de la cuenta origen</h2>
+		</div>
+	</div>	
+	<ul class="mod_details mod_details_operation">	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originCompany">
+			<p class="md-info">Nombre del cliente</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originCompany}}</p>
+			<p class="md-smallInfo">{{::operationDetailVM.operation.originDocType | documentTypeMask}} {{::operationDetailVM.operation.originRUC}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originAccount">
+			<p class="md-info">Cuenta</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originAccount | accountNumberMask}}</p>
+			<p class="md-smallInfo">{{::operationDetailVM.operation.originAccountAlias}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originAccountType">
+			<p class="md-info">Tipo</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originAccountType}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originCurrencyType">
+			<p class="md-info">Moneda</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originCurrencyType | currencyDesc}}</p>
+		</li>	
+	</ul>
+	
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Datos de la cuenta destino</h2>
+		</div>
+	</div>	
+	<ul class="mod_details mod_details_operation">	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsBank">
+			<p class="md-info">Banco</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsBank}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.vlOperation">
+			<p class="md-info">Importe</p>
+			<p class="md-monto" data-currency="::{type:operationDetailVM.operation.destinationCurrencyType, value:operationDetailVM.operation.vlOperation}"></p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.destinationCCI">
+			<p class="md-info">CCI</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.destinationCCI}}</p>
+		</li>	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.destinationBeneficiary">
+			<p class="md-info">Beneficiario</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.destinationBeneficiary}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.destinationITF">
+			<p class="md-info">ITF</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.destinationITF}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.destinationDocumentType">
+			<p class="md-info">Documento</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.destinationDocumentType | documentTypeMask}} {{::operationDetailVM.operation.destinationDocumentNumber}}</p>
+		</li>
+	</ul>
+	
+	<div class="row" data-ng-if="::operationDetailVM.operation.mailConfirmation">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Opcionales</h2>
+		</div>
+	</div>	
+	<ul class="mod_details mod_details_operation" data-ng-if="::operationDetailVM.operation.mailConfirmation">	
+		<li class="md-item">
+			<p class="md-info">Correo electr&oacute;nico</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.mailConfirmation}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.mailMessage">
+			<p class="md-info">Mensaje</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.mailMessage}}</p>
+		</li>
+	</ul>
+		
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Observaciones</h2>
+		</div>
+	</div>				
+	<ul class="mod_details mod_details_operation">
+	  <li class="md-item"> 
+		<p class="md-info">
+			<p class="md-numOper-cncl pre">
+				{{operationDetailVM.operation.dsReject | defaultObservationMask}}
+			</p>
+		</p>
+	  </li>
+	</ul>	
+	
+</div>

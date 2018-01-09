@@ -1,0 +1,29 @@
+<ul class="mod_tableList2" data-ng-class="{'mod_tableList_columns': !!operationListVM.options.onSelect}">
+	<li data-ng-repeat="operation in operationListVM.options.list track by operation.sqOperation" class="tl2-item">
+		<div class="mod_form tl2-date" data-ng-if="::!!operationListVM.options.onSelect">
+			<div class="mfm-checkG d-table">
+				<div class="d-cell">
+					<input id="input_check_select_operation_{{::$index}}" type="checkbox" data-ng-model="operation.checked" data-ng-change="operationListVM.options.onSelect(operation)" class="mfm-inCheck"/>
+					<label onclick="" for="input_check_select_operation_{{::$index}}" class="mfm-labCheck"> <span class="hideAccessible">checkbox 0</span></label>
+				</div>
+			</div>
+		</div>
+
+		<a data-ng-click="operationListVM.options.onClick(operation)" class="tl2-link tl2-oneItem" data-ng-class="{'ico-arrowR-ora': !!operationListVM.options.onClick, 'ico-candado': operation.hasPassword}">
+			<ul style="margin-right: 9px;">
+				<li class="tl2-item">
+					<h4 class="tl2-title w100">{{::operation.dsOperation}}<operation-status data-status-code="operation.statusCode"></operation-status></h4>
+					<p class="tl2-info" data-ng-if="::operation.from"> <span class="tl2-sub">De:&nbsp;</span><span class="tl2-name">{{::operation.from}}</span></p>
+					<p class="tl2-info" data-ng-if="::operation.accountNumberFrom"> <span class="tl2-sub">Cuenta:&nbsp;</span><span class="tl2-name">{{::operation.accountNumberFrom | accountNumberMask}}</span></p>
+					<p class="tl2-info mtxs" data-ng-if="::operation.to"> <span class="tl2-sub">Para:&nbsp;</span><span class="tl2-name">{{::operation.to}}</span></p>
+					<!-- <p class="tl2-info" data-ng-if="::operation.to"> <span class="tl2-sub">Cuenta:&nbsp;</span><span class="tl2-name">{{operation.to == 'Varios' ? 'Varios' : (operation.accountNumberTo  | accountNumberMask)}}</span></p> -->
+					<p class="tl2-info" data-ng-if="::operation.accountNumberTo"> <span class="tl2-sub">Cuenta:&nbsp;</span><span class="tl2-name">{{::operation.accountNumberTo | accountNumberMask}}</span></p>
+					<p class="tl2-number" data-currency="::{type: operation.currencyTypeOperation, value: operation.amount}"></p>
+					<p class="mos-info" data-ng-if="::operation.errorDescription"><uie-alert data-options="::{type:'error', message: operation.errorDescription, closeable: false, show: true}" class="mbxs mts"></uie-alert></p>
+				</li>
+			</ul>
+		</a>
+
+		
+	 </li>
+</ul>

@@ -1,0 +1,19 @@
+<div>
+	<div data-ng-transclude></div>	
+
+	<div data-ng-show="paginationVM.options.show !== false && paginationVM.options.pages > 1" class="mts text-center pagination-container">	
+	
+		<button class="button pagination-direction pagination-prev" 
+			data-ng-hide="paginationVM.options.page == 1"
+			data-ng-click="paginationVM.prev()" 
+		></button>
+		<span class="pagination-page">Página <span class="text-bold">{{paginationVM.options.page}}</span> de <span class="text-bold">{{paginationVM.options.pages}}</span></span>
+		<button class="button pagination-direction pagination-next" 
+			data-ng-hide="paginationVM.options.page == paginationVM.options.pages"
+			data-ng-click="paginationVM.next()"
+		></button>
+		
+	</div>
+	
+</div>
+

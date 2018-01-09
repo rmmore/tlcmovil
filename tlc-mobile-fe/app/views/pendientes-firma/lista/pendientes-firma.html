@@ -1,0 +1,74 @@
+<main data-ng-show="::operationsToSignVM.showMain">
+    <h1 data-page-title class="hideAccessible">Pendientes de firma</h1> 
+	
+	<div class="mod_infoAccount no_padding_top sticky-content-header">
+	<!-- <div sticky="sticky" class="mod_infoAccount no_padding_top"> -->
+	
+		<steps data-steps-options="::{count: 3, current: 1}"></steps>
+		
+		<div class="gridContainer text-init">
+			<div class="row">
+				<div class="mod_tab_panel">
+					<tab-panel template="singing"></tab-panel>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+	<div class="gridContainer text-init visible-mobile visible-tablet">
+		<div class="row">
+			<div class="mod_tab_panel">
+				<div class="col-xs-12 mtp-groupAll">
+					<ul class="nav nav-tabs mtp-group nav-tab-bottom">
+						<li class="mtp-item mtp-item-2 w100">
+							<a class="mtp-link">
+								<div class="mod_form">
+									<div class="mfm-boxBTN">
+										<button type="button" class="mfm-button mfm-dbl" 
+											data-ng-click="operationsToSignVM.sign()" 
+											data-ng-disabled="!operationsToSignVM.areAnySelected || !operationsToSignVM.operationsToSign.length"
+										>Firmar</button>
+									</div>
+								</div>
+							</a>
+						</li>	
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="sticky-content-body-operations">
+		<div class="gridContainer gridList pbl sticky-content-scroll">
+		<!-- <div class="gridContainer gridList pbl"> -->
+	
+			<div data-ng-controller="FiltersAlertPendingOperationsController as filtersAlert" data-ng-show="filtersAlert.alertOptions.show || operationsToSignVM.alertMaxOperations.show" class="mtp-box-filter">
+				<uie-alert data-options="operationsToSignVM.alertMaxOperations" class="{{filtersAlert.alertOptions.show ? 'mbxs' : 'no_marginBottom'}}"  data-ng-if="operationsToSignVM.alertMaxOperations.show"></uie-alert>
+				<uie-alert data-options="filtersAlert.alertOptions" class="no_marginBottom" data-ng-if="filtersAlert.alertOptions.show"></uie-alert> 
+			</div>
+	
+			<div class="wrapper mtxs">
+				<div class="row">
+					<div class="col-xs-12">  
+					
+						<ui-pagination 
+							data-pagination-options="operationsToSignVM.scroll" 
+							data-ng-show="operationsToSignVM.operationsToSign.length">
+							
+							<operation-list 
+								data-options="{
+									list: operationsToSignVM.operationsToSign,
+									onSelect: operationsToSignVM.selectOperation,
+									onClick: operationsToSignVM.clickOperation
+								}"
+							></operation-list>
+						</ui-pagination>
+
+						<alert-no-records data-ng-show="operationsToSignVM.noRecords"></alert-no-records>		
+				
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</main>

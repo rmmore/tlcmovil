@@ -1,0 +1,77 @@
+<div>
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Datos generales</h2>
+		</div>
+	</div>	
+	<ul class="mod_details mod_details_operation">	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.nuSpreadSheet">
+			<p class="md-info">N&deg; Planilla</p>
+			<p class="md-numOper">{{::operationDetailVM.operation.nuSpreadSheet}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.subtype">
+			<p class="md-info">Subtipo</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.subtype | subTypeMask }}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.accountNumber">
+			<p class="md-info">Cuenta de origen</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.accountType}} - {{::operationDetailVM.operation.cdCurrency | currencySymbol}} - {{::operationDetailVM.operation.accountNumber | accountNumberMask}}</p>
+			<p class="md-smallInfo">{{::operationDetailVM.operation.accountAlias}}</p>
+		</li>	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsCompany">
+			<p class="md-info">Empresa pagadora</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsCompany}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dtProcess">
+			<p class="md-info">Fecha de proceso</p>
+			<p class="md-date">{{::operationDetailVM.operation.dtProcess | dateMask}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.transmitter">
+			<p class="md-info">Emisor</p>
+			<p class="md-date">{{::operationDetailVM.operation.transmitter}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsReference">
+			<p class="md-info">Referencia de plantilla</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsReference}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.templateExoneratedITF">
+			<p class="md-info">Plantilla exonerada de ITF</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.templateExoneratedITF}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.vlOperation">
+			<p class="md-info">Monto total</p>
+			<p class="md-monto" data-currency="::{type:operationDetailVM.operation.cdCurrency, value:operationDetailVM.operation.vlOperation}"></p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.vlCreditAmount">
+			<p class="md-info">Monto acumulado</p>
+			<p class="md-infoB" data-currency="::{type:operationDetailVM.operation.cdCurrency, value:operationDetailVM.operation.vlCreditAmount}"></p>
+		</li>
+		<li class="md-item" data-ng-if="operationDetailVM.operation.differenceAmount || operationDetailVM.operation.differenceAmount == 0">
+			<p class="md-info">Diferencia</p>
+			<p class="md-infoB" data-currency="::{type:operationDetailVM.operation.cdCurrency, value:operationDetailVM.operation.differenceAmount}"></p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.nuRegistriesCount">
+			<p class="md-info">Total registros</p>
+			<p class="md-numOper">{{::operationDetailVM.operation.nuRegistriesCount}}</p>
+		</li>
+	</ul>
+		
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Observaciones</h2>
+		</div>
+	</div>				
+	<ul class="mod_details mod_details_operation">
+	  <li class="md-item"> 
+		<p class="md-info">
+			<p class="md-numOper-cncl pre">
+				{{operationDetailVM.operation.dsReject | defaultObservationMask}}
+			</p>
+		</p>
+	  </li>
+	</ul>	
+	
+	<ul class="mod_tableList" data-ng-if="::operationDetailVM.operation.hasBeneficiaries">
+		<li class="tl-item"><a data-ng-click="operationDetailVM.goBeneficiaries()" title="Beneficiarios" class="tl-link ico-arrowR-ora tl-oneItem">Beneficiarios</a></li>
+	</ul>
+</div>

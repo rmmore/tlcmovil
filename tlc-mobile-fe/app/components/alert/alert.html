@@ -1,0 +1,8 @@
+<div data-ng-show="alertVM.options.show">
+	<div class="alert alert-{{alertVM.options.type}} no_marginBottom">
+		<button data-ng-show="alertVM.options.closeable" type="button" class="close" data-ng-click="alertVM.close()">
+			<span class="ico-closed-{{alertVM.options.type}}"></span>
+		</button>
+		<div><span ng-bind-html="alertVM.trustHtml()"></span></div>
+	</div>
+</div>

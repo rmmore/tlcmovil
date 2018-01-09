@@ -1,0 +1,25 @@
+<div id="footer">
+    <div class="wrapper">
+        <div class="columnas clearfix">
+            <div class="columna">
+                <h5 style="line-height: 18px;">Encu&eacute;ntranos en</h5>
+                <ul class="menu-footer">
+                    <li class="icon {{::rs.class}} no_marginBottom" data-ng-repeat="rs in ::footerBasicVM.redesSociales track by $index">
+						<a href="{{::rs.url}}" target="_blank" title="">{{::rs.nombre}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="columna alt">
+                <h5 style="line-height: 18px;" class="seguro">Estas en un entorno seguro</h5>
+                <ul class="menu-footer">
+                    <li class="no_marginBottom">
+                        <a href="{{::footerBasicVM.seguridadUrl}}" target="_blank">Pol&iacute;tica de seguridad</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="copy">
+			&copy; 2016 Portal de Empresas. Todos los derechos reservados.
+		</div>
+    </div>
+</div>

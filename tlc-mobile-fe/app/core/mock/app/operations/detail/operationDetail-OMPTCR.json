@@ -1,0 +1,25 @@
+{
+  "response": {
+	"id": 1,
+	
+  	"dsOperation": "Pago de Tarjetas de Crédito",
+  	"cdStatus": "11",
+  	"dsFullName": "Jhon Perez",
+  	"dtPrepared": "1469217456468",
+	
+  	"dsCompany": "CENTRO AUTOMOTRIZ S.A",
+  	"originAccountAlias": "CENTRO AUTOMOTRIZ",
+  	"originAccountNumber": "1931341240188",
+	"originAccountType": "Corriente",
+	"originCurrencyType": "1001",
+	
+	"cardType": "Tarjeta Crédito Solución Negocios",
+	"headline": "CENTRO CAR SAC",
+	"paymentType": "Pago total",
+	"cardNumber": "0004099800150002548",
+	"currencyVlOperation": "0001",
+	"vlOperation": 60.18,
+	
+  	"dsReject": "Observaciones"
+  }
+}

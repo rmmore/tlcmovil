@@ -1,0 +1,134 @@
+.keypad-mobile-backdrop{
+	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1070;
+}
+.keypad-mobile .keypad table{
+	border-spacing: 0px;
+}
+.keypad-mobile .keypad{
+	position: fixed;
+	z-index: 1080;
+	width: 100%;
+	/*height: 100%;*/
+	bottom: 0;
+}
+.keypad-mobile .keypad .keypad-content{
+	max-width: 400px;
+    margin: 0 auto;
+}
+.keypad-mobile .keypad .keypad-content table{
+	/* position: fixed; */
+    /* bottom: 0; */
+    width: 100%;
+    background-color: #F9F9F9;
+	border-top: 3px solid #F9F9F9;
+    /* box-shadow: 1px 1px 1px 1px #2B2A2A; */
+    box-shadow: 1px 2px 5px 0px rgba(123, 114, 118, 0.8);
+}
+.keypad-mobile .keypad .keypad-content table tr{
+	width: 100%;
+}
+.keypad-mobile .keypad .keypad-content table tr td{
+	width: 33%;
+	padding: 3px;
+}
+.keypad-mobile .keypad .keypad-content table tr td button{
+	width: 100%;
+    background-color: white;
+    height: 50px;
+    border: 1px solid #DDDDDD;
+	font-family: "flexo-bold";
+	font-size: 1.6em;
+}
+.keypad-mobile .keypad .keypad-content table tr td button:active,
+.keypad-mobile .keypad .keypad-content table tr td button.pressed{
+    background-color: #ECECEC !important;
+}
+.keypad-mobile .keypad-clear{
+	background-color: #9F9F9F !important;
+	background: url('../icons/keypad_icon_clear.png');
+    background-size: 23px;
+}
+.keypad-mobile .keypad-done{
+	background-color: blue !important;
+	color: white;
+}
+.keypad-mobile  .keypad-del{
+	background-color: #9F9F9F !important;
+	background: url('../icons/keypad_icon_delete.png');
+    background-size: 35px;
+}
+.keypad-mobile .keypad-cell{
+	border: 1px solid #484848;
+	background-position: center;
+    background-repeat: no-repeat;
+}
+.keypad-mobile .keypad-clear:active,
+.keypad-mobile .keypad-clear.pressed,
+.keypad-mobile .keypad-done:active,
+.keypad-mobile .keypad-done.pressed,
+.keypad-mobile .keypad-del:active,
+.keypad-mobile .keypad-del.pressed {
+	background-color: #8C8C8C !important;
+}
+.keypad-mobile-margin-bottom {
+	margin-bottom: 120px;
+}
+.keypad-mobile-partial-focus {
+	border: 1px solid #FF4F00 !important;
+}
+@media (min-width: 480px) {	
+	.keypad-mobile .keypad .keypad-content table{
+		border-bottom-right-radius: 7px;
+		border-bottom-left-radius: 7px;
+	}
+}
+@media (max-height: 380px) {
+	.keypad-mobile-margin-bottom {
+		margin-bottom: 50px;
+	}
+	.keypad-mobile .keypad .keypad-content table tr td button{
+		height: 40px;
+	}
+	.keypad-mobile .keypad .keypad-content table tr td{
+		width: 16.6%;
+	}
+	.keypad-mobile .keypad .keypad-content{
+		max-width: 350px;
+	}
+	.keypad-mobile-sm {
+		display: show;
+	}
+	.keypad-mobile-lg {
+		display: none;
+	}
+}
+@media (min-height: 381px) {
+	.keypad-mobile-sm {
+		display: none;
+	}
+	.keypad-mobile .keypad .keypad-content table tr td button{
+		height: 50px;
+	}
+}
+@media (min-width: 768px) {
+	.keypad-mobile-margin-bottom {
+		margin-bottom: 0px;
+	}
+}
+.keypad-mobile-input {
+	position: relative;
+}
+.keypad-mobile-input-backdrop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	cursor: pointer;
+	z-index: 1;
+}

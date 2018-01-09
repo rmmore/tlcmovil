@@ -1,0 +1,48 @@
+<div class="modal-header">
+	<h3 class="modal-title">Planilla protegida</h3>
+</div>
+<div class="modal-body" data-modal-auto-height>
+
+	<div class="modal_auth_token">
+		<form class="mod_form mod_auth_sign">
+			<div class="mod_details">
+				
+				<fieldset class="auth-keys" >
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="row">
+								<div class="col-xs-12 mbs">
+									<h3 class="auth-title-confirm">Para cambiar la clave de acceso a su planilla, ingrese una nueva clave y seleccione Confirmar.</h3>
+								</div>
+								<div class="col-xs-5">
+									<h3 class="auth-title"> Clave Nueva:</h3>
+								</div>
+								<div class="col-xs-7 no_padding_left">
+									<label class="ico-key">
+										<input type="password" class="input-key w100" data-ng-model="changePasswordVM.password" maxlength="8">
+									</label>
+								</div>
+								<div class="col-xs-5">
+									<h3 class="auth-title">Confirmar Clave:</h3>
+								</div>
+								<div class="col-xs-7 no_padding_left">
+									<label class="ico-key">
+										<input type="password" class="input-key w100" data-ng-model="changePasswordVM.passwordConfirm" maxlength="8">
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="mod_form">
+				<div class="mfm-boxBTN no_marginTop">
+					<input id="btn03" data-ng-click="changePasswordVM.cancel()" type="button" value="Cancelar" class="mfm-button mfm-dbl cancel">
+					<input id="btn_sign" data-ng-click="changePasswordVM.accept()" type="button" value="Confirmar" class="mfm-button mfm-dbl">
+				</div>
+			</div>
+		</form>
+	</div>
+	
+</div>

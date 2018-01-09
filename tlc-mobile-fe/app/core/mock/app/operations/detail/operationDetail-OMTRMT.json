@@ -1,0 +1,34 @@
+{
+  "response": {
+	"id": 1,
+	
+  	"dsOperation": "Transferencias a cuentas de terceros MIAMI",
+  	"sqOperation": "58124592",
+  	"cdStatus": "11",
+  	"dsFullName": "Jhon Perez",
+  	"dtPrepared": "1469217456468",
+  	"listSignatoryBy": ["Juan Gamboa Zuñiga", "Camilo Lazo Robles"],
+  	"dtExpiration": "1469217456468",
+	
+  	"originName": "BANCO DE COMERCIO S.A",
+  	"originAccountAlias": "BANCO DE COMERCIO",
+  	"originAccountNumber": "1931341240188",
+	"originAccountType": "Corriente",
+	"originCurrencyType": "1001",
+	
+	"destinationName": "FACTORIA EL DIAMANTE S.A",
+	"destinationAccountNumber": "1910335065094",
+	"destinationAccountType": "Corriente",
+	"destinationCurrencyType": "0001",
+	"destinationReference": "12345",
+	
+	"currencyVlOperation": "0001",
+	"vlOperation": 16841.00,
+	"vlExchangeRate": 3.1,
+	
+	"mailConfirmation": "jperez@mail.com",
+	"mailMessage": "Mensaje del correo electronico",
+	
+  	"dsReject": "Observaciones"
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "response": [
+    {
+      "id": 2,
+      "description": "Inicio",
+      "menuItem": {
+        "id": 1,
+        "description": "Menu Pue",
+        "operationCod": "0001",
+        "order": 1,
+        "literalCod": "1",
+        "path": "#url",
+        "active": true
+      },
+       "path": "/inicio",
+      "operationCod": "0001",
+      "order": 1,
+      "literalCod": "2",
+      "active": true,
+      "image": "img/icons/home-16.png",
+      "imageHover": "img/icons/home-16-hover.png",
+      "cssId": "",
+      "cssClass": "active visible-desktop",
+      "menuItems": []
+    },
+    {
+      "id": 3,
+      "description": "Perfil",
+      "menuItem": {
+        "id": 1,
+        "description": "Menu Pue",
+        "operationCod": "0001",
+        "order": 1,
+        "literalCod": "1",
+        "path": "#url",
+        "active": true
+      },
+      "operationCod": "0001",
+      "order": 2,
+      "literalCod": "3",
+      "path": "",
+      "active": true,
+      "image": "",
+      "imageHover": "",
+      "cssId": "",
+      "cssClass": " visible-desktop",
+      "menuItems": [
+        {
+          "id": 4,
+          "description": "Mi Perfil",
+          "menuItem": {
+            "id": 3,
+            "description": "Perfil",
+            "operationCod": "0001",
+            "order": 2,
+            "literalCod": "3",
+            "path": "",
+            "active": true,
+            "image": "",
+            "imageHover": "",
+            "cssId": "",
+            "cssClass": ""
+          },
+          "operationCod": "0001",
+          "order": 1,
+          "literalCod": "4",
+          "path": "/perfil",
+          "active": true,
+          "menuItems": []
+        },
+        {
+          "id": 5,
+          "description": "Cambiar Clave",
+          "menuItem": {
+            "id": 3,
+            "description": "Perfil",
+            "operationCod": "0001",
+            "order": 2,
+            "literalCod": "3",
+            "path": "",
+            "active": true,
+            "image": "",
+            "imageHover": "",
+            "cssId": "",
+            "cssClass": ""
+          },
+          "operationCod": "0001",
+          "order": 2,
+          "literalCod": "5",
+          "path": "/cambiar-clave",
+          "active": true,
+          "menuItems": []
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "description": "Consultas",
+	  "order": 3,
+      "cssId": "menuConsults",
+      "cssClass": "",
+      "path": "",
+      "menuItems": [
+        {          
+		  "id": 11,
+		  "description": "Saldos y Movimientos",
+		  "order": 1,
+		  "cssId": "pending-signature",
+		  "cssClass": "",
+		  "path": "/saldo-y-movimientos/empresas"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "description": "Operaciones Monetarias",
+	  "order": 4,
+      "cssId": "menuOperations",
+      "cssClass": "",
+      "path": "",
+      "menuItems": [
+        {          
+		  "id": 13,
+		  "description": "Pendientes de firma",
+		  "order": 1,
+		  "cssId": "nuSingPendant",
+		  "cssClass": "",
+		  "path": "/pendientes-de-firma"
+        },
+		{          
+		  "id": 14,
+		  "description": "Pendientes de envío",
+		  "order": 2,
+		  "cssId": "nuSendingBcp",
+		  "cssClass": "",
+		  "path": "/pendientes-de-envio"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "description": "Accesos",
+	  "order": 5,
+      "cssId": "",
+      "cssClass": " visible-tablet visible-desktop",
+      "path": "",
+      "menuItems": [
+        {          
+		  "id": 16,
+		  "description": "Telecrédito Web",
+		  "order": 1,
+		  "cssId": "",
+		  "cssClass": "",
+		  "path": "",
+		  "url": "https://www.telecreditobcp.com/tlcnp/"
+        },
+		{          
+		  "id": 17,
+		  "description": "Factoring Electrónico",
+		  "order": 2,
+		  "cssId": "",
+		  "cssClass": "",
+		  "path": "",
+		  "url": "https://www.factoringelectronicobcp.com/"
+        },
+		{          
+		  "id": 18,
+		  "description": "Letras BCP",
+		  "order": 3,
+		  "cssId": "",
+		  "cssClass": "",
+		  "path": "",
+		  "url": "https://www.letrasbcp.com/LetrasWebInternet/"
+        }
+      ]
+    }
+  ]
+}

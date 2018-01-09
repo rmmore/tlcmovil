@@ -1,0 +1,74 @@
+<div>
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Datos generales</h2>
+		</div>
+	</div>	
+	<ul class="mod_details mod_details_operation">	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.templateNumber">
+			<p class="md-info">N° Plantilla</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.templateNumber}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.payingCompany">
+			<p class="md-info">Empresa pagadora</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.payingCompany}}</p>
+			<p class="md-smallInfo">{{::operationDetailVM.operation.documentType | documentTypeMask}} {{::operationDetailVM.operation.documentNumber}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.currencyType">
+			<p class="md-info">Moneda</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.currencyType | currencyDesc}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.accountType">
+			<p class="md-info">Cuenta de origen</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.accountType}} -  {{::operationDetailVM.operation.currencyType | currencySymbol}} - {{::operationDetailVM.operation.accountNumber | accountNumberMask}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.referenceTemplate">
+			<p class="md-info">Referencia plantilla</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.referenceTemplate}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.vlOperation">
+			<p class="md-info">Monto total</p>
+			<p class="md-monto" data-currency="::{value:operationDetailVM.operation.vlOperation}"></p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.accumulatedAmount">
+			<p class="md-info">Monto acumulado</p>
+			<p class="md-infoB" data-currency="::{value:operationDetailVM.operation.accumulatedAmount}"></p>
+		</li>
+		<li class="md-item" data-ng-if="::(operationDetailVM.operation.difference || operationDetailVM.operation.difference == 0)">
+			<p class="md-info">Diferencia</p>
+			<p class="md-infoB" data-currency="::{value:operationDetailVM.operation.difference}"></p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.neteoDocuments">
+			<p class="md-info">Neteo documentos</p>
+			<p class="md-infoB" data-currency="::{value:operationDetailVM.operation.neteoDocuments}"></p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.docsPositiveAmount">
+			<p class="md-info">Docs. Positivos</p>
+			<p class="md-infoB">{{operationDetailVM.operation.docsPositiveCount}} - <span data-currency="::{value:operationDetailVM.operation.docsPositiveAmount}"></span></p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.docsNegativeAmount">
+			<p class="md-info">Docs. Negativos</p>
+			<p class="md-infoB">{{operationDetailVM.operation.docsNegativeCount}} - <span data-currency="::{value:operationDetailVM.operation.docsNegativeAmount}"></span></p>
+		</li>
+	</ul>
+	
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Observaciones</h2>
+		</div>
+	</div>				
+	<ul class="mod_details mod_details_operation">
+	  <li class="md-item"> 
+		<p class="md-info">
+			<p class="md-numOper-cncl pre">
+				{{operationDetailVM.operation.dsReject | defaultObservationMask}}
+			</p>
+		</p>
+	  </li>
+	</ul>		
+	
+	<ul class="mod_tableList" data-ng-if="::operationDetailVM.operation.hasProviders">
+		<li class="tl-item"><a data-ng-click="operationDetailVM.goProviders()" title="Proveedores" class="tl-link ico-arrowR-ora tl-oneItem">Proveedores</a></li>
+	</ul>
+	
+</div>

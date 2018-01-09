@@ -1,0 +1,89 @@
+<main>
+    <h1 data-page-title class="hideAccessible" data-ng-if="::operationsSignedsVM.isSign">Operaciones firmadas</h1> 
+    <h1 data-page-title class="hideAccessible" data-ng-if="::operationsSignedsVM.isReject">Operaciones rechazadas</h1> 
+	
+	<div class="mod_infoAccount no_padding_top">
+		<div class="gridContainer mod_titles_border">			
+			<div class="wrapper">
+				<div class="row">
+					<div class="col-xs-12">
+						<steps data-steps-options="::{count: 3, current: 3}"></steps>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="gridContainer">
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-xs-12">
+					<ul class="mod_sendConfirm">
+						<li class="sdc-item">
+							<p class="sdc-text">
+								<span class="ico-confirm-dos" data-ng-class="::{'error': operationsSignedsVM.allHaveErrors, 'warning': operationsSignedsVM.someHaveErrors}">
+									<span data-ng-if="::operationsSignedsVM.isSign">
+										<span data-ng-if="::operationsSignedsVM.operations.length > 1">
+											<span data-ng-if="::!operationsSignedsVM.allHaveErrors && !operationsSignedsVM.someHaveErrors">Sus operaciones se firmaron con &eacute;xito</span>
+											<span data-ng-if="::(operationsSignedsVM.someHaveErrors && operationsSignedsVM.nroSuccess > 1)">S&oacute;lo {{::operationsSignedsVM.nroSuccess}} operaciones se pudieron firmar</span>
+											<span data-ng-if="::(operationsSignedsVM.someHaveErrors && operationsSignedsVM.nroSuccess === 1)">S&oacute;lo 1 operaci&oacute;n se pudo firmar</span>
+											<span data-ng-if="::operationsSignedsVM.allHaveErrors">Las operaciones no se pudieron firmar</span>
+										</span>
+										<span data-ng-if="::operationsSignedsVM.operations.length === 1">
+											<span data-ng-if="::!operationsSignedsVM.allHaveErrors">La operaci&oacute;n se firm&oacute; con &eacute;xito</span>
+											<span data-ng-if="::operationsSignedsVM.allHaveErrors">La operaci&oacute;n no se pudo firmar</span>
+										</span>
+									</span>
+									<span data-ng-if="::operationsSignedsVM.isReject">
+										<span data-ng-if="::operationsSignedsVM.operations.length > 1">
+											<span data-ng-if="::(!operationsSignedsVM.allHaveErrors && !operationsSignedsVM.someHaveErrors)">Sus operaciones se rechazaron con &eacute;xito</span>
+											<span data-ng-if="::(operationsSignedsVM.someHaveErrors && operationsSignedsVM.nroSuccess > 1)">S&oacute;lo {{::operationsSignedsVM.nroSuccess}} operaciones se pudieron rechazar</span>
+											<span data-ng-if="::(operationsSignedsVM.someHaveErrors && operationsSignedsVM.nroSuccess === 1)">S&oacute;lo 1 operaci&oacute;n se pudo rechazar</span>
+											<span data-ng-if="::operationsSignedsVM.allHaveErrors">Las operaciones no se pudieron rechazar</span>
+										</span>
+										<span data-ng-if="::operationsSignedsVM.operations.length === 1">
+											<span data-ng-if="::!operationsSignedsVM.allHaveErrors">La operaci&oacute;n se rechaz&oacute; con &eacute;xito</span>
+											<span data-ng-if="::operationsSignedsVM.allHaveErrors">La operaci&oacute;n no se pudo firmar</span>
+										</span>
+									</span>
+								</span>
+							</p>
+						</li>
+					</ul>
+					
+					<p class="text-info" data-ng-if="::operationsSignedsVM.isSign">
+						<span data-ng-if="::operationsSignedsVM.operations.length > 1">
+							<span data-ng-if="::(!operationsSignedsVM.allHaveErrors && !operationsSignedsVM.someHaveErrors && operationsSignedsVM.hasPendingSent)">Sus operaciones se encuentran en estado Pendiente de env&iacute;o. Para enviarlas al Banco ingrese a la opci&oacute;n Operaciones pendientes de env&iacute;o.</span>
+							<span data-ng-if="::(operationsSignedsVM.someHaveErrors && operationsSignedsVM.hasPendingSent)">Sus operaciones firmadas se encuentran en estado Pendiente de env&iacute;o. Para enviarlas al Banco ingrese a la opci&oacute;n Operaciones pendientes de env&iacute;o.</span>
+							<span data-ng-if="::operationsSignedsVM.allHaveErrors"></span>
+						</span>
+						<span data-ng-if="::operationsSignedsVM.operations.length === 1">
+							<span data-ng-if="::(!operationsSignedsVM.allHaveErrors && !operationsSignedsVM.someHaveErrors && operationsSignedsVM.hasPendingSent)">Su operaci&oacute;n se encuentra en estado Pendiente de env&iacute;o. Para enviarla al Banco ingrese a la opci&oacute;n Operaciones pendientes de env&iacute;o.</span>
+							<span data-ng-if="::operationsSignedsVM.allHaveErrors"></span>
+						</span>
+					</p>
+					
+					<operation-list class="mts"
+						data-options="{
+							list: operationsSignedsVM.operations
+						}"
+					></operation-list>
+					
+					<ul class="mod_details" data-ng-if="::operationsSignedsVM.isReject">
+						<li class="md-item"> 
+							<p class="md-info">Motivo del rechazo</p>
+							<p class="md-numOper-cncl">{{::operationsSignedsVM.reasonRejection}}</p>
+						</li>
+					</ul>
+					
+					<div class="mod_form">
+						<div class="mfm-boxBTN">
+							<input id="btn03" type="button" data-ng-click="operationsSignedsVM.back()" value="Regresar" class="mfm-button mfm-dbl cancel">
+							<input id="btn04" type="button" data-ng-if="::(operationsSignedsVM.isSign && !operationsSignedsVM.allHaveErrors && operationsSignedsVM.hasPendingSent && operationsSignedsVM.flagSend)" data-ng-click="operationsSignedsVM.goSend()" value="Enviar ahora" class="mfm-button mfm-dbl">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

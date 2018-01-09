@@ -1,0 +1,86 @@
+<div>
+	<div data-ng-include="'components/operation-detail/template/transacciones/datos-generales.html'"></div>
+	
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Datos de la cuenta origen</h2>
+		</div>
+	</div>	
+	<ul class="mod_details mod_details_operation">	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originAccountNumber">
+			<p class="md-info">Cuenta</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originAccountNumber | accountNumberMask}}</p>
+			<p class="md-smallInfo">{{::operationDetailVM.operation.originAccountAlias}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originAccountType">
+			<p class="md-info">Tipo</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originAccountType}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originCurrencyType">
+			<p class="md-info">Moneda</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originCurrencyType | currencyDesc}}</p>
+		</li>	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originCompany">
+			<p class="md-info">Nombre</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originCompany}}</p>
+		</li>
+	</ul>
+	
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Datos del pago</h2>
+		</div>
+	</div>
+	<ul class="mod_details mod_details_operation">	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsPaymentServicesType">
+			<p class="md-info">Clasificaci&oacute;n del pago</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsPaymentServicesType}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsPaymentServicesCompany">
+			<p class="md-info">Empresa proveedora</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsPaymentServicesCompany}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsPaymentServices">
+			<p class="md-info">Servicio</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsPaymentServices}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.documentType">
+			<p class="md-info">Tipo de documento</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.documentType | documentTypeMask}} {{::operationDetailVM.operation.documentNumber}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.bookingCode">
+			<p class="md-info">C&Oacute;DIGO RESERVA</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.bookingCode}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsOwnerService">
+			<p class="md-info">Titular</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsOwnerService}}</p>
+		</li>	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsMsgIdUser">
+			<p class="md-info">{{operationDetailVM.operation.dsMsgIdUser}}</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.numericalCode}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.vlOperation">
+			<p class="md-info">Total</p>
+			<p class="md-monto" data-currency="::{type:operationDetailVM.operation.currencyVlOperation, value:operationDetailVM.operation.vlOperation}"></p>
+		</li>
+	</ul>	
+	
+	<div data-ng-if="::(operationDetailVM.operation.serviceDetail && operationDetailVM.operation.dsMode)" data-ng-include="'components/operation-detail/template/pago-servicios/pago-servicios-'+operationDetailVM.operation.dsMode+'.html'" ></div>
+		
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Observaciones</h2>
+		</div>
+	</div>				
+	<ul class="mod_details mod_details_operation">
+	  <li class="md-item"> 
+		<p class="md-info">
+			<p class="md-numOper-cncl pre">
+				{{operationDetailVM.operation.dsReject | defaultObservationMask}}
+			</p>
+		</p>
+	  </li>
+	</ul>	
+	
+</div>

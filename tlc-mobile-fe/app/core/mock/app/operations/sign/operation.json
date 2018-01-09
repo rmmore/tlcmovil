@@ -1,0 +1,15 @@
+{
+	"response": { 
+		"flagSend": true,
+		"operationResponse":
+		[
+			{"sqOperation": 1, "statusCode": "12" , "errorDesc" : null}, 
+			{"sqOperation": 2, "statusCode": "13" ,"errorDesc" : null},
+			{"sqOperation": 3, "statusCode": "11" ,"errorDesc" : "ERRORRRR"}, 
+			{"sqOperation": 4, "statusCode": "13" ,"errorDesc" : null}, 
+			{"sqOperation": 5, "statusCode": "11" ,"errorDesc" : "ERRORRR"}, 
+			{"sqOperation": 6, "statusCode": "12" ,"errorDesc" : null}, 
+			{"sqOperation": 7, "statusCode": "13" ,"errorDesc" : null}
+		]
+	}
+}

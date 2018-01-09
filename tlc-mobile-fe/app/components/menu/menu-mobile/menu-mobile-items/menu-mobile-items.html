@@ -1,0 +1,17 @@
+<nav class="mod_navMenu">
+	<ul class="nvm-list nvm-level-1" data-ng-show="menuMobileItemsVM.menu.length">
+		<li data-ng-repeat="item_lvl1 in menuMobileItemsVM.menu" class="nvm-items nvm-active" data-ng-class="::item_lvl1.cssClass"> 
+			<a 	id="link_menu_{{::item_lvl1.id}}" class="nvm-link"
+				data-ng-init="item_lvl1.toggle = false"
+				data-ng-click="item_lvl1.menuItems.length > 0 ? menuMobileItemsVM.toggleMenuItems(item_lvl1) : mainVM.goPath(item_lvl1.path)" 
+				data-ng-class="{'ico-arrowD': item_lvl1.menuItems.length, 'active': item_lvl1.toggle}"
+				data-ng-href="{{::item_lvl1.url}}"
+			>{{::item_lvl1.description}}</a>
+			<div data-uib-collapse="!item_lvl1.toggle">
+				<ul data-ng-repeat="item_lvl2 in ::item_lvl1.menuItems track by item_lvl2.id" class="nvm-list nvm-level-2">
+					<li class="nvm-items"> <a  id="link_menu_{{::item_lvl1.id}}" data-ng-click="mainVM.goPath(item_lvl2.path);" data-ng-href="{{::item_lvl2.url}}" target="{{::item_lvl2.url?'_blank':''}}" class="nvm-link">{{::item_lvl2.description}}<span class="nav-number">{{item_lvl2.nroOperations}}</span></a></li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+</nav>

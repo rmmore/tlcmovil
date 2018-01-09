@@ -1,0 +1,22 @@
+<html>
+	<body>
+		<script src="cookies.js"></script>
+		
+		<script type="text/javascript">
+		
+			createCookie('CAS-TOKEN', '', -1);
+			createCookie('AUTH-TOKEN', '', -1);
+			createCookie('CSRF-TOKEN', '', -1);
+			
+			function login() {
+				window.location.href = 'login.html';
+			}
+		
+			login();
+			
+		</script>
+		
+		<h1>CAS Server - Logout</h1>
+		<button onclick="javascript:login()">Ingresar</button>
+	</body>
+</html>

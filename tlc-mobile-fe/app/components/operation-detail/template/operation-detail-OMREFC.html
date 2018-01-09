@@ -1,0 +1,124 @@
+<div>
+	<div data-ng-include="'components/operation-detail/template/transacciones/datos-generales.html'"></div>
+	
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Datos de la cuenta origen</h2>
+		</div>
+	</div>	
+	<ul class="mod_details mod_details_operation">	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originAccount">
+			<p class="md-info">Cuenta</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originAccount | accountNumberMask}}</p>
+			<p class="md-smallInfo">{{::operationDetailVM.operation.originAccountAlias}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originAccountType">
+			<p class="md-info">Tipo</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originAccountType}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.currency">
+			<p class="md-info">Moneda</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.currency | currencyDesc}}</p>
+		</li>	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsAccountName">
+			<p class="md-info">Nombre</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsAccountName}}</p>
+			<p class="md-smallInfo">RUC {{::operationDetailVM.operation.dsBeneficiaryIdc}}</p>
+		</li>
+	</ul>
+	
+	<div class="row" data-ng-if="::operationDetailVM.operation.listCurrency.length">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Datos de la operaci&oacute;n</h2>
+		</div>
+	</div>	
+
+	<div class="table-mod-panel" data-ng-if="::operationDetailVM.operation.listCurrency.length">
+		<table>
+			<tbody>
+				<tr>
+					<td class="table-level1">Tipo</td>
+					<td class="table-level1">Denominaci&oacute;n</td>
+					<td class="table-level1">Cantidad</td>
+				</tr>
+				<tr data-ng-repeat-start="operationData in operationDetailVM.operation.listCurrency track by operationData.cdType" data-ng-if="::operationData.listCurrencyDetail.length">
+					<td class="table-level1" rowspan="{{::(operationData.listCurrencyDetail.length + 1)}}">{{::operationData.cdType | monetaryUnitMask}}</td>
+				</tr>
+				<tr data-ng-repeat="denomination in operationData.listCurrencyDetail track by $index">
+					<td class="table-level2" data-currency="::{type:operationDetailVM.operation.currency, value: denomination.dsDenomination}"></td>
+					<td class="table-level3">{{::(denomination.vlDenomination || 0)}}</td>			
+				</tr>
+				<tr data-ng-repeat-end></tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<ul class="mod_details mod_details_operation" data-ng-if="::operationDetailVM.operation.vlOperation">	
+		<li class="md-item">
+			<p class="md-info">Monto total</p>
+			<p class="md-monto" data-currency="::{type:operationDetailVM.operation.currency, value:operationDetailVM.operation.vlOperation}"></p>
+		</li>
+	</ul>	
+	
+	<ul class="mod_details mod_details_operation">	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsTransport">
+			<p class="md-info">Transportadora</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsTransport}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dtDelivery">
+			<p class="md-info">Fecha de entrega</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dtDelivery | dateMask}} {{::operationDetailVM.operation.hrDelivery}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsReference">
+			<p class="md-info">Referencia</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsReference}}</p>
+		</li>
+	</ul>	
+	
+	<div class="row" data-ng-if="::operationDetailVM.operation.dsRegion">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Lugar de entrega</h2>
+		</div>
+	</div>	
+	
+	<ul class="mod_details mod_details_operation" data-ng-if="::operationDetailVM.operation.dsRegion">	
+		<li class="md-item">
+			<p class="md-info">Localidad</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsRegion}} - {{::operationDetailVM.operation.dsProvince}} - {{::operationDetailVM.operation.dsDistrict}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsAddress">
+			<p class="md-info">Direcci&oacute;n</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsAddress}}</p>
+		</li>
+	</ul>
+	
+	<div class="row" data-ng-if="::operationDetailVM.operation.listContacts.length">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Datos de la persona responsable de la recepci&oacute;n de mesa</h2>
+		</div>
+	</div>	
+	
+	<ul class="mod_details mod_details_operation" data-ng-if="::operationDetailVM.operation.listContacts.length">	
+		<li class="md-item" data-ng-repeat="responsible in operationDetailVM.operation.listContacts track by responsible.dsContactIdc">
+			<p class="md-info">Nombre / Documento</p>
+			<p class="md-infoB">{{::responsible.dsContact}}</p>
+			<p class="md-smallInfo">{{::responsible.cdContactIdcType | documentTypeMask}} {{::responsible.dsContactIdc}}  {{::responsible.dsContactCorrelativeIdc}}</p>
+		</li>
+	</ul>
+		
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Observaciones</h2>
+		</div>
+	</div>				
+	<ul class="mod_details mod_details_operation">
+	  <li class="md-item"> 
+		<p class="md-info">
+			<p class="md-numOper-cncl pre">
+				{{operationDetailVM.operation.dsReject | defaultObservationMask}}
+			</p>
+		</p>
+	  </li>
+	</ul>	
+	
+</div>

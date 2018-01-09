@@ -1,0 +1,34 @@
+{
+	"response": {
+		"listOperationTypeItemDto": [
+			{
+			  "id": 2,
+			  "name": "Abandono por servicio de recaudación"
+			},
+			{
+			  "id": 3,
+			  "name": "Cheques devueltos"
+			},
+			{
+			  "id": 4,
+			  "name": "Depósitos en efectivo"
+			},
+			{
+			  "id": 5,
+			  "name": "Entrega de cheques"
+			},
+			{
+			  "id": 6,
+			  "name": "Cheques pagados"
+			},
+			{
+			  "id": 7,
+			  "name": "Cargos"
+			},
+			{
+			  "id": 8,
+			  "name": "Abonos"
+			}
+	   ]
+	}
+}

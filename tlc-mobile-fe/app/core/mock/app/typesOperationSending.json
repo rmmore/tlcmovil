@@ -1,0 +1,96 @@
+{
+  "response": {"listOperationTypeItemDto":[
+    {
+      "id": 2,
+      "name": "Pagos masivos (Todos)",
+      "items": [
+			{
+			  "id": 3,
+			  "name": "Haberes"
+			},
+			{
+			  "id": 4,
+			  "name": "Proveedores"
+			},
+			{
+			  "id": 5,
+			  "name": "CTS"
+			},
+			{
+			  "id": 6,
+			  "name": "Dividendos"
+			}
+		]
+    },
+    {
+      "id": 7,
+      "name": "Factoring"
+    },
+    {
+      "id": 8,
+      "name": "Transferencias, pagos y varios y otras (Todas)",
+      "items": [
+		{
+		  "id": 9,
+		  "name": "A cuentas propias de BCP"
+		},
+		{
+		  "id": 10,
+		  "name": "A cuentas de terceros BCP"
+		},
+		{
+		  "id": 11,
+		  "name": "A cuentas propias BCP Miami"
+		},
+		{
+		  "id": 12,
+		  "name": "A otros bancos locales"
+		},
+		{
+		  "id": 13,
+		  "name": "A bancos del exterior"
+		},
+		{
+		  "id": 14,
+		  "name": "A cuentas propias con tipo de cambio negociado"
+		},
+		{
+		  "id": 15,
+		  "name": "A cuentas de terceros con tipo de cambio negociado"
+		},
+		{
+		  "id": 16,
+		  "name": "A cuentas locales con tipo de cambio negociado"
+		},
+		{
+		  "id": 17,
+		  "name": "Suscripciones de Fondos Mutuos"
+		},
+		{
+		  "id": 18,
+		  "name": "Rescates de fondos mutuos"
+		},
+		{
+		  "id": 19,
+		  "name": "Pago de documentos (letras y facturas)"
+		},
+		{
+		  "id": 20,
+		  "name": "Pago de servicios"
+		},
+		{
+		  "id": 21,
+		  "name": "Pago de tarjetas de creditos"
+		},
+		{
+		  "id": 22,
+		  "name": "Disposicion de efectivo de tarjetas de credito"
+		},
+		{
+		  "id": 23,
+		  "name": "Remesas de efectivo"
+		}
+	  ]
+    }    
+   ]}
+}

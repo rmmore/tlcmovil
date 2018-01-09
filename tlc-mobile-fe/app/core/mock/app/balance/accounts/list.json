@@ -1,0 +1,130 @@
+{
+	"response": { 
+		"paginationAccount": {
+			"count": 100,  
+			"pages": 5,  
+			"list": [
+				{
+					"accountType": {"name": "Cuenta corriente"}, 
+					"number": "12312345678001",		 
+					"currency": "0001",
+					"contableBalance": 3520.23
+				},
+				{
+					"accountType": {"name": "Cuenta ahorros"}, 
+					"number": "45256978125002",	 
+					"currency": "0001",
+					"contableBalance": 9999.23
+				},
+				{
+					"accountType": {"name": "Cuenta maestra"},
+					"number": "12312345678003",
+					"currency": "0001",
+					"contableBalance": 3520.23
+				},
+				{
+					"accountType": {"name": "Cuenta corriente"}, 
+					"number": "12312345678004",		 
+					"currency": "1001",
+					"contableBalance": -3520.23
+				},
+				{
+					"accountType": {"name": "Cuenta ahorros"}, 
+					"number": "45256978125005",	 
+					"currency": "0001",
+					"contableBalance": 9999.23
+				},
+				{
+					"accountType": {"name": "Cuenta maestra"}, 
+					"number": "12312345678006",
+					"currency": "0001",
+					"contableBalance": 3520.23
+				},
+				{
+					"accountType": {"name": "Cuenta corriente"}, 
+					"number": "12312345678007",		 
+					"currency": "0001",
+					"contableBalance": 3520.23
+				},
+				{
+					"accountType": {"name": "Cuenta ahorros"}, 
+					"number": "45256978125008",	 
+					"currency": "0001",
+					"contableBalance": 9999.23
+				},
+				{
+					"accountType": {"name": "Cuenta maestra"}, 
+					"number": "12312345678009",
+					"currency": "0001",
+					"contableBalance": 3520.23
+				},
+				{
+					"accountType": {"name": "Cuenta corriente"}, 
+					"number": "12312345678010",		 
+					"currency": "0001",
+					"contableBalance": 3520.23
+				},
+				{
+					"accountType": {"name": "Cuenta ahorros"}, 
+					"number": "45256978125011",	 
+					"currency": "0001",
+					"contableBalance": 9999.23
+				},
+				{
+					"accountType": {"name": "Cuenta maestra"}, 
+					"number": "12312345678012",
+					"currency": "0001",
+					"contableBalance": 3520.23
+				},
+				{
+					"accountType": {"name": "Cuenta corriente"}, 
+					"number": "12312345678013",		 
+					"currency": "0001",
+					"contableBalance": 3520.23
+				},
+				{
+					"accountType": {"name": "Cuenta ahorros"}, 
+					"number": "45256978125014",	 
+					"currency": "0001",
+					"contableBalance": 9999.23
+				},
+				{
+					"accountType": {"name": "Cuenta maestra"}, 
+					"number": "12312345678015",
+					"currency": "0001",
+					"contableBalance": 3520.23
+				},
+				{
+					"accountType": {"name": "Cuenta corriente"}, 
+					"number": "12312345678016",		 
+					"currency": "0001",
+					"contableBalance": 3520.23
+				},
+				{
+					"accountType": {"name": "Cuenta ahorros"}, 
+					"number": "45256978125017",	 
+					"currency": "0001",
+					"contableBalance": 9999.23
+				},
+				{
+					"accountType": {"name": "Cuenta maestra"}, 
+					"number": "12312345678018",
+					"currency": "0001",
+					"contableBalance": 3520.23
+				},
+				{
+					"accountType": {"name": "Cuenta corriente"}, 
+					"number": "12312345678019",		 
+					"currency": "0001",
+					"contableBalance": 3520.23
+				},
+				{
+					"accountType": {"name": "Cuenta ahorros"}, 
+					"number": "45256978125020",	 
+					"currency": "0001",
+					"contableBalance": 9999.23
+				}
+			]
+		}
+	}
+}

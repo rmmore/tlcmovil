@@ -1,0 +1,42 @@
+<main data-ng-show="::operationSentVM.showMain">
+	<h1 data-page-title class="hideAccessible">Operaci&oacute;n enviada</h1> 
+	
+	<div class="gridContainer">
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-xs-12">			
+					<div class="mod_details_send">
+					
+						<ul class="mod_sendConfirm">
+							<li class="sdc-item">
+								<p class="sdc-text">
+									<span class="ico-confirm-dos" data-ng-class="::{'error': operationSentVM.operation.errorDescription}">
+										<span data-ng-if="::!operationSentVM.operation.errorDescription">El proceso de env&iacute;o ha finalizado</span>
+										<span data-ng-if="::operationSentVM.operation.errorDescription">La operaci&oacute;n no ha sido enviada</span>
+									</span>
+								</p>
+							</li>
+						</ul>
+													
+						<ul data-ng-if="::operationSentVM.operation.statusCode" class="mod_details mod_details_operation mts">	
+							<li class="md-item">
+								<p class="md-info">Estado</p>
+								<p class="md-infoB"><operation-status data-status-code="operationSentVM.operation.statusCode"></operation-status></p>
+							</li>
+						</ul>						
+							
+						<uie-alert data-ng-if="::operationSentVM.operation.errorDescription" data-options="::{type:'error', message: operationSentVM.operation.errorDescription, closeable: false, show: true}" class="mbxs mts"></uie-alert>
+							
+						<operation-detail data-operation-detail-options="::operationSentVM.options"></operation-detail>
+						
+						<div class="mod_form">
+							<div class="mfm-boxBTN">
+								<input id="btn03" type="button" data-ng-click="operationSentVM.back()" value="Regresar" class="mfm-button mfm-dbl cancel">
+							</div>
+						</div>
+					</div>			
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

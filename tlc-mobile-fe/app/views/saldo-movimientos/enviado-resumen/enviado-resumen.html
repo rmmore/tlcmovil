@@ -1,0 +1,36 @@
+<main>
+	<h1 data-page-title class="hideAccessible">Saldos y Movimientos</h1> 
+	<div class="gridContainer">
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-xs-12">
+					<ul class="mod_sendConfirm">
+						<li class="sdc-item">
+							<p class="sdc-text"><span class="ico-confirm-dos">El archivo se envi&oacute; correctamente</span></p>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-12">
+					<h2 class="hideAccessible">Detalles de env&iacute;o</h2>
+					<ul class="mod_details">
+						<li class="md-item">
+							<p class="md-info">Tipo de archivo</p>
+							<p class="md-infoB">{{::sentSummaryVM.summary.typeFile.name}}</p>
+						</li>
+						<li class="md-item" data-ng-show="sentSummaryVM.summary.typeSeparator.id">
+							<p class="md-info">Separador</p>
+							<p class="md-infoB">{{::sentSummaryVM.summary.typeSeparator.name}}</p>
+						</li>
+						<li class="md-item">
+							<p class="md-info">Destinatarios</p>
+							<div class="movimientos-destinatarios-resumen">
+								<p class="md-infoB " data-ng-repeat="mail in ::sentSummaryVM.summary.mails track by $index">{{::mail}}</p>
+							</div>
+							<!-- <p class="md-infoB">María Pérez &lt;mariaperez@gmail.com&gt;</p> -->
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

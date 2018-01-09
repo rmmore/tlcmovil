@@ -1,0 +1,68 @@
+<div class="row">
+	<div class="col-xs-12 mod_titles mod_details_operation">
+		<h2 class="mt-titleH3 icon-detail">Datos generales</h2>
+	</div>
+</div>	
+<ul class="mod_details mod_details_operation">	
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.dsOperation">
+		<p class="md-info">Tipo de operaci&oacute;n</p>
+		<p class="md-infoB">{{::operationDetailVM.operation.dsOperation}}</p>
+	</li>
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.sqOperation">
+		<p class="md-info">Número de operación</p>
+		<p class="md-infoB">{{::operationDetailVM.operation.sqOperation}}</p>
+	</li>
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.dtProcess">
+		<p class="md-info">Fecha de proceso</p>
+		<p class="md-infoB">{{::operationDetailVM.operation.dtProcess | dateMask}}</p>
+	</li>
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.cdStatus">
+		<p class="md-info">Estado</p>
+		<p class="md-infoB">{{::operationDetailVM.operation.cdStatus | operationStatusMask}}</p>
+	</li>
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.dsFullName">
+		<p class="md-info">Preparada por</p>
+		<p class="md-infoB">{{::operationDetailVM.operation.dsFullName}}</p>
+	</li>
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.dtPrepared">
+		<p class="md-info">Fecha de preparaci&oacute;n</p>
+		<p class="md-infoB">{{::operationDetailVM.operation.dtPrepared | dateMask:'dateTime'}}</p>
+	</li>
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.dsFinalState">
+		<p class="md-info">Fecha de estado final</p>
+		<p class="md-infoB">{{::operationDetailVM.operation.dsFinalState == 'REC' ? 'Rechazada' : 'Devuelta'}}</p>
+	</li>
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.listSignatoryBy.length">
+		<p class="md-info">Firmada por</p>
+		<p 	data-ng-repeat="signatory in operationDetailVM.operation.listSignatoryBy track by $index" 
+			data-ng-class="{'md-infoB': $first, 'md-smallInfo text-bold': !$first}">{{::signatory}}</p>
+	</li>
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.rejectUser">
+		<p class="md-info">Rechazada por</p>
+		<p class="md-infoB">{{::operationDetailVM.operation.rejectUser}}</p>
+	</li>
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.annulledUser">
+		<p class="md-info">Anulada por</p>
+		<p class="md-infoB">{{::operationDetailVM.operation.annulledUser}}</p>
+	</li>
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.dtExpiration">
+		<p class="md-info">Fecha de expiraci&oacute;n</p>
+		<p class="md-infoB">{{::operationDetailVM.operation.dtExpiration | dateMask}}</p>
+	</li>		
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.nroConsult">
+		<p class="md-info">N° Consulta al Funcionario de negocios</p>
+		<p class="md-infoB">{{::operationDetailVM.operation.nroConsult}}</p>
+	</li>
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.sendingUser">
+		<p class="md-info">Enviada por</p>
+		<p class="md-infoB">{{::operationDetailVM.operation.sendingUser}}</p>
+	</li>	
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.dtSending">
+		<p class="md-info">Fecha de envío</p>
+		<p class="md-infoB">{{::operationDetailVM.operation.dtSending | dateMask}}</p>
+	</li>	
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.dtFinalState">
+		<p class="md-info">Fecha de estado final</p>
+		<p class="md-infoB">{{::operationDetailVM.operation.dtFinalState | dateMask}}</p>
+	</li>
+</ul>

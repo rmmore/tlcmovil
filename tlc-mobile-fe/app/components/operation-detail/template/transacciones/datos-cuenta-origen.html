@@ -1,0 +1,38 @@
+<div class="row">
+	<div class="col-xs-12 mod_titles mod_details_operation">
+		<h2 class="mt-titleH3 icon-detail">{{:: operationDetailVM.originAccountTitle || 'Datos de la cuenta origen'}}</h2>
+	</div>
+</div>	
+<ul class="mod_details mod_details_operation">	
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.originClientName">
+		<p class="md-info">Nombre del Cliente</p>
+		<p class="md-infoB">{{::operationDetailVM.operation.originClientName}}</p>
+		<p class="md-smallInfo">{{::operationDetailVM.operation.originDocumentType | documentTypeMask}} {{::operationDetailVM.operation.originDocumentNumber}}</p>
+	</li>	
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.originAccountNumber">
+		<p class="md-info">Cuenta</p>
+		<p class="md-infoB">{{::operationDetailVM.operation.originAccountNumber | accountNumberMask}}</p>
+		<p class="md-smallInfo" data-ng-if="::operationDetailVM.operation.originAccountAlias">{{::operationDetailVM.operation.originAccountAlias}}</p>
+	</li>
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.originAccountType">
+		<p class="md-info">Tipo</p>
+		<p class="md-infoB">{{::operationDetailVM.operation.originAccountType}}</p>
+	</li>
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.originCurrencyType">
+		<p class="md-info">Moneda</p>
+		<p class="md-infoB">{{::operationDetailVM.operation.originCurrencyType | currencyDesc}}</p>
+	</li>	
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.originName">
+		<p class="md-info">Nombre</p>
+		<p class="md-infoB">{{::operationDetailVM.operation.originName}}</p>
+		<p class="md-smallInfo" data-ng-if="::operationDetailVM.operation.dsBeneficiaryIdc">RUC {{::operationDetailVM.operation.dsBeneficiaryIdc}}</p>
+	</li>
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.originPhone">
+		<p class="md-info">Tel&eacute;fono</p>
+		<p class="md-infoB">{{::operationDetailVM.operation.originPhone}}</p>
+	</li>
+	<li class="md-item" data-ng-if="::operationDetailVM.operation.originMail">
+		<p class="md-info">Correo electr&oacute;nico</p>
+		<p class="md-infoB">{{::operationDetailVM.operation.originMail}}</p>
+	</li>
+</ul>

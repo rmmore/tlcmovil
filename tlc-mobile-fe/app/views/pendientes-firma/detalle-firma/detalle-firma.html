@@ -1,0 +1,24 @@
+<main data-ng-show="::signatureDetailVM.showMain">
+	<h1 data-page-title class="hideAccessible">Detalle de firma</h1> 
+	
+	<div class="gridContainer">
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="mod_details_send">
+					
+						<operation-detail data-operation-detail-options="::signatureDetailVM.options"></operation-detail>
+						
+						<div class="mod_form">
+							<div class="mfm-boxBTN">
+								<input id="btn03" type="button" data-ng-click="signatureDetailVM.reject()" value="Rechazar" class="mfm-button mfm-dbl">
+								<input id="btn04" type="button" data-ng-click="signatureDetailVM.sign()" value="Firmar" class="mfm-button mfm-dbl">
+							</div>
+						</div>						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

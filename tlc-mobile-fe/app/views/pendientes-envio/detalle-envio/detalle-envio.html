@@ -1,0 +1,27 @@
+<main data-ng-show="::shippingDetailVM.showMain">
+	<h1 data-page-title class="hideAccessible">Detalle de env&iacute;o</h1> 
+	
+	<div class="gridContainer">
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="mod_details_send">						
+
+						<operation-detail data-operation-detail-options="::shippingDetailVM.options"></operation-detail>
+												
+						<div class="mod_form">
+							<div class="mfm-boxBTN">
+								<input id="btn03" type="button" data-ng-click="shippingDetailVM.back()" value="Regresar" class="mfm-button mfm-dbl cancel">
+								<label for="btn03" class="hideAccessible">Regresar</label>
+								<input id="btn04" type="button" data-ng-disabled="!shippingDetailVM.options.flagEnable" data-ng-click="shippingDetailVM.send()"
+										value="Enviar" class="mfm-button mfm-dbl">
+								<label for="btn04" class="hideAccessible">Enviar</label>
+							</div>
+						</div>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

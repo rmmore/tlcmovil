@@ -1,0 +1,45 @@
+.keypad-frame {
+  width: 90px;
+}
+
+/*==============================================
+KEYPAD
+===============================================*/
+.buttonKeyNumber {
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  height: 21px;
+  width: 25px;
+}
+.buttonKeyNumberClear {
+  background-color: #F06E35;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 10px;
+  text-align: center;
+  float: left;
+  height: 21px;
+  width: 50px;
+}
+.div-keypad-input-container {
+  display: inline-block;
+  width: 100%;
+  margin: 5px 0 5px 5px
+}
+.input-keypad {
+  border: 1px solid #CCC;
+  color: #909090;
+  font-family: "Flexo";
+  font-size: 16px;
+  letter-spacing: 3px;
+  line-height: 1px;
+  text-align: center;
+  width:130px;
+}
+.titles-pass {
+	color: #808080;
+	font-size: 12px;
+	margin: 0;
+}

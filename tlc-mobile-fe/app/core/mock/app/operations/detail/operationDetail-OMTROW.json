@@ -1,0 +1,41 @@
+{
+  "response": {
+	"id": 1,
+	
+  	"dsOperation": "Transferencias a cuentas propias BCP",
+  	"sqOperation": "58124592",
+  	"dtProcess": "1469217456468",
+  	"cdStatus": "11",
+  	"dsFullName": "Jhon Perez",
+  	"dtPrepared": "1469217456468",
+  	"listSignatoryBy": ["Juan Gamboa Zuñiga", "Camilo Lazo Robles"],
+  	"dtExpiration": "1469217456468",
+  	"nroConsult": "5478412568",
+	
+  	"dsCompany": "BANCO DE COMERCIO",
+  	"originAccountAlias": "BANCO DE COMERCIO",
+  	"originAccountNumber": "1931341240188",
+	"originAccountType": "Corriente",
+	"originCurrencyType": "1001",
+	
+	"destinationName": "FACTORIA EL DIAMANTE S.A",
+	"destinationAccountAlias": "FACTORIA EL DIAMANTE",
+	"destinationAccountNumber": "1910335065094",
+	"destinationAccountType": "Corriente",
+	"destinationCurrencyType": "0001",
+	"destinationReference": "12345",
+	"destinationReferenceBeneficiary": "referencia",
+	
+	"vlOperation": 120.00,
+	"referenceExchangeType": 3.1,
+	
+	"chargeAmount": 120.00,
+	"paymentAmount": 375.0,
+	"exchangeType": 3.2,
+	
+	"mailConfirmation": "jperez@mail.com",
+	"mailMessage": "Mensaje del correo electronico",
+	
+  	"observations": "Observaciones"
+  }
+}

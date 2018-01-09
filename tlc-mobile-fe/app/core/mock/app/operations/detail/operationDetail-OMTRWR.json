@@ -1,0 +1,33 @@
+{
+  "response": {
+	"id": 1,
+	
+  	"dsOperation": "A otros bancos locales diferidas",
+  	"sqOperation": "58124592",
+  	"cdStatus": "11",
+  	"dsFullName": "Jhon Perez",
+  	"dtPrepared": "1469217456468",
+  	"listSignatoryBy": ["Juan Gamboa Zuñiga", "Camilo Lazo Robles"],
+  	"dtExpiration": "1469217456468",
+  	"nroConsult": "5478412568",
+	
+  	"originCompany": "BANCO DE COMERCIO",
+  	"originDocType": "5",
+  	"originRUC": "20100047307",
+  	"originAccount": "19187654321073",
+	"originAccountType": "Corriente",
+	"originAccountAlias": "BANCO DE COMERCIO",
+	"originCurrencyType": "1001",
+	
+	"dsBank": "INTERBANK",
+	"destinationCurrencyType": "1001",
+	"vlOperation": 15.00,
+	"destinationCCI": "003-297-0030000523981-36",
+	"destinationBeneficiary": "JUAN ALONSO PEREZ GONZALES",
+	"destinationITF": "Afecta",
+	"destinationDocumentType": "6",
+	"destinationDocumentNumber": "ALDC1234",
+	
+  	"observations": "Observaciones"
+  }
+}

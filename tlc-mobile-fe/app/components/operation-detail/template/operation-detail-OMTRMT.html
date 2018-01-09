@@ -1,0 +1,100 @@
+<div>
+	<div data-ng-include="'components/operation-detail/template/transacciones/datos-generales.html'"></div>
+	
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Datos de la cuenta origen</h2>
+		</div>
+	</div>	
+	<ul class="mod_details mod_details_operation">	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originAccountNumber">
+			<p class="md-info">Cuenta</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originAccountNumber | accountNumberMask}}</p>
+			<p class="md-smallInfo">{{::operationDetailVM.operation.originAccountAlias}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originAccountType">
+			<p class="md-info">Tipo</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originAccountType}}</p>
+		</li>	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originCurrencyType">
+			<p class="md-info">Moneda</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originCurrencyType | currencyDesc}}</p>
+		</li>	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originName">
+			<p class="md-info">Nombre</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originName}}</p>
+		</li>
+	</ul>
+	
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Datos de la cuenta destino</h2>
+		</div>
+	</div>	
+	<ul class="mod_details mod_details_operation">	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.destinationAccountNumber">
+			<p class="md-info">Cuenta</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.destinationAccountNumber | accountNumberMask}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.destinationAccountType">
+			<p class="md-info">Tipo</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.destinationAccountType}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.destinationCurrencyType">
+			<p class="md-info">Moneda</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.destinationCurrencyType | currencyDesc}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.destinationName">
+			<p class="md-info">Nombre</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.destinationName}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.destinationReference">
+			<p class="md-info">Referencia</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.destinationReference}}</p>
+		</li>
+	</ul>
+	
+	<ul class="mod_details mod_details_operation">	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.vlOperation">
+			<p class="md-info">Monto</p>
+			<p class="md-monto" data-currency="::{type:operationDetailVM.operation.currencyVlOperation, value:operationDetailVM.operation.vlOperation}"></p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.vlExchangeRate">
+			<p class="md-info">Tipo de cambio referencial</p>
+			<p class="md-infoB" data-currency="::{type:operationDetailVM.SOL_CODE, value:operationDetailVM.operation.vlExchangeRate}"></p>
+		</li>
+	</ul>
+
+		
+	<div class="row" data-ng-if="::operationDetailVM.operation.mailConfirmation">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Opcionales</h2>
+		</div>
+	</div>	
+	<ul class="mod_details mod_details_operation" data-ng-if="::operationDetailVM.operation.mailConfirmation">	
+		<li class="md-item">
+			<p class="md-info">Correo electr&oacute;nico</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.mailConfirmation}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.mailMessage">
+			<p class="md-info">Mensaje</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.mailMessage}}</p>
+		</li>
+	</ul>	
+		
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Observaciones</h2>
+		</div>
+	</div>				
+	<ul class="mod_details mod_details_operation">
+	  <li class="md-item"> 
+		<p class="md-info">
+			<p class="md-numOper-cncl pre">
+				{{operationDetailVM.operation.dsReject | defaultObservationMask}}
+			</p>
+		</p>
+	  </li>
+	</ul>	
+	
+</div>

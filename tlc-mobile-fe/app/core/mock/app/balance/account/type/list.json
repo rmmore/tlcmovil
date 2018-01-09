@@ -1,0 +1,18 @@
+{
+  "response": {
+		"listAccountTypes": [	
+			{
+			  "id": 2,
+			  "name": "Cuenta corriente"
+			},
+			{
+			  "id": 3,
+			  "name": "Cuenta Ahorros"
+			},
+			{
+			  "id": 4,
+			  "name": "Cuenta maestra"
+			}
+		]
+	}
+}

@@ -1,0 +1,56 @@
+<main data-ng-show="beneficiaryDetailVM.showMain">
+	<h1 data-page-title class="hideAccessible">Detalle de beneficiario</h1> 
+	<div class="gridContainer">
+		<div class="wrapper">
+			<div class="row">
+				<div class="mod_details_signatures col-xs-12">
+					<h2 class="hideAccessible">Detalles de env&iacute;o</h2>
+					<ul class="mod_details">
+						<li class="md-item" data-ng-if="::beneficiaryDetailVM.beneficiary.name">
+							<p class="md-info">Beneficiario</p>
+							<p class="md-name">{{::beneficiaryDetailVM.beneficiary.name}}</p>
+							<p class="md-smallInfo">{{::beneficiaryDetailVM.beneficiary.docType | documentTypeMask}} {{::beneficiaryDetailVM.beneficiary.documentNumber}}</p>
+						</li>
+						<li class="md-item" data-ng-if="::beneficiaryDetailVM.beneficiary.accountNumber">
+							<p class="md-info">Cuenta</p>
+							<p class="md-numOper">{{::beneficiaryDetailVM.beneficiary.accountType}} - {{::beneficiaryDetailVM.beneficiary.currencyType | currencySymbol}} - {{::beneficiaryDetailVM.beneficiary.accountNumber | accountNumberMask}}</p>
+						</li>
+						<li class="md-item" data-ng-if="::beneficiaryDetailVM.beneficiary.amount">
+							<p class="md-info">Monto</p>
+							<p class="md-monto" data-currency="::{type: beneficiaryDetailVM.beneficiary.currencyType, value: beneficiaryDetailVM.beneficiary.amount}"></p>
+						</li>
+						<li class="md-item" data-ng-if="::beneficiaryDetailVM.beneficiary.reference">
+							<p class="md-info">Referencia para el beneficiario</p>
+							<p class="md-numOper">{{::beneficiaryDetailVM.beneficiary.reference}}</p>
+						</li>
+						<li class="md-item" data-ng-if="::beneficiaryDetailVM.beneficiary.validateDocument">
+							<p class="md-info">Validar documento</p>
+							<p class="md-numOper">{{::beneficiaryDetailVM.beneficiary.validateDocument | yesNoMask}}</p>
+						</li>
+					</ul>
+					
+					<ul class="mod_tableList2 mod_tableList_columns" data-ng-if="::beneficiaryDetailVM.beneficiary.lstDocsBenefs">
+						<li data-ng-repeat="item in ::beneficiaryDetailVM.beneficiary.lstDocsBenefs track by $index" class="tl2-item">
+							<a title="Detalle del pago" class="tl2-link ico-arrowR-ora no_background_image tl2-oneItem pls">
+								<ul>
+									<li class="tl2-item">
+										<p class="tl2-info"> <span class="tl2-sub">{{::item.dsDocumentType}}</span></p>
+										<p class="tl2-info"> <span class="tl2-sub">{{::item.nuDocument}}</span></p>
+										<p class="tl2-number" data-ng-if="::beneficiaryDetailVM.beneficiary.amount" data-currency="::{type:beneficiaryDetailVM.beneficiary.currencyType, value:item.vlDocument}"></p>
+									</li>
+								</ul>
+							</a>
+						 </li>
+					</ul>	
+					
+					
+					<div class="mod_form">
+						<div class="mfm-boxBTN">
+							<button class="mfm-button mfm-dbl cancel" data-ng-click="beneficiaryDetailVM.back()">Regresar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

@@ -1,0 +1,68 @@
+<main>
+	<h1 data-page-title class="hideAccessible"></h1>
+
+	<div sticky="sticky" class="mod_infoAccount no_padding_top">
+		<div  class="gridContainer mod_titles_border">
+			<div class="wrapper">
+				<div class="row">
+					<div class="col-xs-12 mod_titles">
+						<h2 class="mt-titleH2" data-ng-if="habilitationVM.isEnable">Habilitar</h2>
+						<h2 class="mt-titleH2" data-ng-if="habilitationVM.isDisable">Deshabilitar</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="sticky-content-body-panel-card">
+		<div class="sticky-content-scroll">
+			<form class="form-card mts">
+
+				<div class="panel-card">
+					<div class="item-avatar">
+						<img src="img/bancaMobil/men_ico_options_close_off.png">
+						<h2>{{habilitationVM.contract.dsCompany}}</h2>
+						<p>Código: {{habilitationVM.contract.cdContract}}</p>
+					</div>
+
+					<div class="item-body">
+						<img class="full-image" src="img/bancaMobil/rgs_home_img_start.png">
+
+						<p data-ng-if="habilitationVM.isEnable && habilitationVM.isSecurity">
+							El contrato no está habilitado. Seleccione la opción Habilitar para habilitar el contrato.
+						 </p>
+
+						<p data-ng-if="habilitationVM.isEnable && !habilitationVM.isSecurity">
+							Usted no es usuario de seguridad. Por favor, contáctese con el usuario de seguridad de su empresa.
+						 </p>
+
+						<p data-ng-if="habilitationVM.isDisable">
+							El contrato está habilitado. Seleccione la opción Deshabilitar para deshabilitar el contrato. 
+						 </p>
+
+					</div>
+				</div>
+
+				<div class="mod_form" data-ng-if="habilitationVM.isEnable && habilitationVM.isSecurity">
+					<div class="mfm-boxBTN no_marginTop">
+						<input id="btn03" data-ng-click="mainVM.logout()" type="button" value="Cerrar" class="mfm-button mfm-dbl cancel">
+						<input id="btn_sign" data-ng-click="habilitationVM.enable()" type="button" value="Habilitar" class="mfm-button mfm-dbl">
+					</div>
+				</div>
+
+				<div class="mod_form" data-ng-if="habilitationVM.isEnable && !habilitationVM.isSecurity">
+					<div class="mfm-boxBTN no_marginTop">
+						<input id="btn03" data-ng-click="mainVM.logout()" type="button" value="Cerrar" class="mfm-button mfm-dbl cancel">
+					</div>
+				</div>
+
+				<div class="mod_form card-buttons" data-ng-if="habilitationVM.isDisable">
+					<div class="mfm-boxBTN no_marginTop">
+						<input id="btn_sign" data-ng-click="habilitationVM.disable()" type="button" value="Deshabilitar" class="mfm-button mfm-dbl">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</main>

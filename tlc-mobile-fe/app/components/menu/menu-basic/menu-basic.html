@@ -1,0 +1,19 @@
+<div id="menu-container">
+	<div class="wrapper" data-ng-controller="MenuBasicController">
+		<ul id="menu">
+			<li data-ng-if="mainVM.showMenu" id="{{::link.cssId}}" data-ng-repeat="(i,link) in ::links track by link.id">
+				<a class="{{::link.cssClass}}" id="item-{{::i}}" data-ng-click="mainVM.goPath(link.path)" data-ng-href="{{::link.url}}" target="_blank">
+					<img alt="" class="image-normal" id="image-normal-{{::i}}" data-ng-src="{{::link.image}}" data-ng-show="{{::link.image.length}}"/> 
+					<img alt="" class="image-hover" id="image-hover-{{::i}}" data-ng-src="{{::link.imageHover}}" data-ng-show="{{::link.imageHover.length}}"/> 
+					{{::link.description}}
+				</a>
+				<ul class="submenu">
+					<li data-ng-repeat="subItem in ::link.menuItems track by subItem.id">
+						<a data-ng-click="mainVM.goPath(subItem.path)" data-ng-href="{{::subItem.url}}" target="_blank">{{::subItem.description}}</a>
+					</li>
+				</ul>
+			</li>
+			<li></li>
+		</ul>
+	</div>
+</div>

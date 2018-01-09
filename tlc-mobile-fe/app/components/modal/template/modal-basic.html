@@ -1,0 +1,26 @@
+<div>
+	<div class="modal-header {{modalVM.classHeader}}" data-ng-show="!!modalVM.title">
+		<div class="row">
+			<div class="col-xs-10">
+				<h2 class="modal-title">{{modalVM.title}}</h2>
+			</div>
+			<div style="display:none" ng-style="{'display': modalVM.headerCloseable ? 'inline-block' : 'none'}" data-ng-click="modalVM.cancel()" class="col-xs-2 closeable">
+				<img src="img/modules/icons/ico-closed.png" alt="Cancelar">
+			</div>
+		</div>
+	</div>
+	<div class="modal-body {{modalVM.classBody}}" data-ng-style="modalVM.styleBody" data-modal-auto-height="150">
+		
+		<div data-ng-if="modalVM.templateBodyURL" data-ng-include="modalVM.templateBodyURL"></div>
+		
+		<p data-ng-bind-html="modalVM.description"></p>
+		
+		<div data-ng-if="!!modalVM.include" data-ng-include="modalVM.include"></div>
+		
+	</div>
+	
+	<div class="modal-footer mod_form {{modalVM.classFooter}}" data-ng-show="(modalVM.showAccept || modalVM.showCancel)">
+		<button type="button" style="display:none" data-ng-style="{'display': modalVM.showCancel ? 'inline-block' : 'none'}" data-ng-click="modalVM.cancel()" class="mfm-button mfm-dbl cancel  mbs mlxs ">{{modalVM.textCancel}}</button>
+		<button type="button" data-ng-show="modalVM.showAccept" data-ng-click="modalVM.accept()" class="mfm-button mfm-dbl">{{modalVM.textAccept}}</button>
+	</div>
+</div>

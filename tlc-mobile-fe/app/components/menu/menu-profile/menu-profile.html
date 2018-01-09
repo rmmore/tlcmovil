@@ -1,0 +1,8 @@
+<ul id="menu-perfil" data-ng-controller="MenuProfileController">
+	<li>
+		<a data-ng-click="mainVM.goPath('/perfil')" data-ng-class="{'active': url == '/perfil'}">Perfil</a>
+	</li>
+	<li>
+		<a data-ng-click="mainVM.goPath('/cambiar-clave')" data-ng-class="{'active': url != '/perfil'}">Cambiar Clave</a>
+	</li>
+</ul>

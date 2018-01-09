@@ -1,0 +1,31 @@
+{
+  "name": "tlc-mobile",
+  "description": "My project",
+  "version": "0.0.1",
+  "license": "My project license V. 0.0.1",
+  "private": true,
+  "dependencies": {
+    "jquery": "<2.0.0",
+    "bootstrap": "~3.3.6",
+    "angular": "~1.4.9",
+    "angular-touch": "~1.4.9",
+    "angular-bootstrap": "~0.14.3",
+    "angular-route": "~1.4.9",
+    "angular-cookies": "~1.4.9",
+    "angular-i18n": "~1.5.1",
+    "angular-animate": "~1.4.9",
+    "angular-aria": "~1.4.9",
+    "angular-messages": "~1.4.9",
+    "angular-material": "~1.0.0",
+    "ngstorage": "~0.3.4",
+    "ngInfiniteScroll": "~1.2.2",
+    "codrops/BookBlock": "*",
+    "jquery.browser": "^0.1.0",
+    "angular-base64": "^2.0.5",
+    "angular-ui-mask": "^1.8.3",
+    "angular-ui-indeterminate": "^1.0.0",
+    "Swiper": "swiper#~3.3.1",
+    "oclazyload": "^1.0.9",
+    "jquery-ui": "^1.12.0"
+  }
+}

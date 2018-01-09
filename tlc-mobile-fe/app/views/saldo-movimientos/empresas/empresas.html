@@ -1,0 +1,35 @@
+<main data-ng-show="::companiesVM.showMain">
+	<h1 data-page-title class="hideAccessible">Saldos y Movimientos</h1> 
+	
+	<div sticky="sticky" class="mod_infoAccount no_padding_top">
+		<div  class="gridContainer mod_titles_border">			
+			<div class="wrapper">
+				<div class="row">
+					<div class="col-xs-12 mod_titles">
+						<h2 class="mt-titleH2 icon-company">Tus Empresas</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="gridContainer gridList">	
+		<div class="wrapper">
+			<ul class="mod_tableList">
+				<li class="tl-item" data-ng-repeat="company in ::companiesVM.companies track by company.cdCompany">
+					<a data-ng-click="companiesVM.goAccounts(company)" class="tl-link ico-arrowR-ora tl-oneItem">
+						<span class="tl-boxL tl-w100">{{::company.dsCompany}}</span>
+						
+						<span class="tl-boxR tl-num tl-fltL text-light-grey text-left">
+						 {{::company.documentType | documentTypeMask}} : {{::company.dsDocumentNumber}} {{::company.dsCorrelativeNumber}}
+						</span>
+						
+						
+					</a>
+				</li>
+			</ul>
+
+			<alert-no-records data-ng-show="companiesVM.noRecords"></alert-no-records>
+		</div>
+	</div>
+</main>

@@ -1,0 +1,37 @@
+<form name="key">
+	<table cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<div id="keypadContainer" class="keypad-frame clearfix" ng-controller="KeypadController">
+					<span id="btn_{{i}}" class="buttonKeyNumber" ng-click="set(i)" ng-repeat="(i, number) in numbers">
+						<img ng-src="data:image/png;base64,{{ number }}" alt=""/>
+					</span>
+					<span ng-click="clearPassword()" class="buttonKeyNumberClear image-erase-keyboard">Limpiar</span>
+				</div>	
+			</td>
+			<td>
+				<div class="div-keypad-input-container">
+					<p class="titles-pass">Ingresa tu actual clave Internet (6 d&iacute;gitos)</p>
+					<div>
+						<input type="radio"  name="pass" checked="checked" id="pass1" ng-model="pass"/>
+						<input id="keypadField" class="input-keypad inputText" type="password" name="password" id="password" ng-model="password" readonly="readonly" ng-maxlength="6" required>
+					</div>
+				</div>
+				<div class="div-keypad-input-container">
+					<p class="titles-pass">Ingresa tu nueva clave Internet (6 d&iacute;gitos)</p>
+					<div>
+						<input type="radio"  name="pass" id="pass2" disabled="disabled" ng-model="pass"/>
+						<input id="keypadField" class="input-keypad inputText" type="password" name="password2" id="password2" ng-model="password2" readonly="readonly"  ng-maxlength="6" required>
+					</div>
+				</div>
+				<div class="div-keypad-input-container">
+					<p class="titles-pass">Confirma tu nueva clave Internet (6 d&iacute;gitos)</p>
+					<div>
+						<input type="radio"  name="pass" id="pass3" disabled="disabled" ng-model="pass"/>
+						<input id="keypadField" class="input-keypad inputText" type="password" name="password3" id="password3" ng-model="password3" readonly="readonly" ng-maxlength="6" required>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+</form>

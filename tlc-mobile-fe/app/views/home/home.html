@@ -1,0 +1,55 @@
+<main>
+	<h1 data-page-title class="hideAccessible"></h1> 
+	<div class="gridContainer visible-mobile visible-tablet">
+		<div class="mod_userLogin" data-ng-class="{'visible-tablet': (mainVM.noContract && !mainVM.isApp), 'ng-hide': (mainVM.noContract && mainVM.isApp)}">
+			<div class="col-xs-12">  
+				<div class="mul-group">
+					<p class="mul-tith2">Titular: <span class="holder-name">{{::mainVM.user.userContract}}</span><span class="mul-numAcc">{{::mainVM.user.cardNumber | cardnumberSeparator}}</span></p>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-xs-12">
+					<div data-ng-class="{'ng-hide': (mainVM.noContract && mainVM.isApp), 'visible-tablet': (mainVM.noContract && !mainVM.isApp)}">
+						<menu-mobile-items data-menu="menuMobileVM.menuHome"></menu-mobile-items>
+					</div>
+					
+					<!-- pruebita -->
+					<nav data-ng-if="::mainVM.noContract" data-ng-class="{'visible-mobile': !mainVM.isApp, 'visible-mobile visible-tablet': mainVM.isApp}" class="mod_navMenu">						
+						<ul class="nvm-list nvm-level-1 mts">
+							<li class="nvm-items nvm-active" style="border: 1px solid #FFB973;background-color: #FFDFBF;"> 
+								<a title="Inicio" class="nvm-link" style="color: #AA3400;font-family: &quot;flexo-regular&quot;;">Lo sentimos. Actualmente no tiene un contrato afiliado a su Telecr&eacute;dito o su contrato ha sido suspendido.</a>
+							</li>
+						</ul>						
+						<div class="mod_form">
+							<div class="mfm-boxBTN">
+								<input id="btn03" data-ng-click="mainVM.logout();" type="button" value="Volver" class="mfm-button mfm-dbl cancel">
+								<label for="btn03" class="hideAccessible">Volver</label>
+							</div>
+						</div>						
+					</nav>
+
+					<!-- <coachmarksslide data-ng-controller="coachmarks"></coachmarksslide> -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="pue wrapper principal visible-desktop">
+		<div class="container-fluid">
+		
+			<div id="cuerpo" class="clearfix">
+				<div id="col-izq">
+					<access-component></access-component>
+					<contact-component></contact-component>
+				</div>
+				<div id="col-der">
+					<banners-component></banners-component>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+	
+</main>

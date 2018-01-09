@@ -1,0 +1,25 @@
+<div>
+	<div class="row mts">				
+		<div class="col-xs-12">		
+			<span class="titleH3">Ingrese el texto de la imagen</span>
+			<div class="captcha w50">
+				<img data-ng-src="data:image/png;base64,{{captchaVM.base64}}" alt="Captcha">
+			</div>
+			<a title="Mostrar otra imagen captcha" class="linkH3 mts">
+				<span data-ng-click="captchaVM.reload()">Mostrar otra imagen</span>
+				<i data-ng-click="captchaVM.reload()" class="glyphicon glyphicon-refresh"></i>
+			</a>
+		</div>
+	</div>
+
+	<div class="row mtxs">				
+		<div class="col-xs-12">
+			<input type="text" maxlength="6" class="w50 text-captcha" 
+				data-ng-model="captchaVM.options.value"
+				data-input-text="{{captchaVM.regex.captcha}}" 
+				autocorrect="off"
+				autocomplete="off"
+				spellcheck="false">
+		</div>
+	</div>
+</div>

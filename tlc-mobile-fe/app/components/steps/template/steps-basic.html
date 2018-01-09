@@ -1,0 +1,7 @@
+<div class="mod_steps">
+	<ul class="mstp-group">
+		<li class="mstp-item" data-ng-repeat="step in stepsVM.steps">
+			<span class="mstp-number" data-ng-class="{'mstp-active': step <= options.current}">{{step}}</span>
+		</li>
+	</ul>
+</div>

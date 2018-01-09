@@ -1,0 +1,37 @@
+<div class="keypad-mobile">
+	<div class="keypad-mobile-backdrop" data-ng-show="keypadMobileVM.isOpen" data-ng-click="keypadMobileVM.close()"></div>
+	<div class="keypad" data-ng-show="keypadMobileVM.isOpen">
+		<div class="keypad-content">
+			<table data-ng-switch="keypadMobileVM.isCustom">
+				<tr class="keypad-mobile-sm" data-ng-switch-when="true" data-ng-repeat="keys in keypadMobileVM.customKeysSm track by $index" data-ng-init="x = $index">
+					<td data-ng-repeat="key in keys track by $index" data-ng-switch="key" data-ng-init="y = $index">
+						<button id="btn_keypad_mobile_sm_clear" data-ng-switch-when="-1" class="keypad-cell keypad-clear" data-keypad-mobile-key="-1">&nbsp;</button>
+						<button id="btn_keypad_mobile_sm_delete" data-ng-switch-when="-2" class="keypad-cell keypad-del" data-keypad-mobile-key="-2">&nbsp;</button>
+						<button id="btn_keypad_mobile_sm_{{::(x == 0 ? y : (6 + y))}}" data-ng-switch-default class="keypad-cell" data-keypad-mobile-key="{{::(x == 0 ? y : (6 + y))}}" data-ng-style="::{'background-image': 'url(data:image/png;base64,'+key+')'}">&nbsp;</button>
+					</td>
+				</tr>
+				<tr class="keypad-mobile-lg" data-ng-switch-when="true" data-ng-repeat="keys in keypadMobileVM.customKeysLg track by $index" data-ng-init="x = $index">
+					<td data-ng-repeat="key in keys track by $index" data-ng-switch="key" data-ng-init="y = $index">
+						<button id="btn_keypad_mobile_lg_clear" data-ng-switch-when="-1" class="keypad-cell keypad-clear" data-keypad-mobile-key="-1">&nbsp;</button>
+						<button id="btn_keypad_mobile_lg_'delete'" data-ng-switch-when="-2" class="keypad-cell keypad-del" data-keypad-mobile-key="-2">&nbsp;</button>
+						<button id="btn_keypad_mobile_lg_{{::(x == 3 ? 9 : (x * 3 + y))}}" data-ng-switch-default class="keypad-cell" data-keypad-mobile-key="{{::(x == 3 ? 9 : (x * 3 + y))}}" data-ng-style="::{'background-image': 'url(data:image/png;base64,'+key+')'}">&nbsp;</button>
+					</td>
+				</tr>
+				<tr class="keypad-mobile-sm" data-ng-switch-default data-ng-repeat="keys in keypadMobileVM.defaultKeysSm track by $index">
+					<td data-ng-repeat="key in keys track by $index" data-ng-switch="key">
+						<button id="btn_keypad_mobile_sm_clear" data-ng-switch-when="-1" class="keypad-cell keypad-clear" data-keypad-mobile-key="-1">&nbsp;</button>
+						<button id="btn_keypad_mobile_sm_delete" data-ng-switch-when="-2" class="keypad-cell keypad-del" data-keypad-mobile-key="-2">&nbsp;</button>
+						<button id="btn_keypad_mobile_sm_{{::key}}" data-ng-switch-default class="keypad-cell" data-keypad-mobile-key="{{::key}}">{{::key}}</button>
+					</td>
+				</tr>
+				<tr class="keypad-mobile-lg" data-ng-switch-default data-ng-repeat="keys in keypadMobileVM.defaultKeysLg track by $index">
+					<td data-ng-repeat="key in keys track by $index" data-ng-switch="key">
+						<button id="btn_keypad_mobile_lg_clear" data-ng-switch-when="-1" class="keypad-cell keypad-clear" data-keypad-mobile-key="-1">&nbsp;</button>
+						<button id="btn_keypad_mobile_lg_delete" data-ng-switch-when="-2" class="keypad-cell keypad-del" data-keypad-mobile-key="-2">&nbsp;</button>
+						<button id="btn_keypad_mobile_lg_{{::key}}" data-ng-switch-default class="keypad-cell" data-keypad-mobile-key="{{::key}}">{{::key}}</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

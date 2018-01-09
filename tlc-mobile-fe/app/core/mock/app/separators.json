@@ -1,0 +1,28 @@
+{
+  "response": [
+    {
+      "id": 1,
+      "name": "Coma (,)"
+    },
+    {
+      "id": 2,
+      "name": "Punto y coma (;)"
+    },
+    {
+      "id": 3,
+      "name": "Pipe (|)"
+    },
+    {
+      "id": 4,
+      "name": "Espacio"
+    },
+    {
+      "id": 5,
+      "name": "Asterisco (*)"
+    },
+    {
+      "id": 6,
+      "name": "Otro"
+    }
+   ]
+}

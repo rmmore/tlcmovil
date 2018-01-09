@@ -1,0 +1,28 @@
+{
+  "response": {
+	"id": 1,
+	
+  	"dsOperation": "Disposición de Efectivo de Tarjeta de Crédito",
+  	"dsFullName": "Jhon Alvarez",
+  	"dtPrepared": "1467049380000",
+  	"cdStatus": "11",
+	
+  	"dsCompany": "CENTRO AUTOMOTRIZ S.A.",
+  	"originCardNumber": "0004099800150002548",
+	"originCardType": "Tarjeta Crédito Solución Negocios",
+  	"originAccountAlias": "CENTRO AUTOMOTRIZ",
+	"originCurrencyType": "0001",
+	
+	"destinationAccountNumber": "19311292975144",
+	"destinationAccountType": "Ahorros",
+	"destinationCurrencyType": "1001",
+	"destinationName": "RIVERA BUSTAMANTE EMELY MARINA",
+	"destinationReference": "Referencia",
+	
+	"vlOperation": 120.00,
+	"referenceExchangeType": 3.1,
+	
+	
+  	"dsReject": "Observaciones"
+  }
+}

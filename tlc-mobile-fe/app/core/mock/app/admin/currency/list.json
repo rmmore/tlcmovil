@@ -1,0 +1,15 @@
+{
+	"response": {"listCurrency": [
+		{
+			"cdCurrency": "0001",
+			"dsSymbol": "S/.",
+			"dsCurrency": "Soles"
+		},
+		{
+			"cdCurrency": "1001",
+			"dsSymbol": "US$",
+			"dsCurrency": "Dólares"
+		}
+	]}
+  
+}

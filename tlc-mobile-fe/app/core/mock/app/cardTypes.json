@@ -1,0 +1,6 @@
+{
+  "response": [
+	{ "id": 1, "cssClass": "card-credimas-negocios"	, "cardNumber": "4912-56"},
+    { "id": 2, "cssClass": "card-acceso-empresarial"	, "cardNumber": "0006-00"}
+  ]
+}

@@ -1,0 +1,14 @@
+<div class="modal-header">
+	<h3 class="modal-title">Tarjeta token</h3>
+</div>
+<div class="modal-body" data-modal-auto-height>
+
+	<token-card data-token="tokenCardModalVM.token" data-key="tokenCardModalVM.key"></token-card>
+	
+	<div class="mod_form">
+		<div class="mfm-boxBTN no_marginTop">
+			<input id="btn03" data-ng-click="tokenCardModalVM.cancel()" type="button" value="Cancelar" class="mfm-button mfm-dbl cancel">
+			<input id="btn_send" data-ng-click="tokenCardModalVM.accept()" type="button" value="Confirmar" class="mfm-button mfm-dbl">
+		</div>
+	</div>
+</div>

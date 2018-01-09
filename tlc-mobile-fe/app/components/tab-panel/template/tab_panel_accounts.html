@@ -1,0 +1,34 @@
+<div class="col-xs-12 mtp-groupAll">
+	<ul class="nav nav-tabs mtp-group">
+		<li data-ng-class="{active:tabs.tab === 1}" class="mtp-item mtp-item w100"><a data-ng-click="tabs.selectTab(1)" title="Filtros" class="mtp-link"><span class="ico-filters">Filtros</span></a></li>
+	</ul>
+	<div class="tab-content" data-ng-show="tabs.tab !== 0">
+		<div data-ng-show="tabs.tab === 1" class="col-xs-12 mtp-content">
+			<div class="wrapper">
+				<div class="mtp-header">
+					<h3 class="mtp-tit">Seleccione el tipo de cuenta y la moneda</h3>
+					<!-- <a title="Cerrar tab" role="button" data-ng-click="tabs.closeTabs()" class="mtp-close"><span class="hideAccessible">Cerrar tab</span></a> -->
+				</div>
+				<div class="mtp-body">
+					<!-- <dropdownlist data-options="{
+						name: 'Tipo de cuenta',
+						service: '$accountsService',
+						getList: 'getTypesAccounts',
+						byDefault: true,						
+						type: 'modal',						
+					}"></dropdownlist> -->
+					<dropdownlist data-ctrl="TypeAccountController"></dropdownlist>
+					<dropdownlist data-ctrl="TypeCoinController"></dropdownlist>
+				</div>
+				<div class="mtp-footer mod_form">
+					<div class="mfm-boxBTN">
+						<input id="btn01" type="button" value="Filtrar" class="mfm-button" data-ng-click="accountsVM.filter(); tabs.closeTabs();"/>
+					</div>
+					<a title="Cerrar tab" data-ng-click="tabs.closeTabs()" class="mtp-close">
+						<span class="hideAccessible">Cerrar tab</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

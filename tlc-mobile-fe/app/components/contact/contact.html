@@ -1,0 +1,14 @@
+<div id="contacto" ng-controller="ContactController">               
+	<h2>Contacta con nosotros</h2>
+	<div class="resumen">
+		<p>Te invitamos a que nos cuentes tus dudas y consultas sobre nuestros productos.</p>
+		<p><a ng-click="visible = !visible" ng-show="!visible">Ver m&aacute;s [+]</a></p>
+		<p><a ng-click="visible = !visible" ng-show="visible">Ver menos [-]</a><p>
+		<div ng-show="visible">
+			<strong class="phone">Lima:</strong><br>
+			<span class="phone">313-2999 / 625-2999</span><br>
+			<strong class="phone">Provincias:</strong><br>
+			<span class="phone">0-8011-8888</span>
+		</div>
+	</div>
+</div>

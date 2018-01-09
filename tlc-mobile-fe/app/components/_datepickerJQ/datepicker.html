@@ -1,0 +1,26 @@
+<ul class="mod_tab_fromEnd">
+	<li data-ng-click="datepickerVM.showDtFrom()" data-ng-class="{dtp_sel:datepickerVM.show.from === true}" class="mtb-item mtb-from dtp_dis">Desde </li>
+	<li data-ng-click="datepickerVM.showDtEnd()" data-ng-class="{dtp_sel:datepickerVM.show.end === true}" class="mtb-item mtb-end dtp_dis">Hasta</li>
+</ul>
+<div class="row">	
+	<div data-ng-class="{dtp_hide:datepickerVM.show.from === false}" class="col-xs-12 col-md-6">
+		<div data-ng-controller="DatepickerFromController as fromVM" class="mod_datepicker">
+				
+			<uie-datepicker 
+				class="datepicker-inline" 
+				data-options="fromVM.optionsJQ"
+			></uie-datepicker>		
+		
+		</div>
+	</div>
+	<div data-ng-class="{dtp_hide:datepickerVM.show.end === false}" class="col-xs-12 col-md-6">
+		<div data-ng-controller="DatepickerEndController as endVM" class="mod_datepicker">
+		
+			<uie-datepicker 
+				class="datepicker-inline" 
+				data-options="endVM.optionsJQ"
+			></uie-datepicker>
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,54 @@
+<main>
+    <h1 data-page-title class="hideAccessible">Detalle del Movimiento</h1> 
+    <div class="gridContainer">
+		<div class="wrapper">
+			<div class="row">  
+				<div class="col-xs-12">
+					<h2 class="hideAccessible">Detalles de env&iacute;o</h2>
+					<ul class="mod_details">
+					  <li class="md-item">
+						<div class="md-info">
+							<p>{{::detailMovementVM.account.accountType.name}}</p>
+							<p>{{::detailMovementVM.account.number | accountNumberMask}}</p>
+						</div>
+						<p class="md-subInfo">Principal - <span class="md-bold">{{::detailMovementVM.company.dsCompany}}</span></p>
+					  </li>
+					  <li class="md-item">
+						<p class="md-textDate">Fecha</p>
+						<p class="md-date">{{::detailMovementVM.movement.fecMov | dateMask:'string'}}</p>
+					  </li>
+					  <li class="md-item">
+						<p class="md-textDate">Fecha Valuta</p>
+						<p class="md-date" ng-if="detailMovementVM.movement.fecValuta != 0">{{::detailMovementVM.movement.fecValuta | dateMask:'string'}}</p>
+					  </li>
+					  <li class="md-item">
+						<p class="md-info">Descripción General</p>
+						<p class="md-infoB">{{::detailMovementVM.movement.refMov}}</p>
+					  </li>
+					  <li class="md-item">
+						<p class="md-info">Monto</p>
+						<p class="md-monto" data-currency="::{type: detailMovementVM.account.currency, value: detailMovementVM.movement.impOpeMov}"></p>
+					  </li>
+					  <li class="md-item">
+						<p class="md-oper">Sucursal - agencia</p>
+						<p class="md-numOper">{{::detailMovementVM.movement.codAgeSucMov}}</p>
+					  </li>
+					  <li class="md-item">
+						<p class="md-oper">N&uacute;mero de operaci&oacute;n</p>
+						<p class="md-numOper">{{::detailMovementVM.movement.nroTrnMov}}</p>
+					  </li>
+					  <li class="md-item">
+						<p class="md-oper">Usuario</p>
+						<p class="md-numOper">{{::detailMovementVM.movement.usuMov}}</p>
+					  </li>
+					</ul>
+					<div class="mod_form">
+					  <div class="mfm-boxBTN">
+						<button data-ng-click="detailMovementVM.back()" class="mfm-button mfm-dbl cancel">Regresar</button>
+					  </div>
+					</div>
+				</div>
+			</div>
+      </div>
+    </div>
+</main>

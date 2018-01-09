@@ -1,0 +1,5 @@
+<cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+	<cas:authenticationSuccess>
+		<cas:user>0006 0050 1111 2222</cas:user>
+	</cas:authenticationSuccess>
+</cas:serviceResponse>

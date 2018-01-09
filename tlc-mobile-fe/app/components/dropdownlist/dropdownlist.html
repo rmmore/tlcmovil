@@ -1,0 +1,15 @@
+<div class="dropdownlist-sample" data-ng-show="dropdownListVM.show !== false">
+	<div class="mod_dropDownList" data-ng-switch="::dropdownListVM.type">
+		<div data-ng-switch-when="modal">
+			<a data-ng-click="dropdownListVM.openModal()" class="dropdown-toggle dwl-link ico-arrowD"><span class="dwl-item">{{::dropdownListVM.name}}</span><span class="dwl-selected">{{dropdownListVM.selection.name}}</span></a>
+		</div>
+		<div data-ng-switch-default data-uib-dropdown>
+			<a data-uib-dropdown-toggle class="dwl-link ico-arrowD"><span class="dwl-item">{{::dropdownListVM.name}}</span><span class="dwl-selected">{{dropdownListVM.selection.name}}</span></a>
+			<ul class="uib-dropdown-menu dwl-group">
+				<li data-ng-repeat="item in ::dropdownListVM.listData track by $index" class="dwl-item" data-ng-class="::{'parent': item.isParent, 'child': item.isChild}">
+					<a data-ng-click="dropdownListVM.selectItem(item); " data-ng-class="{'dwl-active': dropdownListVM.selection.id === item.id}" class="dwl-item-link">{{::item.name}}</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,76 @@
+<div>
+	<div data-ng-include="'components/operation-detail/template/transacciones/datos-generales.html'"></div>
+	
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Datos de la cuenta origen</h2>
+		</div>
+	</div>	
+	<ul class="mod_details mod_details_operation">	
+		<li class="md-item">
+			<p class="md-info" data-ng-if="::operationDetailVM.operation.originAccountNumber">Cuenta</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originAccountNumber | accountNumberMask}}</p>
+			<p class="md-smallInfo">{{::operationDetailVM.operation.originAccountAlias}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originAccountType">
+			<p class="md-info">Tipo</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originAccountType}}</p>
+		</li>	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.originCurrencyType">
+			<p class="md-info">Moneda</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.originCurrencyType | currencyDesc}}</p>
+		</li>	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.dsCompany">
+			<p class="md-info">Nombre</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.dsCompany}}</p>
+		</li>
+	</ul>	
+	
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Datos del pago</h2>
+		</div>
+	</div>	
+	<ul class="mod_details mod_details_operation">	
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.cardType">
+			<p class="md-info">Tipo de Tarjeta</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.cardType}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.headline">
+			<p class="md-info">Titular de la tarjeta</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.headline}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.paymentType">
+			<p class="md-info">Tipo de pago</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.paymentType}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.cardNumber">
+			<p class="md-info">N&uacute;mero de tarjeta</p>
+			<p class="md-infoB">{{::operationDetailVM.operation.cardNumber}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.currencyVlOperation">
+			<p class="md-info">Moneda de pago</p>
+			<p class="md-infoB">Consumo en {{::operationDetailVM.operation.currencyVlOperation}}</p>
+		</li>
+		<li class="md-item" data-ng-if="::operationDetailVM.operation.vlOperation">
+			<p class="md-info">Monto</p>
+			<p class="md-monto" data-currency="::{value:operationDetailVM.operation.vlOperation}"></p>
+		</li>
+	</ul>
+		
+	<div class="row">
+		<div class="col-xs-12 mod_titles mod_details_operation">
+			<h2 class="mt-titleH3 icon-detail">Observaciones</h2>
+		</div>
+	</div>				
+	<ul class="mod_details mod_details_operation">
+	  <li class="md-item"> 
+		<p class="md-info">
+			<p class="md-numOper-cncl pre">
+				{{operationDetailVM.operation.dsReject | defaultObservationMask}}
+			</p>
+		</p>
+	  </li>
+	</ul>	
+	
+</div>

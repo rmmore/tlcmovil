@@ -1,0 +1,26 @@
+{
+  "response": {
+	"id": 1,
+	
+  	"templateNumber": "000110",
+  	"payingCompany": "DECORLUX S.A.C.",
+  	"documentType": "5",
+  	"documentNumber": "20108018772",
+  	"currencyType": "1001",
+  	"accountType": "C",
+  	"accountNumber": "1910002248116",
+  	"referenceTemplate": "REF04082016",
+  	"vlOperation": 1942,
+  	"accumulatedAmount": 1942,
+  	"difference": 0,
+  	"neteoDocuments": 1566,
+  	"docsPositiveCount": "4",
+  	"docsPositiveAmount": 1942,
+  	"docsNegativeCount": "3",
+  	"docsNegativeAmount": 376,
+
+	"hasProviders": true,
+	
+  	"dsReject": "Observaciones"
+  }
+}

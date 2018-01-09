@@ -1,0 +1,42 @@
+<form class="mod_form mod_login">									
+	<div class="carousel_login">										
+		<uib-carousel data-active="loginCarouselVM.active" data-template-url="components/carousel/carousel-without-controls.html">
+			<uib-slide class="item-login" data-index="0">
+				<cards-swiper data-card-model="loginCarouselVM.card"></cards-swiper>
+				<div class="lgn-form-ftr mtm">
+					<div class="mfm-boxBTN">
+						<button type="button" data-ng-click="loginCarouselVM.next();" class="mfm-button lgn-btn">Entrar</button>
+					</div>
+				</div>	
+				<div class="centrar-texto" data-ng-show="!loginCarouselVM.isApp">
+					<a data-ng-href="{{loginCarouselVM.urlTlcWeb}}" title="Ir a Telecrédito" class="linkH2">Ir a Telecrédito Web</a>
+				</div>												
+			</uib-slide>
+			<uib-slide class="item-login" data-index="1">			
+				<div class="mod_key mbm">
+					<div class="row mts" >				
+						<div class="col-xs-12">
+							<label class="ico-key" data-keypad-mobile-input="" data-ng-model="loginCarouselVM.password" data-keypad-options="loginCarouselVM.keypadOptions">
+								<input type="password" class="input-key w100" data-keypad-mobile-partial="6" data-ng-model="loginCarouselVM.password" placeholder="Clave de Internet">
+							</label>
+							<a data-ng-click="loginCarouselVM.whichIskey()" title="¿Qué es la clave de internet?" class="linkH3 mts">
+								¿Qué es la Clave de Internet?
+								<i class="icon-conditions"></i>
+							</a>
+						</div>
+					</div>
+					
+					<captcha data-captcha-options="loginCarouselVM.captchaOptions"></captcha>
+					
+				</div>
+
+				<div class="lgn-form-ftr">
+					<div class="mfm-boxBTN">
+						<input type="button" value="Atras" data-ng-click="loginCarouselVM.prev()" class="mfm-button lgn-btn cancel">
+						<input type="button" value="Entrar" data-ng-click="loginCarouselVM.login()" class="mfm-button lgn-btn">
+					</div>
+				</div>
+			</uib-slide>
+		</uib-carousel>		
+	</div>	
+</form>

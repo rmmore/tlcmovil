@@ -1,0 +1,180 @@
+<main data-ng-show="::providersVM.showMain">
+	<h1 data-page-title class="hideAccessible">Proveedores</h1> 
+	
+	<div class="mod_infoAccount no_padding_top sticky-content-header">
+	<!-- <div sticky="sticky" class="mod_infoAccount no_padding_top"> -->
+		<div class="mod_form">
+			<div class="mod_steps">
+				<p class="input-group search-beneficiaries">
+					<input type="search" class="form-control" placeholder="Buscar proveedores" maxlength="50" data-ng-model="providersVM.querySearch" data-ng-keyup="providersVM.search($event)">
+					<span class="input-group-btn">
+						<button type="button" class="btn btn-default" data-ng-click="providersVM.search()"><i class="glyphicon glyphicon-search"></i></button>
+					</span>
+				</p>
+			</div>
+		</div>
+		<div class="gridContainer text-init">
+			<div class="row">
+				<div class="mod_tab_panel">
+					<tab-panel template="providers"></tab-panel>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="sticky-content-body-providers">
+		<div class="gridContainer gridList sticky-content-scroll">
+		<!-- <div class="gridContainer gridList"> -->
+	
+			<div data-ng-controller="FiltersAlertProvidersController as filtersAlert" data-ng-show="filtersAlert.alertOptions.show" class="mtp-box-filter">
+				<uie-alert data-options="filtersAlert.alertOptions" class="no_marginBottom" data-ng-if="filtersAlert.alertOptions.show"></uie-alert> 
+			</div>
+	
+			<div class="wrapper mtxs">
+				<div class="row">				
+					<div class="col-xs-12">						
+	
+						<uib-carousel 	carousel-interceptor 
+										data-template-url="components/carousel/carousel-without-controls.html" 
+										data-next="providersVM.next"
+										data-prev="providersVM.prev">
+										
+							<uib-slide class="text-init">
+								<div class="mod_carousel">
+									<!-- <div class="row">
+										<div class="col-xs-12 mod_titles mod_details_operation">
+											<h2 class="mt-titleH3 icon-detail">Proveedores</h2>
+										</div>
+									</div>	 -->						
+
+									<ui-pagination data-pagination-options="providersVM.scroll">
+										<ul class="mod_tableList2 mod_tableList_columns">
+											<li data-ng-repeat="item in providersVM.providers track by $index" class="tl2-item">
+												<div class="mod_form tl2-date">
+													<div class="mfm-checkG d-table">
+														<div class="d-cell">
+															<span data-ng-if="::item.dtExpirationDate">
+																<p>{{::item.dtExpirationDate | dateMask:'day'}}</p>
+																<p>{{::item.dtExpirationDate | dateMask:'month'}}</p>
+																<p>{{::item.dtExpirationDate | dateMask:'year'}}</p>
+															</span>
+														</div>
+													</div>
+												</div><a title="Detalle del pago" class="tl2-link ico-arrowR-ora tl2-oneItem" data-ng-click="providersVM.showDetail(item)">
+													<ul>
+														<li class="tl2-item">
+															<p class="tl3-info"><span class="tl3-sub text-bold">{{::item.dsBeneficiary}}</span></p>
+															<p class="tl3-info"><span class="tl3-sub">{{::item.documentType | documentTypeMask}} {{::item.documentNumber}}</span></p>
+															<p class="tl3-info"><span class="tl3-sub">{{::item.dsModality}}</span></p>
+															<p class="tl3-info left-amount-principal" data-ng-if="item.providerAmount">
+																<span class="tl3-sub">
+																	<t>{{item.cdCurrency | currencySymbol}} </t>
+																		<t ng-class="{'negative-currency': item.providerAmount<0}">{{::item.providerAmount}}</t>
+																</span>
+															</p>
+
+														</li>
+													</ul>
+												</a>
+											 </li>
+										</ul>
+									</ui-pagination>
+									
+									<alert-no-records data-ng-show="providersVM.noRecords"></alert-no-records>
+								
+								</div>			
+							</uib-slide>
+							<uib-slide class="text-init">
+								<div class="mod_carousel mod_details_send">
+									<div class="row">
+										<div class="col-xs-12 mod_titles mod_details_operation">
+											<h2 class="mt-titleH3 icon-detail">Datos del proveedor</h2>
+										</div>
+									</div>	
+									<ul class="mod_details mod_details_operation ">	
+										<li class="md-item">
+											<p class="md-info">Nombre del proveedor</p>
+											<p class="md-infoB">{{providersVM.provider.dsBeneficiary}}</p>
+											<p class="md-smallInfo">{{providersVM.provider.documentType | documentTypeMask}} {{providersVM.provider.documentNumber}}</p>
+										</li>
+										<li class="md-item">
+											<p class="md-info">Cuenta o Tarjeta de Cr&eacute;dito de destino</p>
+											<p class="md-infoB">{{providersVM.provider.accountType}} - {{providersVM.provider.cdCurrency | currencySymbol}} - {{providersVM.provider.accountNumber | accountNumberMask}}</p>
+										</li>
+										<li class="md-item" data-ng-if="::providersVM.provider.dtExpirationDate">
+											<p class="md-info">Fecha de vencimiento</p>
+											<p class="md-infoB">{{providersVM.provider.dtExpirationDate | dateMask}}</p>
+										</li>
+										<li class="md-item">
+											<p class="md-info">Modalidad</p>
+											<p class="md-infoB">{{providersVM.provider.dsModality}}</p>
+										</li>
+										<li class="md-item">
+											<p class="md-info">N&deg; Docs</p>
+											<p class="md-infoB">{{providersVM.provider.docsNumber}}</p>
+										</li>
+										<li class="md-item" data-ng-if="providersVM.provider.providerAmount">
+											<p class="md-info">Monto equivalente</p>
+											<p class="md-infoB">{{providersVM.provider.cdCurrency | currencySymbol}} <t ng-class="{'negative-currency': providersVM.provider.providerAmount<0}">{{providersVM.provider.providerAmount}}</t></p>
+										</li>
+
+										<li class="md-item">
+											<p class="md-info">Referencia para la empresa</p>
+											<p class="md-infoB">{{providersVM.provider.dsReference}}</p>
+										</li>
+									</ul>		
+									<ul class="mod_tableList2 mod_tableList_columns" data-ng-if="::providersVM.provider.factsDocsProv.length">
+										<li data-ng-repeat="item in providersVM.provider.factsDocsProv track by $index" class="tl2-item">
+											<div class="mod_form tl2-date">
+												<div class="mfm-checkG d-table">
+													<div class="d-cell">
+														<span data-ng-if="::item.dtExpirationDate">
+															<p>{{::item.dtExpirationDate | dateMask:'day'}}</p>
+															<p>{{::item.dtExpirationDate | dateMask:'month'}}</p>
+															<p>{{::item.dtExpirationDate | dateMask:'year'}}</p>
+														</span>
+													</div>
+												</div>
+											</div><a title="Detalle del pago" class="tl2-link ico-arrowR-ora  no_background_image tl2-oneItem">
+												<ul>
+													<li class="tl2-item row">
+														<p class="col-xs-12 col-sm-6 col-md-6 tl3-info"><span class="tl3-sub text-bold">{{::item.name}}</span></p>
+														<p class="col-xs-12 col-sm-6 col-md-6 tl3-info left-amount-principal-2" data-ng-if="item.vlOriginal">
+															<span class="tl3-sub" >Monto original: {{::item.cdOriginalCurrency | currencySymbol}}
+															 <t ng-class="{'negative-currency': item.vlOriginal<0}">{{::item.vlOriginal}} </t>
+															</span>
+														</p>
+														<p class="col-xs-12 col-sm-6 col-md-6 tl3-info"><span class="tl3-sub">{{::item.documentType | documentTypeMask}} {{::item.documentNumber}}</span></p>
+														<p class="col-xs-12 col-sm-6 col-md-6 tl3-info left-amount-principal-2" data-ng-if="item.vlEquivalent && !!item.documentNumber">
+															<span class="tl3-sub">Monto equivalente: {{::item.cdEquivalentCurrency| currencySymbol}} 
+																<t ng-class="{'negative-currency': item.vlEquivalent<0}">{{::item.vlEquivalent}} </t>
+															</span>
+														</p>
+														<p class="col-xs-12 col-sm-6 col-md-6 tl3-info"><span class="tl3-sub">{{::item.dsModality}}</span></p>
+														<p class="col-xs-12 col-sm-6 col-md-6 tl3-info left-amount-principal-2" data-ng-if="item.vlEquivalent && !item.documentNumber">
+															<span class="tl3-sub">Monto equivalente: {{::item.cdEquivalentCurrency| currencySymbol}} 
+																<t ng-class="{'negative-currency': item.vlEquivalent<0}">{{::item.vlEquivalent}} </t>
+															</span>
+														</p>
+													</li>
+
+
+												</ul>
+											</a>
+										 </li>
+									</ul>
+									<div class="mod_form">
+										<div class="mfm-boxBTN">
+											<input id="btn03" type="button" data-ng-click="providersVM.showList()" value="Regresar" class="mfm-button mfm-dbl cancel">
+										</div>
+									</div>
+								</div>
+							</uib-slide>
+						</uib-carousel>	
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

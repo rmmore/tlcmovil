@@ -1,0 +1,64 @@
+<div class="modal-header">
+	<h3 class="modal-title" data-ng-if="::authorizeSignsVM.isSign">Autorizar firmas</h3>
+	<h3 class="modal-title" data-ng-if="::authorizeSignsVM.isReject">Rechazar firmas</h3>
+</div>
+<div class="modal-body" data-modal-auto-height>
+
+	<steps data-steps-options="::{count: 3, current: 2}"></steps>
+	
+	<div class="modal_auth_token">
+		<form class="mod_form mod_auth_sign">
+			<div class="mod_details">
+			
+				<fieldset data-ng-if="::authorizeSignsVM.isReject" class="auth-keys">
+				  <div class="row">
+					<div class="col-xs-12">
+						<!--Start token inputs-->
+						<h3 class="title-fieldset no_padding_top">Motivo del rechazo</h3>
+						<textarea id="box1" class="text-input" maxlength="200"
+							data-ng-model="authorizeSignsVM.reasonRejection"
+							data-input-text="{{::authorizeSignsVM.regex.reasonRejection}}"
+							autocorrect="off"
+							autocomplete="off"
+							spellcheck="false"
+						></textarea>
+					</div>
+				  </div>
+				</fieldset>
+				
+				<fieldset class="auth-keys" 
+					data-ng-if="::authorizeSignsVM.isSign" 
+					data-ng-model="authorizeSignsVM.key"
+					data-keypad-mobile-input data-keypad-options="::authorizeSignsVM.options">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="row">
+								<div class="col-xs-12 mbs">
+									<h3 class="auth-title-confirm">Confirma que los datos son correctos antes de ingresar tu Clave de Usuario.</h3>
+								</div>
+								<div class="col-xs-6">
+									<h3 class="auth-title">Clave de usuario:</h3>
+								</div>
+								<div class="col-xs-6 no_padding_left">
+									<label class="ico-key">
+										<input type="password" class="input-key w100" 
+											data-keypad-mobile-partial="6"
+											data-ng-model="authorizeSignsVM.key" autocorrect="off" autocomplete="off" spellcheck="false">
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="mod_form">
+				<div class="mfm-boxBTN no_marginTop">
+					<input id="btn03" data-ng-click="authorizeSignsVM.cancel()" type="button" value="Cancelar" class="mfm-button mfm-dbl cancel">
+					<input id="btn_sign" data-ng-click="authorizeSignsVM.accept()" type="button" value="{{::authorizeSignsVM.isReject ? 'Rechazar' : 'Firmar'}}" class="mfm-button mfm-dbl">
+				</div>
+			</div>
+		</form>
+	</div>
+	
+</div>

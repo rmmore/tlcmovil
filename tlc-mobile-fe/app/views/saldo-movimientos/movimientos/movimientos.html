@@ -1,0 +1,73 @@
+<main data-ng-show="::movementsVM.showMain">
+	<h1 data-page-title class="hideAccessible">Saldos y Movimientos</h1> 
+	
+	<div class="mod_infoAccount sticky-content-header" data-ng-class="{'header-reduce': movementsVM.reduce}">
+	<!-- <div sticky="sticky" class="mod_infoAccount"> -->
+		<div  class="gridContainer">
+			<div class="wrapper" data-ng-show="::movementsVM.showAccountInfo">
+				<div class="row">
+					<div class="col-xs-12">
+						<h2 class="mia-titleH2">{{::movementsVM.account.accountType.name}}&nbsp;&nbsp;<span class="mia-accountNumber text-light-grey">{{::movementsVM.account.number | accountNumberMask}}</span></h2>
+						<h3 class="mia-titleH3 point-movements">{{::movementsVM.company.dsCompany}}</h3>
+					</div>
+					<div class="col-xs-12" data-ng-if="::movementsVM.hasBalancesPermission">
+						<div data-ng-controller="ProgressBarController" class="mod_progressBar">
+							<p class="pgb-montoTotal" data-currency="{type: movementsVM.account.currency, value: movementsVM.account.contableBalance}"></p>
+							<p class="pgb-montoTotal-info">Saldo contable</p>
+							<uib-progressbar  data-ng-if="(movementsVM.account.balance > 0 )" data-value="movementsVM.account.balance" data-max="movementsVM.account.contableBalance" title="Saldo contable"></uib-progressbar>
+                            <uib-progressbar  data-ng-if="(movementsVM.account.balance <= 0 )" data-value="0" data-max="100" title="Saldo contable"></uib-progressbar>
+							<div class="pgb-montoLiquid">
+								<p class="pgb-monto" data-currency="{type: movementsVM.account.currency, value: movementsVM.account.balance}"></p>
+								<p class="pgb-info">Saldo l&iacute;quido</p>
+							</div>
+							<div class="header-toggle">
+								<span data-ng-click="movementsVM.reduce = !movementsVM.reduce" class="glyphicon glyphicon-chevron-{{movementsVM.reduce ? 'down' : 'up'}}" aria-hidden="true"></span>
+							</div>
+							<div class="pgb-montoAvaible">
+								<p class="pgb-monto" data-currency="{type: movementsVM.account.currency, value: movementsVM.account.blockedBalance}"></p>
+								<p class="pgb-info">Saldo no disponible</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="gridContainer text-init">
+			<div class="row">
+				<div class="mod_tab_panel">
+					<tab-panel template="movements"></tab-panel>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="sticky-content-body-movements" data-ng-class="{'header-reduce': movementsVM.reduce, 'hasBalancesPermission': movementsVM.hasBalancesPermission}">
+		<div class="gridContainer gridList consultas-movimientos sticky-content-scroll">
+		<!-- <div class="gridContainer gridList consultas-movimientos"> -->
+	
+			<div data-ng-controller="FiltersAlertMovementsController as filtersAlert" data-ng-show="filtersAlert.alertOptions.show" class="mtp-box-filter">
+				<uie-alert data-options="filtersAlert.alertOptions" class="no_marginBottom" data-ng-if="filtersAlert.alertOptions.show"></uie-alert> 
+			</div>
+	
+			<div class="wrapper mtxs">
+				<div class="row">
+					<div class="col-xs-12">
+						<ui-pagination data-pagination-options="movementsVM.scroll" data-ng-show="!movementsVM.noRecords">
+							<ul class="mod_tableList mod_tableList_columns">
+								<li data-ng-repeat="item in movementsVM.movements track by $index" class="tl-item">
+									<div class="tl-date">
+										<p>{{::item.fecMov | dateMask:'day'}}</p>
+										<p>{{::item.fecMov | dateMask:'month'}}</p>
+										<p>{{::item.fecMov | dateMask:'year'}}</p>
+									</div><a data-ng-click="movementsVM.goDetailMovement(item)" class="tl-link ico-arrowR-ora tl-oneItem"><span class="tl-boxL tl-concept">{{::item.refMov}}</span><span class="tl-boxR tl-num tl-flexBold" data-currency="::{type: movementsVM.account.currency, value: item.impOpeMov}"></span></a>
+								</li>
+							</ul>
+						</ui-pagination>
+						
+						<alert-no-records data-ng-show="movementsVM.noRecords"></alert-no-records>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

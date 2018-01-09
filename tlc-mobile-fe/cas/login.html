@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<!--[if IE 7 ]> <html lang="es" dir="ltr" class="ie7" data-ng-app="cas"> <![endif]-->
+<!--[if IE 8 ]> <html lang="es" dir="ltr" class="ie8" data-ng-app="cas"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> 
+<html lang="es" dir="ltr" data-ng-app="cas"> 
+<!--<![endif]-->
+
+	<head>
+		<title>Telecrédito BCP</title>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="Telecrédito BCP">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		
+		<base href="/cas/"/>
+		
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/general.css"/>
+		<link rel="stylesheet" type="text/css" href="css/modules.css"/>	
+		<link rel="stylesheet" type="text/css" href="css/app.css"/>	
+		<link rel="stylesheet" type="text/css" href="components/loader/loader.css" />
+		<link rel="stylesheet" type="text/css" href="libs/BookBlock/bookblock.css" />
+		<link rel="stylesheet" type="text/css" href="libs/Swiper/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="components/keypad/keypad-mobile/keypad-mobile.css" />
+		
+		<link rel="shortcut icon" type="image/x-icon" href="img/modules/icons/favicon.ico">
+		
+		<!-- Modernizr -->		
+		<script src="libs/BookBlock/modernizr.custom.js"></script>
+	</head>	
+	
+	<body data-ng-controller="loginViewController as loginVM" class="mod_body  no_padding_top mobile no_scroll">	
+	
+		<document-events></document-events>
+		
+		<div id="mybody" data-ng-show="!loading" unselectable="on" style="-webkit-user-select: none;">
+			
+			<main>
+				<div class="gridContainer">
+					<div class="wrapper">
+						<div class="row">						
+							<div class="col-xs-12 d-table">		
+								<login-carousel data-login-carousel-options="loginVM.loginCarousel"></login-carousel>						
+							</div>
+						</div>
+					</div>
+				</div>
+			</main> 
+				
+			<!-- Footer de la pagina -->
+			<!-- <footer-basic></footer-basic> -->
+			
+			<!-- Teclado numerico mobile -->
+			<keypad-mobile></keypad-mobile>
+			
+			<loader></loader>
+			
+		</div>
+		
+		<div class="msg_load" data-ng-show="mainVM.loading">
+			<div class="messagebody">
+				<p><strong>La página está cargando.</strong></p>
+				<p>Por favor, espere un momento.</p>
+				<p>Gracias.</p>
+			</div>
+		</div>
+		
+		<noscript class="no-script">			
+			<div class="messagebody">
+				<p>BCP te informa que debes activar javascript</p>
+				<p>en tu navegador para poder usar nuestra p&aacute;gina.</p>
+				<p>Gracias.</p>
+			</div>
+		</noscript>
+		
+		<div class="msg_version hide">
+			<div class="messagebody">
+				<p><strong>Est&aacute; con una versión desactualizada del navegador.</strong></p>
+				<p>Por favor, actualice su navegador.</p>
+				<p>Gracias.</p>
+			</div>
+		</div>
+		
+
+		
+		<!-- Librerias JS y Angular -->
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/jquery.browser/jquery.browser.min.js"></script>	
+		<script src="libs/browser.validate.js"></script>
+		<!-- <script src="libs/bootstrap/js/bootstrap.min.js"></script> -->
+		<script src="libs/angular/angular.min.js"></script>			
+		<script src="libs/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+		<script src="libs/angular-touch/angular-touch.min.js"></script>
+		<script src="libs/angular-animate/angular-animate.min.js"></script>
+		<script src="libs/angular-base64/angular-base64.min.js"></script>
+		
+		<!-- Fastclick -->		
+		<script src="libs/fastclick/fastclick.js"></script>
+		
+		<!-- BookBlock -->		
+		<script src="libs/BookBlock/jquery.bookblock.min.js"></script>
+		
+		<!-- Swiper -->		
+		<script src="libs/Swiper/swiper.min.js"></script>
+		
+		<script src="libs/cookies.js"></script>
+		
+		<!-- CORE -->
+		<script src="core/constants/core.constants.js"></script>
+		<script src="core/services/storage.services.js"></script>
+		<script src="core/services/promise.services.js"></script>
+		<script src="core/services/util.services.js"></script>
+		<script src="core/services/login.services.js"></script>
+		<script src="core/filters/filters.js"></script>
+
+		<!-- CORE/Interceptors -->
+	 	<script src="core/interceptors/response.interceptor.js"></script> 
+		<script src="core/interceptors/error.interceptor.js"></script>
+		
+		<!-- COMPONENTS/Modal -->			
+		<script src="components/modal/modal.module.js"></script>
+		<script src="components/modal/modal.controller.js"></script>
+		<script src="components/modal/modal.directive.js"></script>
+		<script src="components/modal/modal.factory.js"></script>
+		
+		<!-- COMPONENTS/Document events -->			
+		<script src="components/document-events/document-events.directives.js"></script>
+		<script src="components/document-events/document-events.module.js"></script>
+		
+		<!-- COMPONENTS/keyup -->			
+		<script src="components/input-number/input-number.directive.js"></script>
+		<script src="components/input-number/input-number.module.js"></script>
+		
+		<!-- COMPONENTS/Input text -->			
+		<script src="components/input-text/input-text.directive.js"></script>
+		<script src="components/input-text/input-text.module.js"></script>
+
+		<!-- COMPONENTS/Loader -->
+		<script src="components/loader/loader.directives.js"></script>
+		<script src="components/loader/loader.factory.js"></script>
+		<script src="components/loader/loader.module.js"></script>
+
+		<!-- COMPONENTS/Cards -->
+		<script src="components/carousel/carousel.interceptor.js"></script>
+		<script src="components/carousel/carousel.module.js"></script>
+		
+			<!-- SUB COMPONENTS/Login -->
+			<script src="components/carousel/carousel-login/carousel-login.controller.js"></script>
+			<script src="components/carousel/carousel-login/carousel-login.directives.js"></script>
+			<script src="components/carousel/carousel-login/carousel-login.module.js"></script>
+
+		<!-- COMPONENTS/Swiper -->
+		<script src="components/swiper/swiper.directive.js"></script>
+		<script src="components/swiper/swiper.controller.js"></script>
+		<script src="components/swiper/swiper.module.js"></script>
+		
+			<!-- SUB COMPONENTS/Cards -->
+			<script src="components/swiper/swiper-cards/swiper-cards.controller.js"></script>
+			<script src="components/swiper/swiper-cards/swiper-cards.directives.js"></script>
+			<script src="components/swiper/swiper-cards/swiper-cards.services.js"></script>
+			<script src="components/swiper/swiper-cards/swiper-cards.module.js"></script>
+
+		<!-- COMPONENTS/Focus -->
+		<script src="components/focus/focus.directive.js"></script>
+		<script src="components/focus/focus.module.js"></script>
+
+		<!-- COMPONENTS/Book Block -->
+		<script src="components/book-block/book-block-slide.directive.js"></script>
+		<script src="components/book-block/book-block.controller.js"></script>
+		<script src="components/book-block/book-block.directive.js"></script>
+		<script src="components/book-block/book-block.module.js"></script>
+		
+		<!-- COMPONENTS/Keypad -->		
+		<script src="components/keypad/keypad.module.js"></script>
+		
+			<!-- SUB COMPONENTS/Keypad mobile -->			
+			<script src="components/keypad/keypad-mobile/keypad-mobile.controller.js"></script>
+			<script src="components/keypad/keypad-mobile/keypad-mobile.directive.js"></script>
+			<script src="components/keypad/keypad-mobile/keypad-mobile-input/keypad-mobile-input.directive.js"></script>
+			<script src="components/keypad/keypad-mobile/keypad-mobile-input/keypad-mobile-input.controller.js"></script>
+			<script src="components/keypad/keypad-mobile/keypad-mobile-partial/keypad-mobile-partial.directive.js"></script>
+			<script src="components/keypad/keypad-mobile/keypad-mobile-key.directive.js"></script>
+			<script src="components/keypad/keypad-mobile/keypad-mobile.factory.js"></script>
+			<script src="components/keypad/keypad-mobile/keypad-mobile.services.js"></script>
+			<script src="components/keypad/keypad-mobile/keypad-mobile.module.js"></script>
+		
+		<!-- COMPONENTS/Captcha -->		
+		<script src="components/captcha/captcha.directive.js"></script>
+		<script src="components/captcha/captcha.controller.js"></script>
+		<script src="components/captcha/captcha.services.js"></script>
+		<script src="components/captcha/captcha.module.js"></script>
+		
+		<script type="text/javascript">
+		
+			(function(angular) {
+			
+				'use strict';
+			
+				angular.module('cas', [	
+					'ngAnimate',
+					'ngTouch',
+					'ui.bootstrap',	
+					'base64',
+					'core.constants',
+					'core.promise.services',
+					'core.storage.services',
+					'core.util.services',
+					'core.login.services',
+					'core.response.interceptor',
+					'core.error.interceptor',
+					'core.filters',
+					'component.loader',	
+					'component.input-number',
+					'component.input-text',
+					'component.modal',	
+					'component.carousel',
+					'component.carousel-login',
+					'component.document-events',
+					'component.keypad',
+					'component.focus',
+					'component.book-block',
+					'component.captcha',
+					'component.swiper'
+				])	
+				.config(appConfig)
+				.run(appRun)
+				.controller('loginViewController', loginViewController);
+				
+				appConfig.$inject = ['$httpProvider'];
+				
+				function appConfig($httpProvider) {
+					$httpProvider.interceptors.push('responseInterceptor');
+					$httpProvider.interceptors.push('errorInterceptor');
+				}
+				
+				function appRun() {
+					FastClick.attach(document.body);
+				}
+				
+				loginViewController.$inject = [					
+					'$window',
+					'$base64',
+					'$coreConstants',
+					'$loader',
+					'$loginService',
+					'$storageService',
+				];
+				
+				function loginViewController(				
+					$window,
+					$base64,
+					$coreConstants,
+					$loader,
+					$loginService,
+					$storageService
+				) {
+				
+					var vm = this;		
+
+					initStates();
+					
+					////////////
+					
+					function initStates() {
+						vm.loginCarousel = {login: login, clearAll: null};
+					}				
+					
+					function login(data, saveCard) {
+						
+						$loader.setMessage($coreConstants.MSG_LOAD_USER_LOGGING);
+						
+						$loginService.login(data).then(function(response){
+							
+							$loader.showLoader();
+							
+							if(saveCard) {
+								saveCard();
+							}
+							
+							$storageService.setCasToken(response.data.response.casToken);
+							$storageService.setAuthToken(response.data.response.authToken);
+							
+							var st = response.data.response.serviceTicket;
+									
+							//pruebita para mostrar usuario seguridad
+							if(data.cardNumber.substr(12) == '2222') {
+								$window.location.href = $coreConstants.APP_TLC_URL + '#?security&ticket=' + st;
+								return;
+							}		
+							
+							//pruebita para mostrar usuario no seguridad
+							if(data.cardNumber.substr(12) == '3333') {
+								$window.location.href = $coreConstants.APP_TLC_URL + '#?nosecurity&ticket=' + st;
+								return;
+							}
+							
+							$window.location.href = $coreConstants.APP_TLC_URL + '#?ticket=' + st;
+							
+						}, function() {
+						
+							vm.loginCarousel.clearAll();
+							
+						});
+							
+					}
+				}
+			
+			}(angular));
+		
+			function alerta() {
+				alert('prueba de la aplicación nativa');
+			}
+		</script>
+			
+	</body> 
+	
+</html>

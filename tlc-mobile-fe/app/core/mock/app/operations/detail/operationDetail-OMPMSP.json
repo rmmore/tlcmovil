@@ -1,0 +1,21 @@
+{
+  "response": {
+	"id": 1,
+  	"cdStatus": "11",
+  	"nuSpreadSheet": "000119",
+  	"accountAlias": "CORPORACION DE LOS FIELES DEL GRUPO",
+  	"accountNumber": "19187654321073",
+  	"accountType": "C",
+	"cdCurrency": "0001",
+  	"dsCompany": "CORPORACION DE LOS FIELES DEL GRUPO S.A.",
+  	"dtProcess": "1470151143906",
+  	"dsReference": "Cheques gerencia",
+  	"templateExoneratedITF": "No",
+  	"vlOperation": 1525.50,
+  	"vlCreditAmount": 1525.50,
+  	"differenceAmount": 0,
+  	"nuRegistriesCount": 2,
+  	"dsReject": "Observaciones",
+	"hasBeneficiaries": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+	"response": {
+		"companyList":[
+			{
+				"cdCompany": 1,
+				"dsCompany": "CONSORCIO OSORIO SA",
+				"documentType": "1",
+				"dsDocumentNumber": "1234567890123",
+				"dsCorrelativeNumber": ""
+			},
+			{
+				"cdCompany": 2,
+				"dsCompany": "CORPORATION TECHNOLOGY SAC",
+				"documentType": "2",
+				"dsDocumentNumber": "6841265656566",
+				"dsCorrelativeNumber": "1"
+			}
+		]
+	}
+}

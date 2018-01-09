@@ -1,0 +1,252 @@
+{
+	"response": { "paginationOperation": {
+		"count": 100, 
+		"pages": 5, 
+		"list": [
+			{
+				"id": 1,
+				"name": "Roger Samaniego Velez",
+				"accountType": "C",
+				"accountNumber": "19187654321073",
+				"currencyType": "0001",
+				"docType": "4",
+				"documentNumber": "44556677",
+				"reference": "Haberes NOV12",
+				"validateDocument": "S"
+			},
+			{
+				"id": 2,
+				"name": "Stacy Ann Ferguson",
+				"accountType": "C",
+				"accountNumber": "19187654321073",
+				"currencyType": "0001",
+				"amount": -1525.50,	
+				"docType": "4",
+				"documentNumber": "44556677",
+				"reference": "Haberes NOV12",
+				"validateDocument": "N",
+				"lstDocsBenefs": [
+					{"dsDocumentType": "Factura del proveedor", "nuDocument": "FP00000000122", "vlDocument": 23},
+					{"dsDocumentType": "Note crédito  proveedor", "nuDocument": "NC00000032221", "vlDocument": -32},
+					{"dsDocumentType": "Factura del proveedor", "nuDocument": "FP00000000001", "vlDocument": 232}
+				]
+			},
+			{
+				"id": 3,
+				"name": "Roger Samaniego Velez",
+				"accountType": "C",
+				"accountNumber": "19187654321073",
+				"currencyType": "0001",
+				"amount": 1525.50,	
+				"docType": "4",
+				"documentNumber": "44556677",
+				"reference": "Haberes NOV12",
+				"validateDocument": "S"
+			},
+			{
+				"id": 4,
+				"name": "Stacy Ann Ferguson",
+				"accountType": "C",
+				"accountNumber": "19187654321073",
+				"currencyType": "0001",
+				"amount": 1525.50,	
+				"docType": "4",
+				"documentNumber": "44556677",
+				"reference": "Haberes NOV12",
+				"validateDocument": "S"
+			},
+			{
+				"id": 5,
+				"name": "Roger Samaniego Velez",
+				"accountType": "C",
+				"accountNumber": "19187654321073",
+				"currencyType": "0001",
+				"amount": 1525.50,	
+				"docType": "4",
+				"documentNumber": "44556677",
+				"reference": "Haberes NOV12",
+				"validateDocument": "S"
+			},
+			{
+				"id": 6,
+				"name": "Stacy Ann Ferguson",
+				"accountType": "C",
+				"accountNumber": "19187654321073",
+				"currencyType": "0001",
+				"amount": 1525.50,	
+				"docType": "4",
+				"documentNumber": "44556677",
+				"reference": "Haberes NOV12",
+				"validateDocument": "S"
+			},
+			{
+				"id": 7,
+				"name": "Roger Samaniego Velez",
+				"accountType": "C",
+				"accountNumber": "19187654321073",
+				"currencyType": "0001",
+				"amount": 1525.50,	
+				"docType": "4",
+				"documentNumber": "44556677",
+				"reference": "Haberes NOV12",
+				"validateDocument": "S"
+			},
+			{
+				"id": 8,
+				"name": "Stacy Ann Ferguson",
+				"accountType": "C",
+				"accountNumber": "19187654321073",
+				"currencyType": "0001",
+				"amount": 1525.50,	
+				"docType": "4",
+				"documentNumber": "44556677",
+				"reference": "Haberes NOV12",
+				"validateDocument": "S"
+			},
+			{
+				"id": 9,
+				"name": "Roger Samaniego Velez",
+				"accountType": "C",
+				"accountNumber": "19187654321073",
+				"currencyType": "0001",
+				"amount": 1525.50,	
+				"docType": "4",
+				"documentNumber": "44556677",
+				"reference": "Haberes NOV12",
+				"validateDocument": "S"
+			},
+			{
+				"id": 10,
+				"name": "Stacy Ann Ferguson",
+				"accountType": "C",
+				"accountNumber": "19187654321073",
+				"currencyType": "0001",
+				"amount": 1525.50,	
+				"docType": "4",
+				"documentNumber": "44556677",
+				"reference": "Haberes NOV12",
+				"validateDocument": "S"
+			},
+			{
+				"id": 11,
+				"name": "Roger Samaniego Velez",
+				"accountType": "C",
+				"accountNumber": "19187654321073",
+				"currencyType": "0001",
+				"amount": 1525.50,	
+				"docType": "4",
+				"documentNumber": "44556677",
+				"reference": "Haberes NOV12",
+				"validateDocument": "S"
+			},
+			{
+				"id": 12,
+				"name": "Stacy Ann Ferguson",
+				"accountType": "C",
+				"accountNumber": "19187654321073",
+				"currencyType": "0001",
+				"amount": 1525.50,	
+				"docType": "4",
+				"documentNumber": "44556677",
+				"reference": "Haberes NOV12",
+				"validateDocument": "S"
+			},
+			{
+				"id": 13,
+				"name": "Roger Samaniego Velez",
+				"accountType": "C",
+				"accountNumber": "19187654321073",
+				"currencyType": "0001",
+				"amount": 1525.50,	
+				"docType": "4",
+				"documentNumber": "44556677",
+				"reference": "Haberes NOV12",
+				"validateDocument": "S"
+			},
+			{
+				"id": 14,
+				"name": "Stacy Ann Ferguson",
+				"accountType": "C",
+				"accountNumber": "19187654321073",
+				"currencyType": "0001",
+				"amount": 1525.50,	
+				"docType": "4",
+				"documentNumber": "44556677",
+				"reference": "Haberes NOV12",
+				"validateDocument": "S"
+			},
+			{
+				"id": 15,
+				"name": "Roger Samaniego Velez",
+				"accountType": "C",
+				"accountNumber": "19187654321073",
+				"currencyType": "0001",
+				"amount": 1525.50,
+				"docType": "4",
+				"documentNumber": "44556677",
+				"reference": "Haberes NOV12",
+				"validateDocument": "S"
+			},
+			{
+				"id": 16,
+				"name": "Stacy Ann Ferguson",
+				"accountType": "C",
+				"accountNumber": "19187654321073",
+				"currencyType": "0001",
+				"amount": 1525.50,	
+				"docType": "4",
+				"documentNumber": "44556677",
+				"reference": "Haberes NOV12",
+				"validateDocument": "S"
+			},
+			{
+				"id": 17,
+				"name": "Roger Samaniego Velez",
+				"accountType": "C",
+				"accountNumber": "19187654321073",
+				"currencyType": "0001",
+				"amount": 1525.50,	
+				"docType": "4",
+				"documentNumber": "44556677",
+				"reference": "Haberes NOV12",
+				"validateDocument": "S"
+			},
+			{
+				"id": 18,
+				"name": "Stacy Ann Ferguson",
+				"accountType": "C",
+				"accountNumber": "19187654321073",
+				"currencyType": "0001",
+				"amount": 1525.50,	
+				"docType": "4",
+				"documentNumber": "44556677",
+				"reference": "Haberes NOV12",
+				"validateDocument": "S"
+			},
+			{
+				"id": 19,
+				"name": "Roger Samaniego Velez",
+				"accountType": "C",
+				"accountNumber": "19187654321073",
+				"currencyType": "0001",
+				"amount": 1525.50,	
+				"docType": "4",
+				"documentNumber": "44556677",
+				"reference": "Haberes NOV12",
+				"validateDocument": "S"
+			},
+			{
+				"id": 20,
+				"name": "Stacy Ann Ferguson",
+				"accountType": "C",
+				"accountNumber": "19187654321073",
+				"currencyType": "0001",
+				"amount": 1525.50,	
+				"docType": "4",
+				"documentNumber": "44556677",
+				"reference": "Haberes NOV12",
+				"validateDocument": "S"
+			}
+		]
+	}}
+}

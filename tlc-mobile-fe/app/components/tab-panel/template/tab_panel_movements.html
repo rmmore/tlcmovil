@@ -1,0 +1,72 @@
+<div class="col-xs-12 mtp-groupAll">
+	<ul class="nav nav-tabs mtp-group">
+		<li data-ng-class="{ active:tabs.tab === 1 }" class="mtp-item "><a data-ng-click="tabs.selectTab(1)" title="Histórico" class="mtp-link"> <span class="ico-history">Hist&oacute;rico</span></a></li>
+		<li data-ng-class="{ active:tabs.tab === 2 }" class="mtp-item"><a data-ng-click="tabs.selectTab(2)" title="Filtros" class="mtp-link"><span class="ico-filters">Filtros</span></a></li>
+		<li data-ng-class="{ active:tabs.tab === 3 }" class="mtp-item"><a data-ng-click="tabs.selectTab(3)" title="Exportar" class="mtp-link"><span class="ico-export">Exportar</span></a></li>
+	</ul>
+	<div class="tab-content" data-ng-show="tabs.tab !== 0">
+		<div data-ng-show="tabs.tab === 1" class="col-xs-12 mtp-content">
+			<div class="wrapper">
+				<div class="mtp-header">
+					<h3 class="mtp-tit">Seleccione fechas</h3>
+					<p class="mtp-text">Podrá seleccionar un periodo de 30 días de entre los últimos 6 meses.</p>
+				</div>
+				<div class="mtp-body mtp-calendar">
+					<ui-datepicker></ui-datepicker>
+				</div>
+				<div class="mtp-footer mod_form">
+					<div class="mfm-boxBTN mtxs mbxs">
+						<input id="btn01" type="button" value="Limpiar" class="mfm-button mfm-dbl" data-ng-click="movementsVM.clearHistoric(); tabs.closeTabs();"/>
+					</div>
+					<a title="Cerrar tab" role="button" data-ng-click="tabs.closeTabs()" class="mtp-close">
+						<span class="hideAccessible">Cerrar tab</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div data-ng-show="tabs.tab === 2" class="col-xs-12 mtp-content">
+			<div class="wrapper">
+				<div class="mtp-header">
+					<h3 class="mtp-tit">Seleccione el tipo de operaci&oacute;n</h3>
+				</div>
+				<div class="mtp-body">
+					<dropdownlist data-ctrl="TypeOperationMovementsController"></dropdownlist>
+				</div>
+				<div class="mtp-footer mod_form">
+					<div class="mfm-boxBTN">
+						<input id="btn01" type="button" value="Filtrar" class="mfm-button mfm-dbl" data-ng-click="movementsVM.filter(true); tabs.closeTabs();"/>
+					</div>
+					<a title="Cerrar tab" role="button" data-ng-click="tabs.closeTabs()" class="mtp-close">
+						<span class="hideAccessible">Cerrar tab</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div data-ng-show="tabs.tab === 3" class="col-xs-12 mtp-content">
+			<div class="wrapper" data-ng-controller="InputMailController as inputMail"  data-ng-init="inputMail.init(movementsVM)">
+				<div class="mtp-header">
+					<h3 class="mtp-tit">Seleccione el formato del archivo</h3>
+				</div>
+				<div class="mtp-body">					
+					<dropdownlist data-ctrl="TypeFileController"></dropdownlist>
+					<dropdownlist data-ctrl="SeparatorController"></dropdownlist>
+					
+					<input data-ng-show="movementsVM.showInputSeparator" type="text" maxlength="1" class="w100 input-separator mtxs" data-ng-model="movementsVM.inputSeparator" autocorrect="off" autocomplete="off" spellcheck="false" placeholder="Separador">
+
+					<h3 class="mtp-tit mtp-mod-emails">Introduzca mail destinatario</h3>	
+
+					<chips data-ng-model="inputMail.mails" data-chips-options="::inputMail.options"></chips>
+					
+				</div>
+				<div class="mtp-footer mod_form">
+					<div class="mfm-boxBTN">
+						<input id="btn01" type="button" value="Enviar" class="mfm-button mfm-dbl mbs" 
+							data-ng-disabled="movementsVM.showInputSeparator && ! movementsVM.inputSeparator"
+							data-ng-click="inputMail.send()"/>
+					</div>
+					<a title="Cerrar tab" role="button" data-ng-click="tabs.closeTabs()" class="mtp-close"><span class="hideAccessible">Cerrar tab</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

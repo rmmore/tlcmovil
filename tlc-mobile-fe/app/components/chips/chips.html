@@ -1,0 +1,41 @@
+<div class="mod_inputChips">
+	<div class="md-chips">
+		<div data-ng-repeat="chip in chipsVM.items track by $index" data-ng-class="{'md-focused': chipsVM.selectedChip == $index}" class="md-chip">
+			<div class="md-chip-content" tabindex="-1" data-ng-click="chipsVM.selectChip($index)">
+			   <span>{{chip}}</span>
+			</div>
+			<div class="md-chip-remove-container">
+			    <button class="md-chip-remove" data-ng-click="chipsVM.removeChip($index)" type="button" tabindex="-1">
+					<md-icon>
+						<svg version="1.1" x="0px" y="0px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false">
+							<g><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"></path></g>
+						</svg>
+					</md-icon>  
+			    </button>
+			</div>
+		</div>
+		<div class="md-chip-input-container">        
+			<input 	class="md-input" tabindex="0"
+					type="{{chipsVM.options.type || 'text'}}" 
+					placeholder="{{chipsVM.options.placeholder}}" 
+					data-ng-model="chipsVM.chipBuffer" 
+					data-ng-trim="false" 
+					data-focus="chipsVM.focusChipBuffer" 
+					data-ng-keydown="chipsVM.inputKeydown($event)" 
+					data-ng-blur="chipsVM.onBlur()"
+					autocorrect="off"
+					autocomplete="off"
+					maxlength="{{chipsVM.options.maxlength}}"
+					spellcheck="false">
+		</div>
+		<div class="md-chip-button-more-container">
+			<div class="md-chip-button-more-parent">
+				<div class="md-chip-button-more-child">
+					<button type="button" class="close" data-ng-click="chipsVM.more($event)">
+						<span class="ico-more-chip"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

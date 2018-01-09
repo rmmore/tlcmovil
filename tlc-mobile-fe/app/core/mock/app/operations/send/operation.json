@@ -1,0 +1,11 @@
+{
+	"response": [
+		{"sqOperation": 1, "statusCode": "21"}, 
+		{"sqOperation": 2, "statusCode": "35"},
+		{"sqOperation": 3, "errorCode": "ERROR003"}, 
+		{"sqOperation": 4, "statusCode": "40"}, 
+		{"sqOperation": 5, "errorCode": "ERROR003"}, 
+		{"sqOperation": 6, "statusCode": "36"}, 
+		{"sqOperation": 7, "statusCode": "21"}
+	]
+}

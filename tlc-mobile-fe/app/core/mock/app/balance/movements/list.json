@@ -1,0 +1,191 @@
+{
+  "response": { 
+	"paginationMovementsDto": {
+		"count": 100, 
+		"pages": 5,
+		"list": [
+		{
+		  "nroTrnMov": "0300673",
+		  "fecMov": "1467954000000",
+		  "refMov": "DE EMPRESA CONSTRUCTOR",
+		  "impOpeMov": 150.00,
+		  "fecValuta": "1467954000000",
+		  "codAgeSucMov": "111-008",
+		  "usuMov": "TNPOAO"
+		},
+		{
+		  "nroTrnMov": "0300674",
+		  "fecMov": "1468513716210",
+		  "refMov": "PAGO LETRA 004588236576",
+		  "impOpeMov":  254,
+		  "fecValuta": "1467954000000",
+		  "codAgeSucMov": "111-008",
+		  "usuMov": "TNPOAO"
+		},
+		{
+		  "nroTrnMov": "0300675",
+		  "fecMov": "1453698000000",
+		  "refMov": "DE OTRA CUENTA",
+		  "impOpeMov":  25.00,
+		  "fecValuta": "1467954000000",
+		  "codAgeSucMov": "111-008",
+		  "usuMov": "TNPOAO"
+		},
+		{
+		  "nroTrnMov": "0300676",
+		  "fecMov": "1467954000000",
+		  "refMov": "ENTR. EFEC. 000323",
+		  "impOpeMov": 1570.00,
+		  "fecValuta": "1467954000000",
+		  "codAgeSucMov": "111-008",
+		  "usuMov": "TNPOAO"
+		},
+		{
+		  "nroTrnMov": "0300677",
+		  "fecMov": "1467954000000",
+		  "refMov": "DE PANADERIA VIRGEN DE FATIMA",
+		  "impOpeMov":  100,
+		  "fecValuta": "1467954000000",
+		  "codAgeSucMov": "111-008",
+		  "usuMov": "TNPOAO"
+		},
+		{
+		  "nroTrnMov": "0300678",
+		  "fecMov": "1467954000000",
+		  "refMov": "IMPUESTOS ITF",
+		  "impOpeMov":  158.00,
+		  "fecValuta": "1467954000000",
+		  "codAgeSucMov": "111-008",
+		  "usuMov": "TNPOAO"
+		},
+		{
+		  "nroTrnMov": "0300679",
+		  "fecMov": "1467954000000",
+		  "refMov": "De empresa constructor",
+		  "impOpeMov": 10000.00,
+		  "fecValuta": "1467954000000",
+		  "codAgeSucMov": "111-008",
+		  "usuMov": "TNPOAO"
+		},
+		{
+		  "nroTrnMov": "0300680",
+		  "fecMov": "1467954000000",
+		  "refMov": "Pago letra 004588236576",
+		  "impOpeMov":  -359700999.00,
+		  "fecValuta": "1467954000000",
+		  "codAgeSucMov": "111-008",
+		  "usuMov": "TNPOAO"
+		},
+		{
+		  "nroTrnMov": "0300681",
+		  "fecMov": "1467954000000",
+		  "refMov": "Impuesto ITF",
+		  "impOpeMov":  900000.00,
+		  "fecValuta": "1467954000000",
+		  "codAgeSucMov": "111-008",
+		  "usuMov": "TNPOAO"
+		},
+		{
+		  "nroTrnMov": "0300682",
+		  "fecMov": "1467954000000",
+		  "refMov": "De empresa constructor",
+		  "impOpeMov": 10000.00,
+		  "fecValuta": "1467954000000",
+		  "codAgeSucMov": "111-008",
+		  "usuMov": "TNPOAO"
+		},
+		{
+		  "nroTrnMov": "0300683",
+		  "fecMov": "1467954000000",
+		  "refMov": "De empresa constructor",
+		  "impOpeMov": 10000.00,
+		  "fecValuta": "1467954000000",
+		  "codAgeSucMov": "111-008",
+		  "usuMov": "TNPOAO"
+		},
+		{
+		  "nroTrnMov": "0300684",
+		  "fecMov": "1467954000000",
+		  "refMov": "Pago letra 004588236576",
+		  "impOpeMov":  -359700999.00,
+		  "fecValuta": "1467954000000",
+		  "codAgeSucMov": "111-008",
+		  "usuMov": "TNPOAO"
+		},
+		{
+		  "nroTrnMov": "0300685",
+		  "fecMov": "1467954000000",
+		  "refMov": "Impuesto ITF",
+		  "impOpeMov":  900000.00,
+		  "fecValuta": "1467954000000",
+		  "codAgeSucMov": "111-008",
+		  "usuMov": "TNPOAO"
+		},
+		{
+		  "nroTrnMov": "0300686",
+		  "fecMov": "1467954000000",
+		  "refMov": "De empresa constructor",
+		  "impOpeMov": 10000.00,
+		  "fecValuta": "1467954000000",
+		  "codAgeSucMov": "111-008",
+		  "usuMov": "TNPOAO"
+		},
+		{
+		  "nroTrnMov": "0300687",
+		  "fecMov": "1467954000000",
+		  "refMov": "Pago letra 004588236576",
+		  "impOpeMov":  -359700999.00,
+		  "fecValuta": "1467954000000",
+		  "codAgeSucMov": "111-008",
+		  "usuMov": "TNPOAO"
+		},
+		{
+		  "nroTrnMov": "0300688",
+		  "fecMov": "1467954000000",
+		  "refMov": "Impuesto ITF",
+		  "impOpeMov":  900000.00,
+		  "fecValuta": "1467954000000",
+		  "codAgeSucMov": "111-008",
+		  "usuMov": "TNPOAO"
+		},
+		{
+		  "nroTrnMov": "0300689",
+		  "fecMov": "1467954000000",
+		  "refMov": "De empresa constructor",
+		  "impOpeMov": 10000.00,
+		  "fecValuta": "1467954000000",
+		  "codAgeSucMov": "111-008",
+		  "usuMov": "TNPOAO"
+		},
+		{
+		  "nroTrnMov": "0300690",
+		  "fecMov": "1467954000000",
+		  "refMov": "Pago letra 004588236576",
+		  "impOpeMov":  -359700999.00,
+		  "fecValuta": "1467954000000",
+		  "codAgeSucMov": "111-008",
+		  "usuMov": "TNPOAO"
+		},
+		{
+		  "nroTrnMov": "0300691",
+		  "fecMov": "1467954000000",
+		  "refMov": "Impuesto ITF",
+		  "impOpeMov":  900000.00,
+		  "fecValuta": "1467954000000",
+		  "codAgeSucMov": "111-008",
+		  "usuMov": "TNPOAO"
+		},
+		{
+		  "nroTrnMov": "0300692",
+		  "fecMov": "1467954000000",
+		  "refMov": "De empresa constructor",
+		  "impOpeMov": 10000.00,
+		  "fecValuta": "1467954000000",
+		  "codAgeSucMov": "111-008",
+		  "usuMov": "TNPOAO"
+		}
+	   ]
+
+	}
+  }
+}

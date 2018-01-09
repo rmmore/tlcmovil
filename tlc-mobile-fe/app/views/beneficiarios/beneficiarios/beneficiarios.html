@@ -1,0 +1,58 @@
+<main data-ng-show="::beneficiariesVM.showMain">
+	<h1 data-page-title class="hideAccessible">Beneficiarios</h1> 
+	
+	<div class="mod_infoAccount no_padding_top sticky-content-header">
+	<!-- <div sticky="sticky" class="mod_infoAccount no_padding_top"> -->
+		<div class="mod_form">
+			<div class="mod_steps">
+				<!-- <div class="mfm-searchG">
+					<label for="search01" class="mfm-labSrh">search 01</label>
+					<input id="search01" type="search" data-ng-model="queryName" data-ng-keyup="search($event)" placeholder="Buscar beneficiarios" class="mfm-inSrh">
+				</div> -->
+				<p class="input-group search-beneficiaries">
+					<input type="search" class="form-control" placeholder="Buscar beneficiarios" maxlength="50" data-ng-model="beneficiariesVM.querySearch" data-ng-keyup="beneficiariesVM.search($event)">
+					<span class="input-group-btn">
+						<button type="button" class="btn btn-default" data-ng-click="beneficiariesVM.search()"><i class="glyphicon glyphicon-search"></i></button>
+					</span>
+				</p>
+			</div>
+		</div>
+		<div class="gridContainer text-init">
+			<div class="row">
+				<div class="mod_tab_panel">
+					<tab-panel template="beneficiaries"></tab-panel>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="sticky-content-body-beneficiaries">
+		<div class="gridContainer gridList sticky-content-scroll">
+		<!-- <div class="gridContainer gridList"> -->
+	
+			<div data-ng-controller="FiltersAlertBeneficiariesController as filtersAlert" data-ng-show="filtersAlert.alertOptions.show" class="mtp-box-filter">
+				<uie-alert data-options="filtersAlert.alertOptions" class="no_marginBottom" data-ng-if="filtersAlert.alertOptions.show"></uie-alert> 
+			</div>
+	
+			<div class="wrapper mtxs">
+				<div class="row">				
+					<div class="col-xs-12">
+					
+						<ui-pagination data-pagination-options="beneficiariesVM.scroll">
+							<ul class="mod_tableList">
+								<li class="tl-item" data-ng-repeat="item in beneficiariesVM.beneficiaries track by $index">
+									<a data-ng-click="beneficiariesVM.goDetail(item)" class="tl-link ico-arrowR-ora">
+										<span class="tl-boxL" data-ng-class="{'tl-w60': item.amount || item.amount === 0}">{{::item.name}}<span class="tl-code code-account-number">A. {{::item.currencyType | currencySymbol}} {{::item.accountNumber | accountNumberMask}}</span></span><span class="tl-boxR tl-num" data-ng-if="::item.amount" data-currency="::{type: item.currencyType, value: item.amount}"></span>
+									</a>
+								</li>
+							</ul>
+						</ui-pagination>			
+						
+						<alert-no-records data-ng-show="beneficiariesVM.noRecords"></alert-no-records>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

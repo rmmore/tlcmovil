@@ -1,0 +1,65 @@
+{
+  "response": {
+	"paginationOperation": {
+		"count": 100, 
+		"pages": 5,
+		"list": [
+		{
+		  "sqOperation": 1,
+		  "accountNumberFrom": "1911175052011",
+		  "accountNumberTo": "201020011471111",
+		  "dsOperation": "A cuentas propias BCP Miami",
+		  "codeTypeOperation": "OMPMSV",
+		  "from": "CLINICA DE LIMA",
+		  "to": "PRODUCTOS DE ACERO DEL PERU",
+		  "amount": 541,
+		  "currencyType": "1001"
+		},
+		{
+		  "sqOperation": 2,
+		  "accountNumberFrom": "1931431243009",
+		  "accountNumberTo": "00329800300052398196",
+		  "dsOperation": "A otros bancos locales",
+		  "codeTypeOperation": "OMPMSP",
+		  "from": "LA ASOCIACION EMPRESARIAL DE COMERCIANTES",
+		  "to": "PRODUCTOS DE ACERO DEL PERU",
+		  "amount": 30,
+		  "currencyType": "0001"
+		},
+		{
+		  "sqOperation": 3,
+		  "accountNumberFrom": "1911427081059",
+		  "dsOperation": "Proveedores",
+		  "codeTypeOperation": "OMPMDV",
+		  "from": "PANADERIA LOS OLIVOS",
+		  "to": "Varios",
+		  "amount": 180,
+		  "currencyType": "0001",
+		  "hasPassword": true,
+		  "canResetPassword": true
+		},
+		{
+		  "sqOperation": 4,
+		  "accountNumberFrom": "1911435907009",
+		  "dsOperation": "Remesas de efectivo",
+		  "codeTypeOperation": "OMPMCT",
+		  "from": "EMPRESAS MOLINO SA",
+		  "to": "LUCHO PEREZ ALMEIDA",
+		  "accountNumberTo": "00329800300052398196",
+		  "amount": 4000,
+		  "currencyType": "0001"
+		},
+		{
+		  "sqOperation": 5,
+		  "accountNumberFrom": "1931341240188",
+		  "dsOperation": "Haberes",
+		  "codeTypeOperation": "OMPMSV",
+		  "from": "PRODUCTOS DE ACERO DEL PERU",
+		  "to": "Varios",
+		  "amount": 51120.00,
+		  "currencyType": "1001"
+		}
+	   ]
+	}
+  }
+}

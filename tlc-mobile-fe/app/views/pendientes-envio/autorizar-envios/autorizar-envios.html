@@ -1,0 +1,66 @@
+<div class="modal-header">
+	<h3 class="modal-title">Autorizar envíos</h3>
+</div>
+<div class="modal-body" data-modal-auto-height>
+
+	<steps data-steps-options="::{count: 3, current: 2}"></steps>
+
+	<form class="mod_form mod_auth_token">
+		<div class="mod_details">
+			<h2 class="hideAccessible">Introducci&oacute;n de claves</h2>
+			
+			<fieldset class="auth-keys">
+				<legend class="hideAccessible">Introducci&oacute;n de datos tarjeta token</legend>
+				<div class="row mbxs">
+					<div class="col-xs-12">
+						<div class="row">
+							<div class="col-xs-12 mbxs">
+								<h3 class="auth-title-confirm">Confirma que los datos son correctos antes de ingresar tu Clave Digital Token.</h3>
+							</div>
+						</div>
+					</div>
+					<!--Ends token inputs-->
+				</div>
+				<div class="row mbxs">
+					<div class="col-xs-12">
+						<div class="row" data-keypad-mobile-input data-ng-model="authorizeSendsVM.tokenValue" data-keypad-options="::authorizeSendsVM.optionsValue">
+							<div class="col-xs-5">
+								<h3 class="auth-title">Tarjeta Token:</h3>
+							</div>
+							<div class="col-xs-6 no_padding_left text-left">
+								<label class="ico-key-token">
+									<input type="text" class="input-key w60" data-keypad-mobile-partial="2" data-ng-model="authorizeSendsVM.token">
+								</label>
+							</div>
+						</div>
+					</div>
+					<!--Ends token inputs-->
+				</div>
+				<!--Starts key input-->
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="row" data-keypad-mobile-input data-ng-model="authorizeSendsVM.tokenKey" data-keypad-options="::authorizeSendsVM.optionsKey">
+							<div class="col-xs-5">
+								<h3 class="auth-title">Clave:</h3>
+							</div>
+							<div class="col-xs-6 no_padding_left">
+								<label class="ico-key">
+									<input type="password" class="input-key w100" data-keypad-mobile-partial="6" data-ng-model="authorizeSendsVM.key" autocorrect="off" autocomplete="off" spellcheck="false">
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+	</form>
+	
+	<div class="mod_form">
+		<div class="mfm-boxBTN no_marginTop">
+			<input id="btn03" data-ng-click="authorizeSendsVM.cancel()" type="button" value="Cancelar" class="mfm-button mfm-dbl cancel">
+			<label for="btn03" class="hideAccessible">Cancelar</label>
+			<input id="btn_send" data-ng-click="authorizeSendsVM.accept()" type="button" value="Enviar" class="mfm-button mfm-dbl">
+			<label for="btn_send" class="hideAccessible">Enviar</label>
+		</div>
+	</div>
+</div>

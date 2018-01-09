@@ -1,0 +1,50 @@
+<main data-ng-show="::accountsVM.showMain">
+	<h1 data-page-title class="hideAccessible">Saldos y Movimientos</h1> 
+	
+	<div class="mod_infoAccount no_padding_top sticky-content-header">
+	<!-- <div sticky="sticky" class="mod_infoAccount no_padding_top"> -->
+		<div  class="gridContainer">
+			<div class="wrapper">
+				<div class="row">
+					<div class="col-xs-12 mod_titles">
+						<h2 class="mt-titleH2 icon-account">Cuentas</h2>
+						<h3 class="mt-titleH3">{{::accountsVM.company.dsCompany}}</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="gridContainer text-init">
+			<div class="row">
+				<div class="mod_tab_panel">
+					<tab-panel template="accounts"></tab-panel>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="sticky-content-body-accounts">
+		<div class="gridContainer gridList sticky-content-scroll">
+		<!-- <div class="gridContainer gridList"> -->		
+	
+			<div data-ng-controller="FiltersAlertAccountsController as filtersAlert" data-ng-show="filtersAlert.alertOptions.show" class="mtp-box-filter">
+				<uie-alert data-options="filtersAlert.alertOptions" class="no_marginBottom" data-ng-if="filtersAlert.alertOptions.show"></uie-alert> 
+			</div>
+			
+			<div class="wrapper mtxs">
+			
+				<ui-pagination data-pagination-options="accountsVM.scroll" data-ng-show="!accountsVM.noRecords">
+					<ul class="mod_tableList">
+						<li data-ng-repeat="account in accountsVM.accounts track by account.number" class="tl-item">
+							<a data-ng-click="accountsVM.goMovements(account)" class="tl-link ico-arrowR-ora" data-ng-class="::{'no_background_image': !accountsVM.hasMovementsPermission}">
+								<span class="tl-boxL tl-w60">{{::account.accountType.name}}<span class="tl-code">{{::account.number | accountNumberMask}}</span></span><span class="tl-boxR tl-num" data-ng-if="::accountsVM.hasBalancesPermission" data-currency="::{type: account.currency, value: account.contableBalance}"></span>
+							</a>
+						</li>
+					</ul>
+				</ui-pagination>
+
+				<alert-no-records data-ng-show="accountsVM.noRecords"></alert-no-records>
+				
+			</div>
+		</div>
+	</div>
+</main>

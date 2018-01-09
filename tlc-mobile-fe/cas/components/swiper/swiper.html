@@ -1,0 +1,12 @@
+<div class="swiper-container">
+
+	<div class="swiper-wrapper" data-ng-transclude></div>
+	<!-- Add Pagination -->
+	<div class="swiper-pagination"></div>
+	<!-- Add Arrows -->
+	<div data-ng-if="swiperVM.support3D" class="swiper-button-prev" data-ng-show="swiperVM.activeIndex !== 0"></div>
+	<div data-ng-if="swiperVM.support3D" class="swiper-button-next" data-ng-show="swiperVM.activeIndex !== swiperVM.slides.length-1" ></div>
+	
+	<div data-ng-if="!swiperVM.support3D" class="swiper-button-prev" data-ng-show="swiperVM.activeIndex !== 0" data-ng-click="swiperVM.prev()"></div>
+	<div data-ng-if="!swiperVM.support3D" class="swiper-button-next" data-ng-show="swiperVM.activeIndex !== swiperVM.slides.length-1" data-ng-click="swiperVM.next()"></div>
+</div>

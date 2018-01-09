@@ -1,0 +1,30 @@
+<header id="header" class="gridContainer mod_headerFixed">
+	<div class="row">
+	  <div class="col-xs-12 hdr-group">
+		<span data-ng-click="headerMobileVM.back()" data-ng-if="mainVM.showBack" class="hdr-boxBack">
+			<a title="volver atrás" class="hdr-linkBack">
+				<img src="img/modules/icons/ico-arrow-left-white.png" alt="Volver atrás" class="hdr-mmenu"/>
+			</a>
+		</span>
+		<p class="hideAccessible">Telecr&eacute;dito Mobil - BCP</p>
+		<p class="hdr-title" id="page-title"></p>
+		<span class="hdr-logo-container">
+			<a data-ng-click="mainVM.goHome()" id="page-logo" title="Logo BCP" class="hdr-logo">
+				<img src="img/modules/icons/ico-logo-BCP.png" alt="BCP Telecredito Mobile" class="hdr-logo-tm"/>
+			</a>
+		</span>
+		<a data-ng-click="mainVM.goHome()" title="Logo BCP" class="hdr-logo">
+			<img src="img/modules/icons/ico-logo-BCP-d.png" alt="BCP Telecredito Mobile" class="hdr-logo-d"/>
+		</a>
+		<span	data-ng-controller="MenuToggleController as menuToggleVM" 
+				data-ng-click="menuToggleVM.toggleMenu()" 
+				data-ng-if="mainVM.showMenu" 
+				data-ng-class="{'ng-hide': (mainVM.noContract && mainVM.isApp), 'visible-tablet': (mainVM.noContract && !mainVM.isApp)}"
+				class="hdr-boxMenu">
+			<a title="Abrir menu mobile" class="hdr-linkMenu">
+				<img src="img/modules/icons/ico-mmenu.png" alt="Abrir menu"/>
+			</a>
+		</span>
+	  </div>
+	</div>
+</header>

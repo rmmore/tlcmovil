@@ -1,0 +1,32 @@
+{
+  "response": {
+	"id": 1,
+	
+  	"dsOperation": "A cuentas de terceros con tipo de cambio negociado",
+  	"cdStatus": "11",
+  	"dsFullName": "Jhon Alvarez",
+  	"dtPrepared": "1467049380000",
+	
+  	"originName": "BANCO DE COMERCIO",
+  	"originAccountAlias": "BANCO DE COMERCIO",
+  	"originAccountNumber": "1931341240188",
+	"originAccountType": "Corriente",
+	"originCurrencyType": "1001",
+	
+	"destinationName": "FACTORIA EL DIAMANTE S.A",
+	"destinationAccountNumber": "1910335065094",
+	"destinationAccountType": "Corriente",
+	"destinationCurrencyType": "0001",
+	"destinationReference": "1221",
+	
+	"vlOperation": 231,
+	"destinationTicket": "SP-1122",
+	"exchangeRateNegotiated": 2.3,
+	"againstValue": 531.3,
+	
+	"chargeAmount": 231,
+	"paymentAmount": 531.3,
+	
+  	"observations": "Observaciones"
+  }
+}

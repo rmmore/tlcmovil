@@ -1,0 +1,53 @@
+<main ng-controller="PerfilViewController">
+	<h1 data-page-title class="hideAccessible">Perfil</h1> 
+	
+	<div class="pue wrapper perfil visible-desktop">
+		<div class="container-fluid">
+
+			<div id="cuerpo" class="clearfix">
+				<div id="col-izq">
+					<menu-profile></menu-profile>
+				</div>
+				<div id="col-der">
+					<div id="perfil" class="contenido">
+						<div id="breadcrumb">
+							<span class="base">Inicio</span> <span>&gt;</span> <span class="current">Perfil</span>
+						</div>
+
+						<h1>Perfil</h1>
+						<hr class="line"/>
+						<h2>{{mainVM.user.company}}</h2>
+						<hr class="line"/>
+						<h2>Datos de la tarjeta:</h2>
+						<div class="tarjeta">
+							<p>{{mainVM.user.cardType}}</p>
+							<p>N&uacute;mero: {{mainVM.user.cardNumber}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+	<div class="gridContainer visible-mobile visible-tablet">
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="mod_details_send">					
+
+						<ul class="mod_details">		
+							<li class="md-item">
+								<p class="text-bold">{{mainVM.user.company}}</p>
+								<p >&nbsp;</p>
+								<p >Datos de la tarjeta:</p>
+								<p class="md-info d-block">{{mainVM.user.cardType}}</p>
+								<p class="md-info">Numero: {{mainVM.user.cardNumber}}</p>
+							</li>
+						</ul>								
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

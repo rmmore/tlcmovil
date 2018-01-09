@@ -1,0 +1,14 @@
+{
+	"response": {
+		"listCurrency": [
+			{
+			  "id": 2,
+			  "name": "Soles"
+			},
+			{
+			  "id": 3,
+			  "name": "Dolares"
+			}
+	   ]
+	}
+}

@@ -1,0 +1,36 @@
+{
+  "response":{
+	  "dsOperation":"Transferencia a bancos del exterior",
+	  "cdStatus":"11",
+	  "dsFullName":"Jhon Alvarez",
+	  "dtPrepared":1469140926000,
+	  "listSignatoryBy":["Richi Peña"],
+	  
+	  "originAccountNumber":"1931341240188",
+	  "originAccountType":"Cuenta Corriente",
+	  "originCurrencyType":"1001",
+	  "originName":"BANCO DE COMERCIO",
+	  "originPhone":"123456789",
+	  "originMail":"rodasilv@everis.com",
+	  "vlOperation":120.0,
+	  "fgExpenseOur":"S",
+	  "dsReject":"N",
+	  "dtExpiration":null,
+	  "sqOperation":null,
+	  "dsCreditAccountName":"ROBERTO DA SILVA",
+	  "dsTypeAccount":"REGULAR",
+	  "dsAddressBeneficiary":"Gal Gentil Falcao",
+	  "dsCreditAccount":"12222154                                ",
+	  "referenceBeneficiary":"Referencia",
+	  "dsBroker":"Banco do Brasil",
+	  "dsCodeFtBroker":"COLOCOBMMD1",
+	  "dsAccountFtBroker":"1931341240188",
+	  "cdTypeCodeFtBroker":"SWIFT (MUNDIAL)",
+	  "dsBrokerPlace":"Brasil/DFrasilia",
+	  "dsBank":"Citibank",
+	  "dsAddressBank":"Dirección",
+	  "dsLocationPayingBank":"Brasil/SP/Sao Paulo",
+	  "dsCodeFtPayingBank":"COLOCOBMMD1",
+	  "cdTypeCodeFtPayingBank":"SWIFT (MUNDIAL)"
+	  }	  
+}
